@@ -91,7 +91,14 @@ public class Character : MonoBehaviour
     {
         foreach (var kvp in _blendShapesSortedByCharacteristicType)
         {
-            SetWeightForBlendShapesPerCharacteristic(kvp.Key, 0);
+            float initialValue = 0;
+            CharacteristicType type = kvp.Key;
+            Characteristic characteristic = AppManager.CharacterManager.GetCharacteristicByType(type);
+            if (characteristic.HasNegativeValues)
+            {
+                initialValue = 100;
+            }
+            SetWeightForBlendShapesPerCharacteristic(type, initialValue);
         }
     }
 
