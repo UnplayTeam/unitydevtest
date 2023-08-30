@@ -13,7 +13,7 @@ namespace JoshBowersDEV.Characters
     [CreateAssetMenu(fileName = "Character", menuName = "Characters/Data")]
     public class CharacterMeshData : BindableScriptableObjectBase
     {
-        #region General Properties
+        #region Racial and Gender Properties
 
         [SerializeField]
         private bool _isHybrid;
@@ -125,17 +125,84 @@ namespace JoshBowersDEV.Characters
             set => SetProperty(ref _orcRace, value);
         }
 
-        [SerializeField]
         private float _gender;
 
-        [Binding]
         public float Gender
         {
             get => _gender;
-            set => SetProperty(ref _gender, value);
+            set
+            {
+                SetProperty(ref _gender, value);
+            }
         }
 
-        #endregion General Properties
+        [SerializeField]
+        private float _humanFemale;
+
+        [Binding]
+        public float HumanGender
+        {
+            get => Gender * HumanRace;
+        }
+
+        [SerializeField]
+        private float _humanMale;
+
+        [Binding]
+        public float HumanMale
+        {
+            get => _humanMale;
+        }
+
+        [SerializeField]
+        private float _orcFemale;
+
+        [Binding]
+        public float OrcFemale
+        {
+            get => _orcFemale;
+            set
+            {
+            }
+        }
+
+        [SerializeField]
+        private float _orcMale;
+
+        [Binding]
+        public float OrcMale
+        {
+            get => _orcMale;
+            set
+            {
+            }
+        }
+
+        [SerializeField]
+        private float _elfFemale;
+
+        [Binding]
+        public float ElfFemale
+        {
+            get => _elfFemale;
+            set
+            {
+            }
+        }
+
+        [SerializeField]
+        private float _elfMale;
+
+        [Binding]
+        public float ElfMale
+        {
+            get => _elfMale;
+            set
+            {
+            }
+        }
+
+        #endregion Racial and Gender Properties
 
         #region Head Properties
 

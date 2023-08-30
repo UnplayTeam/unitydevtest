@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.realseriousgames.unityweld": "https://github.com/TimGameDev/Unity-Weld.git",
+    "com.unity.addressables": "1.21.17",
     "com.unity.cinemachine": "2.9.7",
     "com.unity.collab-proxy": "2.0.5",
     "com.unity.feature.development": "1.0.1",

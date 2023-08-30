@@ -1,22 +1,75 @@
-using JoshBowersDEV.Characters;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSkinnedMeshBinding : MonoBehaviour
+namespace JoshBowersDEV.Characters
 {
-    #region Properties
-
-    private CharacterMeshData _characterMeshData;
-
-    public CharacterMeshData CharacterMeshData
+    [System.Serializable]
+    public class SkinnedBinding
     {
-        get => _characterMeshData;
-        set
+        public SkinnedBinding()
         {
-            _characterMeshData = value;
+            BlendShape = "Empty";
+            CharacterProperty = "Empty";
+            Weight = 1.0f;
         }
+
+        public string BlendShape;
+        public string CharacterProperty;
+        public float Weight;
     }
 
-    #endregion Properties
+    /// <summary>
+    /// Used to bind specific <see cref="SkinnedMeshRenderer"/> values to <see cref="CharacterMeshData"/> values based on weighted values.
+    /// </summary>
+    [RequireComponent(typeof(SkinnedMeshRenderer))]
+    public class CharacterSkinnedMeshBinding : MonoBehaviour
+    {
+        #region Properties
+
+        private CharacterMeshData _characterMeshData;
+
+        public CharacterMeshData CharacterMeshData
+        {
+            get => _characterMeshData;
+            set
+            {
+                _characterMeshData = value;
+            }
+        }
+
+        [SerializeField]
+        private SkinnedMeshRenderer _skinnedMeshRenderer;
+
+        public SkinnedMeshRenderer SkinnedMeshRenderer
+        {
+            get => _skinnedMeshRenderer;
+            set => _skinnedMeshRenderer = value;
+        }
+
+        #endregion Properties
+
+        #region Public Variables
+
+        [SerializeField]
+        public List<SkinnedBinding> SkinnedBindings;
+
+        #endregion Public Variables
+
+        #region Unity Callbacks
+
+        // Make sure that Variables are assigned immediately
+        private void Reset()
+        {
+            if (SkinnedMeshRenderer == null)
+                SkinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        }
+
+        private void Awake()
+        {
+            if (SkinnedMeshRenderer == null)
+                SkinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        }
+
+        #endregion Unity Callbacks
+    }
 }

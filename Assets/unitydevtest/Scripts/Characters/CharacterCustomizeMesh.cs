@@ -8,6 +8,7 @@ namespace JoshBowersDEV.Characters
     /// <summary>
     /// Bindable mono for exposing current Mesh information.
     /// </summary>
+    [Binding]
     public class CharacterCustomizeMesh : BindableBehaviourBase
     {
         #region Properties
