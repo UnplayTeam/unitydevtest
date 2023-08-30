@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityWeld.Binding;
 
-public class CharacterCustomizeMesh : MonoBehaviour
+namespace JoshBowersDEV.Characters
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Bindable mono for exposing current Mesh information.
+    /// </summary>
+    public class CharacterCustomizeMesh : BindableBehaviourBase
     {
-        
-    }
+        #region Properties
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField]
+        private CharacterMeshData _characterMeshData;
+
+        [Binding]
+        public CharacterMeshData CharacterMeshData
+        {
+            get => _characterMeshData;
+            set => _characterMeshData = value;
+        }
+
+        #endregion Properties
     }
 }
