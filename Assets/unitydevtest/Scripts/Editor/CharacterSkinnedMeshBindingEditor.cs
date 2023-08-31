@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityWeld.Binding;
 
 namespace JoshBowersDEV.Characters
 {
@@ -29,7 +30,9 @@ namespace JoshBowersDEV.Characters
                 binding.CharacterMeshData = reference.Result;
             }
 
-            EditorGUILayout.LabelField("Bindings", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Connections", EditorStyles.boldLabel);
+            EditorGUILayout.Space(5);
+            //EditorGUILayout.PropertyField(serializedObject.FindProperty("Bindings"), true);
 
             _showBindings = EditorGUILayout.Foldout(_showBindings, "Skinned Bindings");
 
@@ -97,11 +100,22 @@ namespace JoshBowersDEV.Characters
                     }
 
                     selectedPropertyIndex = EditorGUILayout.Popup("CharacterProperty", selectedPropertyIndex, propertyNames);
-
-                    binding.SkinnedBindings[i].CharacterProperty = propertyNames[selectedPropertyIndex];
+                    try
+                    {
+                        Debug.Log(propertyNames[selectedPropertyIndex]);
+                        binding.SkinnedBindings[i].CharacterProperty = propertyNames[selectedPropertyIndex];
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError(e.Message, binding);
+                        throw;
+                    }
 
                     // Display the Weight field.
                     binding.SkinnedBindings[i].Weight = EditorGUILayout.FloatField("Weight", binding.SkinnedBindings[i].Weight);
+
+                    // Display whether the inverted field
+                    binding.SkinnedBindings[i].IsInvertedValue = EditorGUILayout.Toggle("Is Value Inverted?", binding.SkinnedBindings[i].IsInvertedValue);
 
                     // Add a button to remove this binding.
                     if (GUILayout.Button("Remove Binding"))

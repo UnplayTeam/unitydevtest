@@ -1,8 +1,12 @@
+using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityWeld.Binding;
 
 namespace JoshBowersDEV.Characters
 {
+    #region Enums
+
     public enum Race
     {
         Human,
@@ -10,9 +14,95 @@ namespace JoshBowersDEV.Characters
         Orc
     }
 
+    public enum CharacterProperty
+    {
+        IsHybrid,
+        Race,
+        FirstRace,
+        SecondRace,
+        HybridBlend,
+        HumanRace,
+        ElfRace,
+        OrcRace,
+        Female,
+        Male,
+        FemaleHuman,
+        MaleHuman,
+        FemaleElf,
+        MaleElf,
+        FemaleOrc,
+        MaleOrc,
+        EarScale,
+        EarLobeSize,
+        EarsOut,
+        BrowWide,
+        BrowForward,
+        FacialCheekbonesInOut,
+        FacialCheeksGauntFull,
+        FacialChinTipLength,
+        FacialChinTipWidth,
+        FacialJawDown,
+        FacialJawWide,
+        FacialLipTopThinFull,
+        FacialLipBotThinFull,
+        FacialMouthCrease,
+        FacialMouthWidth,
+        FacialMouthOut,
+        FacialNoseAngle,
+        FacialNoseBulb,
+        FacialNoseBridgeDepth,
+        FacialNoseBridgeWidth,
+        FacialNoseLength,
+        FacialNoseTipWidthInOut,
+        BodyMuscularMidHeavy,
+        BodyWeightThinHeavy,
+        IsoBack,
+        IsoBelly,
+        IsoBellyHeight,
+        IsoBiceps,
+        IsoBustSmallLarge,
+        IsoButt,
+        IsoDeltoids,
+        IsoForearms,
+        IsoPectorals,
+        IsoRibcage,
+        IsoTrunk,
+        IsoTrapezius,
+        LegUpperIsoCalves,
+        LegUpperIsoThighs,
+        WaistIsoBulge
+    }
+
+    #endregion Enums
+
     [CreateAssetMenu(fileName = "Character", menuName = "Characters/Data")]
+    [Binding]
     public class CharacterMeshData : BindableScriptableObjectBase
     {
+        #region Events
+
+        public Action<string, float> PropertyChangedEvent;
+
+        #endregion Events
+
+        #region Overrides
+
+        // Override for alerting non-weld members that a change has been made
+        protected override bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        {
+            if (Equals(storage, value))
+                return false;
+
+            storage = value;
+            OnPropertyChanged(propertyName);
+
+            float floatValue = Convert.ToSingle(value); // Convert the generic value to a float.
+            PropertyChangedEvent?.Invoke(propertyName, floatValue);
+            return true;
+        }
+
+        #endregion Overrides
+
         #region Racial and Gender Properties
 
         [SerializeField]
@@ -125,81 +215,64 @@ namespace JoshBowersDEV.Characters
             set => SetProperty(ref _orcRace, value);
         }
 
-        private float _gender;
+        [SerializeField]
+        private float _female;
 
-        public float Gender
+        public float Female
         {
-            get => _gender;
+            get => _female;
             set
             {
-                SetProperty(ref _gender, value);
+                SetProperty(ref _female, value);
             }
         }
 
         [SerializeField]
-        private float _humanFemale;
+        private float _male;
 
-        [Binding]
-        public float HumanGender
+        public float Male
         {
-            get => Gender * HumanRace;
-        }
-
-        [SerializeField]
-        private float _humanMale;
-
-        [Binding]
-        public float HumanMale
-        {
-            get => _humanMale;
-        }
-
-        [SerializeField]
-        private float _orcFemale;
-
-        [Binding]
-        public float OrcFemale
-        {
-            get => _orcFemale;
+            get => _male;
             set
             {
+                SetProperty(ref _male, value);
             }
         }
 
-        [SerializeField]
-        private float _orcMale;
-
         [Binding]
-        public float OrcMale
+        public float FemaleHuman
         {
-            get => _orcMale;
-            set
-            {
-            }
+            get => Female * HumanRace;
         }
 
-        [SerializeField]
-        private float _elfFemale;
-
         [Binding]
-        public float ElfFemale
+        public float MaleHuman
         {
-            get => _elfFemale;
-            set
-            {
-            }
+            get => Male * HumanRace;
         }
 
-        [SerializeField]
-        private float _elfMale;
+        [Binding]
+        public float FemaleElf
+        {
+            get => Female * ElfRace;
+        }
 
         [Binding]
-        public float ElfMale
+        public float MaleElf
         {
-            get => _elfMale;
-            set
-            {
-            }
+            get => Male * ElfRace;
+        }
+
+        [Binding]
+        public float FemaleOrc
+        {
+            get => Female * OrcRace;
+        }
+
+        [Binding]
+        public float MaleOrc
+        {
+            get => Male * OrcRace;
         }
 
         #endregion Racial and Gender Properties
@@ -400,7 +473,7 @@ namespace JoshBowersDEV.Characters
         private float _facialNoseBridgeWidth;
 
         [Binding]
-        public float facialNoseBridgeWidth
+        public float FacialNoseBridgeWidth
         {
             get => _facialNoseBridgeWidth;
             set => SetProperty(ref _facialNoseBridgeWidth, value);
@@ -605,5 +678,183 @@ namespace JoshBowersDEV.Characters
         }
 
         #endregion Lower Body Properties
+
+        #region Public Methods
+
+        public float GetCharacterProperty(CharacterProperty property)
+        {
+            switch (property)
+            {
+                case CharacterProperty.Race:
+                    return (float)Race;
+
+                case CharacterProperty.FirstRace:
+                    return (float)FirstRace;
+
+                case CharacterProperty.SecondRace:
+                    return (float)SecondRace;
+
+                case CharacterProperty.HybridBlend:
+                    return HybridBlend;
+
+                case CharacterProperty.HumanRace:
+                    return HumanRace;
+
+                case CharacterProperty.ElfRace:
+                    return ElfRace;
+
+                case CharacterProperty.OrcRace:
+                    return OrcRace;
+
+                case CharacterProperty.Female:
+                    return Female;
+
+                case CharacterProperty.Male:
+                    return Male;
+
+                case CharacterProperty.FemaleHuman:
+                    return FemaleHuman;
+
+                case CharacterProperty.MaleHuman:
+                    return MaleHuman;
+
+                case CharacterProperty.FemaleElf:
+                    return FemaleElf;
+
+                case CharacterProperty.MaleElf:
+                    return MaleElf;
+
+                case CharacterProperty.FemaleOrc:
+                    return FemaleOrc;
+
+                case CharacterProperty.MaleOrc:
+                    return MaleOrc;
+
+                case CharacterProperty.EarScale:
+                    return EarScale;
+
+                case CharacterProperty.EarLobeSize:
+                    return EarLobeSize;
+
+                case CharacterProperty.EarsOut:
+                    return EarsOut;
+
+                case CharacterProperty.BrowWide:
+                    return BrowWide;
+
+                case CharacterProperty.BrowForward:
+                    return BrowForward;
+
+                case CharacterProperty.FacialCheekbonesInOut:
+                    return FacialCheekbonesInOut;
+
+                case CharacterProperty.FacialCheeksGauntFull:
+                    return FacialCheeksGauntFull;
+
+                case CharacterProperty.FacialChinTipLength:
+                    return FacialChinTipLength;
+
+                case CharacterProperty.FacialChinTipWidth:
+                    return FacialChinTipWidth;
+
+                case CharacterProperty.FacialJawDown:
+                    return FacialJawDown;
+
+                case CharacterProperty.FacialJawWide:
+                    return FacialJawWide;
+
+                case CharacterProperty.FacialLipTopThinFull:
+                    return FacialLipTopThinFull;
+
+                case CharacterProperty.FacialLipBotThinFull:
+                    return FacialLipBotThinFull;
+
+                case CharacterProperty.FacialMouthCrease:
+                    return FacialMouthCrease;
+
+                case CharacterProperty.FacialMouthWidth:
+                    return FacialMouthWidth;
+
+                case CharacterProperty.FacialMouthOut:
+                    return FacialMouthOut;
+
+                case CharacterProperty.FacialNoseAngle:
+                    return FacialNoseAngle;
+
+                case CharacterProperty.FacialNoseBulb:
+                    return FacialNoseBulb;
+
+                case CharacterProperty.FacialNoseBridgeDepth:
+                    return FacialNoseBridgeDepth;
+
+                case CharacterProperty.FacialNoseBridgeWidth:
+                    return FacialNoseBridgeWidth;
+
+                case CharacterProperty.FacialNoseLength:
+                    return FacialNoseLength;
+
+                case CharacterProperty.FacialNoseTipWidthInOut:
+                    return FacialNoseTipWidthInOut;
+
+                case CharacterProperty.BodyMuscularMidHeavy:
+                    return BodyMuscularMidHeavy;
+
+                case CharacterProperty.BodyWeightThinHeavy:
+                    return BodyWeightThinHeavy;
+
+                case CharacterProperty.IsoBack:
+                    return IsoBack;
+
+                case CharacterProperty.IsoBelly:
+                    return IsoBelly;
+
+                case CharacterProperty.IsoBellyHeight:
+                    return IsoBellyHeight;
+
+                case CharacterProperty.IsoBiceps:
+                    return IsoBiceps;
+
+                case CharacterProperty.IsoBustSmallLarge:
+                    return IsoBustSmallLarge;
+
+                case CharacterProperty.IsoButt:
+                    return IsoButt;
+
+                case CharacterProperty.IsoDeltoids:
+                    return IsoDeltoids;
+
+                case CharacterProperty.IsoForearms:
+                    return IsoForearms;
+
+                case CharacterProperty.IsoPectorals:
+                    return IsoPectorals;
+
+                case CharacterProperty.IsoRibcage:
+                    return IsoRibcage;
+
+                case CharacterProperty.IsoTrunk:
+                    return IsoTrunk;
+
+                case CharacterProperty.IsoTrapezius:
+                    return IsoTrapezius;
+
+                case CharacterProperty.LegUpperIsoCalves:
+                    return LegUpperIsoCalves;
+
+                case CharacterProperty.LegUpperIsoThighs:
+                    return LegUpperIsoThighs;
+
+                case CharacterProperty.WaistIsoBulge:
+                    return WaistIsoBulge;
+
+                default:
+                    Debug.LogWarning("Unsupported property: " + property.ToString());
+                    return 0.0f; // Return a default value or handle the error as needed.
+            }
+        }
+
+        #endregion Public Methods
+
+        #region Private Methods
     }
 }

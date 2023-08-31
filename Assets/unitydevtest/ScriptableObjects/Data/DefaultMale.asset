@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbb2baff4eb10b4aa51da94465a5894, type: 3}
   m_Name: DefaultMale
   m_EditorClassIdentifier: 
-  _isHybrid: 1
-  _race: 0
+  _isHybrid: 0
+  _race: 2
   _firstRace: 0
   _secondRace: 1
   _hybridBlend: 0.005
-  _gender: 0
+  _female: 1
+  _male: 0
   _earScale: 0
   _earLobeSize: 0
   _earsOut: 0

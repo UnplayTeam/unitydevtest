@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 0bfc780b8da400b4db906d0790f01d4c
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 1e33f1ba7f1b01649875c6a3c71ef784
+    m_Address: Assets/unitydevtest/ScriptableObjects/Data/DefaultMale.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6105ee6ec19f1c3458e7da38a224e2d3, type: 2}
   m_SchemaSet:

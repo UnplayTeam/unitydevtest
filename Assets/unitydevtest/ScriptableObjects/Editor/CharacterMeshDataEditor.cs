@@ -4,6 +4,7 @@ using JoshBowersDEV.Characters;
 [CustomEditor(typeof(CharacterMeshData))]
 public class CharacterMeshDataEditor : Editor
 {
+    private bool showGenderProperties = false;
     private bool showHeadProperties = false;
     private bool showUpperBodyProperties = false;
     private bool showLowerBodyProperties = false;
@@ -32,8 +33,6 @@ public class CharacterMeshDataEditor : Editor
             }
 
             characterMeshData.HybridBlend = EditorGUILayout.Slider("Hybrid Blend", characterMeshData.HybridBlend, -1f, 1f);
-
-            ShowOtherProperties(characterMeshData);
         }
         else
         {
@@ -41,22 +40,29 @@ public class CharacterMeshDataEditor : Editor
             characterMeshData.Race = (Race)EditorGUILayout.EnumPopup("Race", characterMeshData.Race);
 
             EditorGUILayout.HelpBox("First Race and Second Race are only valid if Race is Hybrid.", MessageType.Info);
-
-            ShowOtherProperties(characterMeshData);
-
-            EditorUtility.SetDirty(characterMeshData);
         }
 
+        ShowOtherProperties(characterMeshData);
+        EditorUtility.SetDirty(characterMeshData);
         // Make sure to update the serialized object
         serializedObject.ApplyModifiedProperties();
     }
 
     private void ShowOtherProperties(CharacterMeshData characterMeshData)
     {
+        showGenderProperties = EditorGUILayout.Foldout(showGenderProperties, "Gender Properties", true);
+        if (showGenderProperties)
+        {
+            // Display the serialized float properties with their necessary ranges
+            EditorGUILayout.BeginVertical();
+            characterMeshData.Female = EditorGUILayout.Slider("Female Slider", characterMeshData.Female, 0, 1f);
+            characterMeshData.Male = EditorGUILayout.Slider("Male Slider", characterMeshData.Male, 0, 1f);
+            EditorGUILayout.EndVertical();
+        }
+
         showHeadProperties = EditorGUILayout.Foldout(showHeadProperties, "Head Properties", true);
         if (showHeadProperties)
         {
-            // Display the serialized float properties with their necessary ranges
             EditorGUILayout.BeginVertical();
             characterMeshData.EarScale = EditorGUILayout.Slider("Ear Scale", characterMeshData.EarScale, 0f, 1f);
             characterMeshData.EarLobeSize = EditorGUILayout.Slider("Ear Lobe Size", characterMeshData.EarLobeSize, 0f, 1f);
@@ -77,7 +83,7 @@ public class CharacterMeshDataEditor : Editor
             characterMeshData.FacialNoseAngle = EditorGUILayout.Slider("Facial Nose Angle", characterMeshData.FacialNoseAngle, 0f, 1f);
             characterMeshData.FacialNoseBulb = EditorGUILayout.Slider("Facial Nose Bulb", characterMeshData.FacialNoseBulb, 0f, 1f);
             characterMeshData.FacialNoseBridgeDepth = EditorGUILayout.Slider("Facial Nose Bridge Depth", characterMeshData.FacialNoseBridgeDepth, 0f, 1f);
-            characterMeshData.facialNoseBridgeWidth = EditorGUILayout.Slider("Facial Nose Bridge Width", characterMeshData.facialNoseBridgeWidth, 0f, 1f);
+            characterMeshData.FacialNoseBridgeWidth = EditorGUILayout.Slider("Facial Nose Bridge Width", characterMeshData.FacialNoseBridgeWidth, 0f, 1f);
             characterMeshData.FacialNoseLength = EditorGUILayout.Slider("Facial Nose Length", characterMeshData.FacialNoseLength, 0f, 1f);
             characterMeshData.FacialNoseTipWidthInOut = EditorGUILayout.Slider("Facial Nose Tip Width In/Out", characterMeshData.FacialNoseTipWidthInOut, 0f, 1f);
             EditorGUILayout.EndVertical();

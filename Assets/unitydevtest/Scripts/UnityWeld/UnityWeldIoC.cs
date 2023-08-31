@@ -1,6 +1,6 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 
-namespace NineHundredLbs.EchoPark
+namespace JoshBowersDEV
 {
 #if UNITY_EDITOR
 
@@ -10,7 +10,6 @@ namespace NineHundredLbs.EchoPark
         static UnityWeldIoC()
         {
         }
-
-#endif
     }
-}*/
+#endif
+}

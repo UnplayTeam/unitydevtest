@@ -478,9 +478,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!137 &178696695562490308 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6372440926999984971, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &919132148317976858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1882048886000283979, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5128211257865086109 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 487027076128001436, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
   m_PrefabInstance: {fileID: 6932823405508735550}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5866666020603689435
@@ -496,6 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterMeshData: {fileID: 11400000, guid: 1e33f1ba7f1b01649875c6a3c71ef784, type: 2}
+  _isHybrid: 0
 --- !u!1001 &6932823405508735550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -787,4 +798,132 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1882048886000283979, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5866666020603689435}
+    - targetCorrespondingSourceObject: {fileID: 1797891923497154124, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8857218435805758617}
+    - targetCorrespondingSourceObject: {fileID: 1797891923497154124, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8857218435805758616}
+    - targetCorrespondingSourceObject: {fileID: 5099587357111390649, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9200022132453416227}
+    - targetCorrespondingSourceObject: {fileID: 5099587357111390649, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9200022132453416228}
+    - targetCorrespondingSourceObject: {fileID: 2161372213944760153, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8808273340778526857}
+    - targetCorrespondingSourceObject: {fileID: 2161372213944760153, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8808273340778526858}
   m_SourcePrefab: {fileID: 100100000, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+--- !u!137 &7160418863742004837 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7883241262334285542, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8808273340778526856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2161372213944760153, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8808273340778526857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808273340778526856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 7160418863742004837}
+--- !u!114 &8808273340778526858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808273340778526856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 0
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
+--- !u!1 &8857218435805758615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1797891923497154124, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8857218435805758616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857218435805758615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 178696695562490308}
+--- !u!114 &8857218435805758617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857218435805758615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 0
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
+--- !u!1 &9200022132453416226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5099587357111390649, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9200022132453416227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200022132453416226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 5128211257865086109}
+--- !u!114 &9200022132453416228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200022132453416226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 0
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
