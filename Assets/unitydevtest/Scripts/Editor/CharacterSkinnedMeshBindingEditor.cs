@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.TerrainTools;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -17,10 +18,41 @@ namespace JoshBowersDEV.Characters
     [CustomEditor(typeof(CharacterSkinnedMeshBinding))]
     public class CharacterSkinnedMeshBindingEditor : Editor
     {
+        public override void OnInspectorGUI()
+        {
+            // Target the script.
+            CharacterSkinnedMeshBinding binding = (CharacterSkinnedMeshBinding)target;
+
+            EditorGUILayout.LabelField("(This will clear existing bindings)");
+            // Add a button above the SkinnedBindings property.
+            if (GUILayout.Button("Fill Skinned Bindings"))
+            {
+                // Call the FillSkinnedBindings() function on the target script.
+                binding.FillSkinnedBindings();
+            }
+
+            // Display the rest of the inspector properties.
+            DrawDefaultInspector();
+        }
+
+        /* Save for later, not working as intended currently/
         private bool _showBindings = true; // Whether to show the bindings list.
+        private SerializedObject serializedCharacterSkinnedMeshBinding;
+        private SerializedProperty skinnedMeshRendererProperty;
+        private SerializedProperty characterMeshDataProperty;
+        private SerializedProperty skinnedBindingsProperty;
+
+        private void OnEnable()
+        {
+            serializedCharacterSkinnedMeshBinding = new SerializedObject(target);
+            skinnedMeshRendererProperty = serializedCharacterSkinnedMeshBinding.FindProperty("SkinnedMeshRenderer");
+            characterMeshDataProperty = serializedCharacterSkinnedMeshBinding.FindProperty("CharacterMeshData");
+            skinnedBindingsProperty = serializedCharacterSkinnedMeshBinding.FindProperty("SkinnedBindings");
+        }
 
         public override void OnInspectorGUI()
         {
+            serializedCharacterSkinnedMeshBinding.Update();
             CharacterSkinnedMeshBinding binding = (CharacterSkinnedMeshBinding)target;
 
             binding.SkinnedMeshRenderer = (SkinnedMeshRenderer)EditorGUILayout.ObjectField("Skinned Mesh Renderer", binding.SkinnedMeshRenderer, typeof(SkinnedMeshRenderer), true);
@@ -60,7 +92,7 @@ namespace JoshBowersDEV.Characters
                 {
                     EditorGUILayout.BeginVertical("box");
                     EditorGUILayout.LabelField("Binding " + (i + 1), EditorStyles.boldLabel);
-
+                     Not working as intended, save for later
                     // Display the BlendShape enum popup based on available blend shapes.
                     string[] blendShapeNames = GetBlendShapeNames(binding.SkinnedMeshRenderer);
                     int selectedBlendShapeIndex = -1; // Default value, indicating no selection
@@ -107,7 +139,8 @@ namespace JoshBowersDEV.Characters
                     }
                     catch (Exception e)
                     {
-                        Debug.LogError(e.Message, binding);
+                        Debug.Log("Property Names did not contain index: " + selectedPropertyIndex);
+                        Debug.LogError($"{e.Message} / {e.StackTrace}", binding);
                         throw;
                     }
 
@@ -134,7 +167,7 @@ namespace JoshBowersDEV.Characters
                 }
             }
 
-            EditorUtility.SetDirty(binding);
+            serializedCharacterSkinnedMeshBinding.ApplyModifiedProperties();
 
             // Apply modifications to the serialized object.
             serializedObject.ApplyModifiedProperties();
@@ -248,5 +281,7 @@ namespace JoshBowersDEV.Characters
         }
 
         #endregion Context Menu Functionality
+
+    */
     }
 }

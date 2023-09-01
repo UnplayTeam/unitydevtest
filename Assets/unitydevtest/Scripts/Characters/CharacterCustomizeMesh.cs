@@ -38,10 +38,19 @@ namespace JoshBowersDEV.Characters
         }
 
         [Binding]
+        public int RaceInt
+        {
+            get => CharacterMeshData.RaceInt;
+            set => CharacterMeshData.SetRaceInt(value);
+        }
+
+        [Binding]
         public Race Race
         {
             get => CharacterMeshData.Race;
         }
+
+        #region Currently out of scope
 
         [Binding]
         public Race FirstRace
@@ -60,6 +69,8 @@ namespace JoshBowersDEV.Characters
         {
             get => CharacterMeshData.HybridBlend;
         }
+
+        #endregion Currently out of scope
 
         // Do not serialize the below race sliders, these will be determined elsewhere.
         [Binding]
@@ -80,50 +91,46 @@ namespace JoshBowersDEV.Characters
             get => CharacterMeshData.OrcRace;
         }
 
-        public float Female
+        [Binding]
+        public float FemaleMale
         {
-            get => CharacterMeshData.Female;
-        }
-
-        public float Male
-        {
-            get => CharacterMeshData.Male;
+            get => CharacterMeshData.FemaleMale;
         }
 
         [Binding]
-        public float FemaleHuman
+        public float RacialFemaleHuman
         {
-            get => CharacterMeshData.FemaleHuman;
+            get => CharacterMeshData.RacialFemaleHuman;
         }
 
         [Binding]
-        public float MaleHuman
+        public float RacialMaleHuman
         {
-            get => CharacterMeshData.MaleHuman;
+            get => CharacterMeshData.RacialMaleHuman;
         }
 
         [Binding]
-        public float FemaleElf
+        public float RacialFemaleElf
         {
-            get => CharacterMeshData.FemaleElf;
+            get => CharacterMeshData.RacialFemaleElf;
         }
 
         [Binding]
-        public float MaleElf
+        public float RacialMaleElf
         {
-            get => Male * ElfRace;
+            get => CharacterMeshData.RacialMaleElf;
         }
 
         [Binding]
-        public float FemaleOrc
+        public float RacialFemaleOrc
         {
-            get => Female * OrcRace;
+            get => CharacterMeshData.RacialFemaleOrc;
         }
 
         [Binding]
-        public float MaleOrc
+        public float RacialMaleOrc
         {
-            get => Male * OrcRace;
+            get => CharacterMeshData.RacialMaleOrc;
         }
 
         #endregion Racial and Gender Properties
@@ -131,135 +138,157 @@ namespace JoshBowersDEV.Characters
         #region Head Properties
 
         [Binding]
-        public float EarScale
+        public float FacialEarScale
         {
-            get => CharacterMeshData.EarScale;
+            get => CharacterMeshData.FacialEarScale;
+            set => CharacterMeshData.SetFacialEarScale(value);
         }
 
         [Binding]
-        public float EarLobeSize
+        public float FacialEarLobeSize
         {
-            get => CharacterMeshData.EarLobeSize;
+            get => CharacterMeshData.FacialEarLobeSize;
+            set => CharacterMeshData.SetFacialEarLobeSize(value);
         }
 
         [Binding]
-        public float EarsOut
+        public float FacialEarsOut
         {
-            get => CharacterMeshData.EarsOut;
+            get => CharacterMeshData.FacialEarsOut;
+            set => CharacterMeshData.SetFacialEarsOut(value);
         }
 
         [Binding]
-        public float BrowWide
+        public float FacialBrowWide
         {
-            get => CharacterMeshData.BrowWide;
+            get => CharacterMeshData.FacialBrowWide;
+            set => CharacterMeshData.SetFacialBrowWide(value);
         }
 
         [Binding]
-        public float BrowForward
+        public float FacialBrowForward
         {
-            get => CharacterMeshData.BrowForward;
+            get => CharacterMeshData.FacialBrowForward;
+            set => CharacterMeshData.SetFacialBrowForward(value);
         }
 
         [Binding]
         public float FacialCheekbonesInOut
         {
             get => CharacterMeshData.FacialCheekbonesInOut;
+            set => CharacterMeshData.SetFacialCheekbonesInOut(value);
         }
 
         [Binding]
         public float FacialCheeksGauntFull
         {
             get => CharacterMeshData.FacialCheeksGauntFull;
+            set => CharacterMeshData.SetFacialCheeksGauntFull(value);
         }
 
         [Binding]
         public float FacialChinTipLength
         {
             get => CharacterMeshData.FacialChinTipLength;
+            set => CharacterMeshData.SetFacialChinTipLength(value);
         }
 
         [Binding]
         public float FacialChinTipWidth
         {
             get => CharacterMeshData.FacialChinTipWidth;
+            set => CharacterMeshData.SetFacialChinTipWidth(value);
         }
 
         [Binding]
         public float FacialJawDown
         {
             get => CharacterMeshData.FacialJawDown;
+            set => CharacterMeshData.SetFacialJawDown(value);
         }
 
         [Binding]
         public float FacialJawWide
         {
             get => CharacterMeshData.FacialJawWide;
+            set => CharacterMeshData.SetFacialJawWide(value);
         }
 
         [Binding]
         public float FacialLipTopThinFull
         {
             get => CharacterMeshData.FacialLipTopThinFull;
+            set => CharacterMeshData.SetFacialLipTopThinFull(value);
         }
 
         [Binding]
         public float FacialLipBotThinFull
         {
             get => CharacterMeshData.FacialLipBotThinFull;
+            set => CharacterMeshData.SetFacialLipBotThinFull(value);
         }
 
         [Binding]
         public float FacialMouthCrease
         {
             get => CharacterMeshData.FacialMouthCrease;
+            set => CharacterMeshData.SetFacialMouthCrease(value);
         }
 
         [Binding]
         public float FacialMouthWidth
         {
             get => CharacterMeshData.FacialMouthWidth;
+            set => CharacterMeshData.SetFacialMouthWidth(value);
         }
 
         [Binding]
         public float FacialMouthOut
         {
             get => CharacterMeshData.FacialMouthOut;
+            set => CharacterMeshData.SetFacialMouthOut(value);
         }
 
         [Binding]
         public float FacialNoseAngle
         {
             get => CharacterMeshData.FacialNoseAngle;
+            set => CharacterMeshData.SetFacialNoseAngle(value);
         }
 
         [Binding]
         public float FacialNoseBulb
         {
             get => CharacterMeshData.FacialNoseBulb;
+            set => CharacterMeshData.SetFacialNoseBulb(value);
         }
 
         [Binding]
         public float FacialNoseBridgeDepth
         {
             get => CharacterMeshData.FacialNoseBridgeDepth;
+            set => CharacterMeshData.SetFacialNoseBridgeDepth(value);
         }
 
         [Binding]
         public float facialNoseBridgeWidth
         {
             get => CharacterMeshData.FacialNoseBridgeWidth;
+            set => CharacterMeshData.SetFacialNoseBridgeWidth(value);
         }
 
         [Binding]
         public float FacialNoseLength
         {
             get => CharacterMeshData.FacialNoseLength;
+            set => CharacterMeshData.SetFacialNoseLength(value);
         }
 
         [Binding]
         public float FacialNoseTipWidthInOut
         {
             get => CharacterMeshData.FacialNoseTipWidthInOut;
+            set => CharacterMeshData.SetFacialNoseTipWidthInOut(value);
         }
 
         #endregion Head Properties
@@ -270,48 +299,56 @@ namespace JoshBowersDEV.Characters
         public float BodyMuscularMidHeavy
         {
             get => CharacterMeshData.BodyMuscularMidHeavy;
+            set => CharacterMeshData.SetBodyMuscularMidHeavy(value);
         }
 
         [Binding]
         public float BodyWeightThinHeavy
         {
             get => CharacterMeshData.BodyWeightThinHeavy;
+            set => CharacterMeshData.SetBodyWeightThinHeavy(value);
         }
 
         [Binding]
         public float IsoBack
         {
             get => CharacterMeshData.IsoBack;
+            set => CharacterMeshData.SetIsoBack(value);
         }
 
         [Binding]
         public float IsoBelly
         {
             get => CharacterMeshData.IsoBelly;
+            set => CharacterMeshData.SetIsoBelly(value);
         }
 
         [Binding]
         public float IsoBellyHeight
         {
             get => CharacterMeshData.IsoBellyHeight;
+            set => CharacterMeshData.SetIsoBellyHeight(value);
         }
 
         [Binding]
         public float IsoBiceps
         {
             get => CharacterMeshData.IsoBiceps;
+            set => CharacterMeshData.SetIsoBiceps(value);
         }
 
         [Binding]
         public float IsoBustSmallLarge
         {
             get => CharacterMeshData.IsoBustSmallLarge;
+            set => CharacterMeshData.SetIsoBustSmallLarge(value);
         }
 
         [Binding]
         public float IsoButt
         {
             get => CharacterMeshData.IsoButt;
+            set => CharacterMeshData.SetIsoButt(value);
         }
 
         [Binding]
@@ -324,30 +361,35 @@ namespace JoshBowersDEV.Characters
         public float IsoForearms
         {
             get => CharacterMeshData.IsoForearms;
+            set => CharacterMeshData.SetIsoForearms(value);
         }
 
         [Binding]
         public float IsoPectorals
         {
             get => CharacterMeshData.IsoPectorals;
+            set => CharacterMeshData.SetIsoPectorals(value);
         }
 
         [Binding]
         public float IsoRibcage
         {
             get => CharacterMeshData.IsoRibcage;
+            set => CharacterMeshData.SetIsoRibcage(value);
         }
 
         [Binding]
         public float IsoTrunk
         {
             get => CharacterMeshData.IsoTrunk;
+            set => CharacterMeshData.SetIsoTrunk(value);
         }
 
         [Binding]
         public float IsoTrapezius
         {
             get => CharacterMeshData.IsoTrapezius;
+            set => CharacterMeshData.SetIsoTrapezius(value);
         }
 
         #endregion Upper Body Properties
@@ -358,18 +400,21 @@ namespace JoshBowersDEV.Characters
         public float LegUpperIsoCalves
         {
             get => CharacterMeshData.LegUpperIsoCalves;
+            set => CharacterMeshData.SetLegUpperIsoCalves(value);
         }
 
         [Binding]
         public float LegUpperIsoThighs
         {
             get => CharacterMeshData.LegUpperIsoThighs;
+            set => CharacterMeshData.SetLegUpperIsoThighs(value);
         }
 
         [Binding]
         public float WaistIsoBulge
         {
             get => CharacterMeshData.WaistIsoBulge;
+            set => CharacterMeshData.SetWaistIsoBulge(value);
         }
 
         #endregion Lower Body Properties

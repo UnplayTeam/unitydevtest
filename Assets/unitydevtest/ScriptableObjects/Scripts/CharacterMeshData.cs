@@ -115,6 +115,20 @@ namespace JoshBowersDEV.Characters
             set => SetProperty(ref _isHybrid, value);
         }
 
+        private int _raceInt = -1;
+
+        [Binding]
+        public int RaceInt
+        {
+            get => _raceInt;
+            set
+            {
+                SetProperty(ref _raceInt, value);
+                byte tryVal = Convert.ToByte(value);
+                Race = (Race)tryVal;
+            }
+        }
+
         [SerializeField]
         private Race _race = Race.Human;
 
@@ -129,21 +143,15 @@ namespace JoshBowersDEV.Characters
                     switch (value)
                     {
                         case Race.Human:
-                            HumanRace = 1.0f;
-                            ElfRace = 0f;
-                            OrcRace = 0f;
+                            SetRaceProperties(1.0f, 0f, 0f);
                             break;
 
                         case Race.Elf:
-                            HumanRace = 0f;
-                            ElfRace = 1.0f;
-                            OrcRace = 0f;
+                            SetRaceProperties(0f, 1.0f, 0f);
                             break;
 
                         case Race.Orc:
-                            HumanRace = 0f;
-                            ElfRace = 0f;
-                            OrcRace = 1f;
+                            SetRaceProperties(0f, 0f, 1f);
                             break;
 
                         default:
@@ -154,707 +162,275 @@ namespace JoshBowersDEV.Characters
             }
         }
 
+        private void SetRaceProperties(float humanValue, float elfValue, float orcValue)
+        {
+            if (!_isHybrid)
+            {
+                HumanRace = humanValue;
+                ElfRace = elfValue;
+                OrcRace = orcValue;
+            }
+        }
+
+        #region Disabled for now, out of scope.
+
+        // Racial and Gender Properties
         [Tooltip("Only valid if Race is hybrid")]
         [SerializeField]
         private Race _firstRace;
 
         [Binding]
-        public Race FirstRace
-        {
-            get => _firstRace;
-            set => SetProperty(ref _firstRace, value);
-        }
+        public Race FirstRace { get => _firstRace; set => SetProperty(ref _firstRace, value); }
 
         [Tooltip("Only valid if Race is hybrid")]
         [SerializeField]
         private Race _secondRace;
 
         [Binding]
-        public Race SecondRace
-        {
-            get => _secondRace;
-            set => SetProperty(ref _secondRace, value);
-        }
+        public Race SecondRace { get => _secondRace; set => SetProperty(ref _secondRace, value); }
 
         [Tooltip("Only valid if Race is hybrid")]
         [SerializeField]
         private float _hybridBlend;
 
         [Binding]
-        public float HybridBlend
-        {
-            get => _hybridBlend;
-            set => SetProperty(ref _hybridBlend, value);
-        }
+        public float HybridBlend { get => _hybridBlend; set => SetProperty(ref _hybridBlend, value); }
 
-        private float _humanRace;
-
-        // Do not serialize the below race sliders, these will be determined elsewhere.
-        [Binding]
-        public float HumanRace
-        {
-            get => _humanRace;
-            set => SetProperty(ref _humanRace, value);
-        }
-
-        private float _elfRace;
+        #endregion Disabled for now, out of scope.
 
         [Binding]
-        public float ElfRace
-        {
-            get => _elfRace;
-            set => SetProperty(ref _elfRace, value);
-        }
-
-        private float _orcRace;
+        public float HumanRace { get; private set; }
 
         [Binding]
-        public float OrcRace
-        {
-            get => _orcRace;
-            set => SetProperty(ref _orcRace, value);
-        }
-
-        [SerializeField]
-        private float _female;
-
-        public float Female
-        {
-            get => _female;
-            set
-            {
-                SetProperty(ref _female, value);
-            }
-        }
-
-        [SerializeField]
-        private float _male;
-
-        public float Male
-        {
-            get => _male;
-            set
-            {
-                SetProperty(ref _male, value);
-            }
-        }
+        public float ElfRace { get; private set; }
 
         [Binding]
-        public float FemaleHuman
-        {
-            get => Female * HumanRace;
-        }
+        public float OrcRace { get; private set; }
 
-        [Binding]
-        public float MaleHuman
-        {
-            get => Male * HumanRace;
-        }
+        // Gender Properties
+        [SerializeField] private float _femaleMale;
 
-        [Binding]
-        public float FemaleElf
-        {
-            get => Female * ElfRace;
-        }
+        public float FemaleMale { get => _femaleMale; set => SetProperty(ref _femaleMale, value); }
 
-        [Binding]
-        public float MaleElf
-        {
-            get => Male * ElfRace;
-        }
+        [Binding] public float RacialFemaleHuman => ((FemaleMale < 0) ? Mathf.Abs(FemaleMale) : 0) * HumanRace;
+        [Binding] public float RacialMaleHuman => ((FemaleMale > 0) ? FemaleMale : 0) * HumanRace;
+        [Binding] public float RacialFemaleElf => ((FemaleMale < 0) ? Mathf.Abs(FemaleMale) : 0) * ElfRace;
+        [Binding] public float RacialMaleElf => ((FemaleMale > 0) ? FemaleMale : 0) * ElfRace;
+        [Binding] public float RacialFemaleOrc => ((FemaleMale < 0) ? Mathf.Abs(FemaleMale) : 0) * OrcRace;
+        [Binding] public float RacialMaleOrc => ((FemaleMale > 0) ? FemaleMale : 0) * OrcRace;
 
-        [Binding]
-        public float FemaleOrc
-        {
-            get => Female * OrcRace;
-        }
+        // Head Properties
+        [SerializeField] private float _facialEarScale;
 
-        [Binding]
-        public float MaleOrc
-        {
-            get => Male * OrcRace;
-        }
+        [Binding] public float FacialEarScale { get => _facialEarScale; set => SetProperty(ref _facialEarScale, value); }
+
+        [SerializeField] private float _facialEarLobeSize;
+        [Binding] public float FacialEarLobeSize { get => _facialEarLobeSize; set => SetProperty(ref _facialEarLobeSize, value); }
+
+        [SerializeField] private float _facialEarsOut;
+        [Binding] public float FacialEarsOut { get => _facialEarsOut; set => SetProperty(ref _facialEarsOut, value); }
+
+        [SerializeField] private float _facialBrowWide;
+        [Binding] public float FacialBrowWide { get => _facialBrowWide; set => SetProperty(ref _facialBrowWide, value); }
+
+        [SerializeField] private float _facialBrowForward;
+        [Binding] public float FacialBrowForward { get => _facialBrowForward; set => SetProperty(ref _facialBrowForward, value); }
+
+        [SerializeField] private float _facialCheekbonesInOut;
+        [Binding] public float FacialCheekbonesInOut { get => _facialCheekbonesInOut; set => SetProperty(ref _facialCheekbonesInOut, value); }
+
+        [SerializeField] private float _facialCheeksGauntFull;
+        [Binding] public float FacialCheeksGauntFull { get => _facialCheeksGauntFull; set => SetProperty(ref _facialCheeksGauntFull, value); }
+
+        [SerializeField] private float _facialChinTipLength;
+        [Binding] public float FacialChinTipLength { get => _facialChinTipLength; set => SetProperty(ref _facialChinTipLength, value); }
+
+        [SerializeField] private float _facialChinTipWidth;
+        [Binding] public float FacialChinTipWidth { get => _facialChinTipWidth; set => SetProperty(ref _facialChinTipWidth, value); }
+
+        [SerializeField] private float _facialJawDown;
+        [Binding] public float FacialJawDown { get => _facialJawDown; set => SetProperty(ref _facialJawDown, value); }
+
+        [SerializeField] private float _facialJawWide;
+        [Binding] public float FacialJawWide { get => _facialJawWide; set => SetProperty(ref _facialJawWide, value); }
+
+        [SerializeField] private float _facialLipTopThinFull;
+        [Binding] public float FacialLipTopThinFull { get => _facialLipTopThinFull; set => SetProperty(ref _facialLipTopThinFull, value); }
+
+        [SerializeField] private float _facialLipBotThinFull;
+        [Binding] public float FacialLipBotThinFull { get => _facialLipBotThinFull; set => SetProperty(ref _facialLipBotThinFull, value); }
+
+        [SerializeField] private float _facialMouthCrease;
+        [Binding] public float FacialMouthCrease { get => _facialMouthCrease; set => SetProperty(ref _facialMouthCrease, value); }
+
+        [SerializeField] private float _facialMouthWidth;
+        [Binding] public float FacialMouthWidth { get => _facialMouthWidth; set => SetProperty(ref _facialMouthWidth, value); }
+
+        [SerializeField] private float _facialMouthOut;
+        [Binding] public float FacialMouthOut { get => _facialMouthOut; set => SetProperty(ref _facialMouthOut, value); }
+
+        [SerializeField] private float _facialNoseAngle;
+        [Binding] public float FacialNoseAngle { get => _facialNoseAngle; set => SetProperty(ref _facialNoseAngle, value); }
+
+        [SerializeField] private float _facialNoseBulb;
+        [Binding] public float FacialNoseBulb { get => _facialNoseBulb; set => SetProperty(ref _facialNoseBulb, value); }
+
+        [SerializeField] private float _facialNoseBridgeDepth;
+        [Binding] public float FacialNoseBridgeDepth { get => _facialNoseBridgeDepth; set => SetProperty(ref _facialNoseBridgeDepth, value); }
+
+        [SerializeField] private float _facialNoseBridgeWidth;
+        [Binding] public float FacialNoseBridgeWidth { get => _facialNoseBridgeWidth; set => SetProperty(ref _facialNoseBridgeWidth, value); }
+
+        [SerializeField] private float _facialNoseLength;
+        [Binding] public float FacialNoseLength { get => _facialNoseLength; set => SetProperty(ref _facialNoseLength, value); }
+
+        [SerializeField] private float _facialNoseTipWidthInOut;
+        [Binding] public float FacialNoseTipWidthInOut { get => _facialNoseTipWidthInOut; set => SetProperty(ref _facialNoseTipWidthInOut, value); }
 
         #endregion Racial and Gender Properties
 
-        #region Head Properties
-
-        [SerializeField]
-        private float _earScale;
-
-        [Binding]
-        public float EarScale
-        {
-            get => _earScale;
-            set => SetProperty(ref _earScale, value);
-        }
-
-        [SerializeField]
-        private float _earLobeSize;
-
-        [Binding]
-        public float EarLobeSize
-        {
-            get => _earLobeSize;
-            set => SetProperty(ref _earLobeSize, value);
-        }
-
-        [SerializeField]
-        private float _earsOut;
-
-        [Binding]
-        public float EarsOut
-        {
-            get => _earsOut;
-            set => SetProperty(ref _earsOut, value);
-        }
-
-        [SerializeField]
-        private float _browWide;
-
-        [Binding]
-        public float BrowWide
-        {
-            get => _browWide;
-            set => SetProperty(ref _browWide, value);
-        }
-
-        [SerializeField]
-        private float _browForward;
-
-        [Binding]
-        public float BrowForward
-        {
-            get => _browForward;
-            set => SetProperty(ref _browForward, value);
-        }
-
-        [SerializeField]
-        private float _facialCheekbonesInOut;
-
-        [Binding]
-        public float FacialCheekbonesInOut
-        {
-            get => _facialCheekbonesInOut;
-            set => SetProperty(ref _facialCheekbonesInOut, value);
-        }
-
-        [SerializeField]
-        private float _facialCheeksGauntFull;
-
-        [Binding]
-        public float FacialCheeksGauntFull
-        {
-            get => _facialCheeksGauntFull;
-            set => SetProperty(ref _facialCheeksGauntFull, value);
-        }
-
-        [SerializeField]
-        private float _facialChinTipLength;
-
-        [Binding]
-        public float FacialChinTipLength
-        {
-            get => _facialChinTipLength;
-            set => SetProperty(ref _facialChinTipLength, value);
-        }
-
-        [SerializeField]
-        private float _facialChinTipWidth;
-
-        [Binding]
-        public float FacialChinTipWidth
-        {
-            get => _facialChinTipWidth;
-            set => SetProperty(ref _facialChinTipWidth, value);
-        }
-
-        [SerializeField]
-        private float _facialJawDown;
-
-        [Binding]
-        public float FacialJawDown
-        {
-            get => _facialJawDown;
-            set => SetProperty(ref _facialJawDown, value);
-        }
-
-        [SerializeField]
-        private float _facialJawWide;
-
-        [Binding]
-        public float FacialJawWide
-        {
-            get => _facialJawWide;
-            set => SetProperty(ref _facialJawWide, value);
-        }
-
-        [SerializeField]
-        private float _facialLipTopThinFull;
-
-        [Binding]
-        public float FacialLipTopThinFull
-        {
-            get => _facialLipTopThinFull;
-            set => SetProperty(ref _facialLipTopThinFull, value);
-        }
-
-        [SerializeField]
-        private float _facialLipBotThinFull;
-
-        [Binding]
-        public float FacialLipBotThinFull
-        {
-            get => _facialLipBotThinFull;
-            set => SetProperty(ref _facialLipBotThinFull, value);
-        }
-
-        [SerializeField]
-        private float _facialMouthCrease;
-
-        [Binding]
-        public float FacialMouthCrease
-        {
-            get => _facialMouthCrease;
-            set => SetProperty(ref _facialMouthCrease, value);
-        }
-
-        [SerializeField]
-        private float _facialMouthWidth;
-
-        [Binding]
-        public float FacialMouthWidth
-        {
-            get => _facialMouthWidth;
-            set => SetProperty(ref _facialMouthWidth, value);
-        }
-
-        [SerializeField]
-        private float _facialMouthOut;
-
-        [Binding]
-        public float FacialMouthOut
-        {
-            get => _facialMouthOut;
-            set => SetProperty(ref _facialMouthOut, value);
-        }
-
-        [SerializeField]
-        private float _facialNoseAngle;
-
-        [Binding]
-        public float FacialNoseAngle
-        {
-            get => _facialNoseAngle;
-            set => SetProperty(ref _facialNoseAngle, value);
-        }
-
-        [SerializeField]
-        private float _facialNoseBulb;
-
-        [Binding]
-        public float FacialNoseBulb
-        {
-            get => _facialNoseBulb;
-            set => SetProperty(ref _facialNoseBulb, value);
-        }
-
-        [SerializeField]
-        private float _facialNoseBridgeDepth;
-
-        [Binding]
-        public float FacialNoseBridgeDepth
-        {
-            get => _facialNoseBridgeDepth;
-            set => SetProperty(ref _facialNoseBridgeDepth, value);
-        }
-
-        [SerializeField]
-        private float _facialNoseBridgeWidth;
-
-        [Binding]
-        public float FacialNoseBridgeWidth
-        {
-            get => _facialNoseBridgeWidth;
-            set => SetProperty(ref _facialNoseBridgeWidth, value);
-        }
-
-        [SerializeField]
-        private float _facialNoseLength;
-
-        [Binding]
-        public float FacialNoseLength
-        {
-            get => _facialNoseLength;
-            set => SetProperty(ref _facialNoseLength, value);
-        }
-
-        [SerializeField]
-        private float _facialNoseTipWidthInOut;
-
-        [Binding]
-        public float FacialNoseTipWidthInOut
-        {
-            get => _facialNoseTipWidthInOut;
-            set => SetProperty(ref _facialNoseTipWidthInOut, value);
-        }
-
-        #endregion Head Properties
-
         #region Upper Body Properties
 
-        [SerializeField]
-        private float _bodyMuscularMidHeavy;
-
-        [Binding]
-        public float BodyMuscularMidHeavy
-        {
-            get => _bodyMuscularMidHeavy;
-            set => SetProperty(ref _bodyMuscularMidHeavy, value);
-        }
-
-        [SerializeField]
-        private float _bodyWeightThinHeavy;
-
-        [Binding]
-        public float BodyWeightThinHeavy
-        {
-            get => _bodyWeightThinHeavy;
-            set => SetProperty(ref _bodyWeightThinHeavy, value);
-        }
-
-        [SerializeField]
-        private float _isoBack;
-
-        [Binding]
-        public float IsoBack
-        {
-            get => _isoBack;
-            set => SetProperty(ref _isoBack, value);
-        }
-
-        [SerializeField]
-        private float _isoBelly;
-
-        [Binding]
-        public float IsoBelly
-        {
-            get => _isoBelly;
-            set => SetProperty(ref _isoBelly, value);
-        }
-
-        [SerializeField]
-        private float _isoBellyHeight;
-
-        [Binding]
-        public float IsoBellyHeight
-        {
-            get => _isoBellyHeight;
-            set => SetProperty(ref _isoBellyHeight, value);
-        }
-
-        [SerializeField]
-        private float _isoBiceps;
-
-        [Binding]
-        public float IsoBiceps
-        {
-            get => _isoBiceps;
-            set => SetProperty(ref _isoBiceps, value);
-        }
-
-        [SerializeField]
-        private float _isoBustSmallLarge;
-
-        [Binding]
-        public float IsoBustSmallLarge
-        {
-            get => _isoBustSmallLarge;
-            set => SetProperty(ref _isoBustSmallLarge, value);
-        }
-
-        [SerializeField]
-        private float _isoButt;
-
-        [Binding]
-        public float IsoButt
-        {
-            get => _isoButt;
-            set => SetProperty(ref _isoButt, value);
-        }
-
-        [SerializeField]
-        private float _isoDeltoids;
-
-        [Binding]
-        public float IsoDeltoids
-        {
-            get => _isoDeltoids;
-            set => SetProperty(ref _isoDeltoids, value);
-        }
-
-        [SerializeField]
-        private float _isoForearms;
-
-        [Binding]
-        public float IsoForearms
-        {
-            get => _isoForearms;
-            set => SetProperty(ref _isoForearms, value);
-        }
-
-        [SerializeField]
-        private float _isoPectorals;
-
-        [Binding]
-        public float IsoPectorals
-        {
-            get => _isoPectorals;
-            set => SetProperty(ref _isoPectorals, value);
-        }
-
-        [SerializeField]
-        private float _isoRibcage;
-
-        [Binding]
-        public float IsoRibcage
-        {
-            get => _isoRibcage;
-            set => SetProperty(ref _isoRibcage, value);
-        }
-
-        [SerializeField]
-        private float _isoTrunk;
-
-        [Binding]
-        public float IsoTrunk
-        {
-            get => _isoTrunk;
-            set => SetProperty(ref _isoTrunk, value);
-        }
-
-        [SerializeField]
-        private float _isoTrapezius;
-
-        [Binding]
-        public float IsoTrapezius
-        {
-            get => _isoTrapezius;
-            set => SetProperty(ref _isoTrapezius, value);
-        }
+        [SerializeField] private float _bodyMuscularMidHeavy;
+        [Binding] public float BodyMuscularMidHeavy { get => _bodyMuscularMidHeavy; set => SetProperty(ref _bodyMuscularMidHeavy, value); }
+        [SerializeField] private float _bodyWeightThinHeavy;
+        [Binding] public float BodyWeightThinHeavy { get => _bodyWeightThinHeavy; set => SetProperty(ref _bodyWeightThinHeavy, value); }
+        [SerializeField] private float _isoBack;
+        [Binding] public float IsoBack { get => _isoBack; set => SetProperty(ref _isoBack, value); }
+        [SerializeField] private float _isoBelly;
+        [Binding] public float IsoBelly { get => _isoBelly; set => SetProperty(ref _isoBelly, value); }
+        [SerializeField] private float _isoBellyHeight;
+        [Binding] public float IsoBellyHeight { get => _isoBellyHeight; set => SetProperty(ref _isoBellyHeight, value); }
+        [SerializeField] private float _isoBiceps;
+        [Binding] public float IsoBiceps { get => _isoBiceps; set => SetProperty(ref _isoBiceps, value); }
+        [SerializeField] private float _isoBustSmallLarge;
+        [Binding] public float IsoBustSmallLarge { get => _isoBustSmallLarge; set => SetProperty(ref _isoBustSmallLarge, value); }
+        [SerializeField] private float _isoButt;
+        [Binding] public float IsoButt { get => _isoButt; set => SetProperty(ref _isoButt, value); }
+        [SerializeField] private float _isoDeltoids;
+        [Binding] public float IsoDeltoids { get => _isoDeltoids; set => SetProperty(ref _isoDeltoids, value); }
+        [SerializeField] private float _isoForearms;
+        [Binding] public float IsoForearms { get => _isoForearms; set => SetProperty(ref _isoForearms, value); }
+        [SerializeField] private float _isoPectorals;
+        [Binding] public float IsoPectorals { get => _isoPectorals; set => SetProperty(ref _isoPectorals, value); }
+        [SerializeField] private float _isoRibcage;
+        [Binding] public float IsoRibcage { get => _isoRibcage; set => SetProperty(ref _isoRibcage, value); }
+        [SerializeField] private float _isoTrunk;
+        [Binding] public float IsoTrunk { get => _isoTrunk; set => SetProperty(ref _isoTrunk, value); }
+        [SerializeField] private float _isoTrapezius;
+        [Binding] public float IsoTrapezius { get => _isoTrapezius; set => SetProperty(ref _isoTrapezius, value); }
 
         #endregion Upper Body Properties
 
         #region Lower Body Properties
 
-        [SerializeField]
-        private float _legUpperIsoCalves;
-
-        [Binding]
-        public float LegUpperIsoCalves
-        {
-            get => _legUpperIsoCalves;
-            set => SetProperty(ref _legUpperIsoCalves, value);
-        }
-
-        [SerializeField]
-        private float _legUpperIsoThighs;
-
-        [Binding]
-        public float LegUpperIsoThighs
-        {
-            get => _legUpperIsoThighs;
-            set => SetProperty(ref _legUpperIsoThighs, value);
-        }
-
-        [SerializeField]
-        private float _waistIsoBulge;
-
-        [Binding]
-        public float WaistIsoBulge
-        {
-            get => _waistIsoBulge;
-            set => SetProperty(ref _waistIsoBulge, value);
-        }
+        [SerializeField] private float _legUpperIsoCalves;
+        [Binding] public float LegUpperIsoCalves { get => _legUpperIsoCalves; set => SetProperty(ref _legUpperIsoCalves, value); }
+        [SerializeField] private float _legUpperIsoThighs;
+        [Binding] public float LegUpperIsoThighs { get => _legUpperIsoThighs; set => SetProperty(ref _legUpperIsoThighs, value); }
+        [SerializeField] private float _waistIsoBulge;
+        [Binding] public float WaistIsoBulge { get => _waistIsoBulge; set => SetProperty(ref _waistIsoBulge, value); }
 
         #endregion Lower Body Properties
 
-        #region Public Methods
+        #region Public Setters
 
-        public float GetCharacterProperty(CharacterProperty property)
-        {
-            switch (property)
-            {
-                case CharacterProperty.Race:
-                    return (float)Race;
+        // Racial and Gender Properties
+        public void SetIsHybrid(bool value) => IsHybrid = value;
 
-                case CharacterProperty.FirstRace:
-                    return (float)FirstRace;
+        public void SetRaceInt(int value) => RaceInt = value;
 
-                case CharacterProperty.SecondRace:
-                    return (float)SecondRace;
+        public void SetRace(Race value) => Race = value;
 
-                case CharacterProperty.HybridBlend:
-                    return HybridBlend;
+        public void SetFirstRace(Race value) => FirstRace = value;
 
-                case CharacterProperty.HumanRace:
-                    return HumanRace;
+        public void SetSecondRace(Race value) => SecondRace = value;
 
-                case CharacterProperty.ElfRace:
-                    return ElfRace;
+        public void SetHybridBlend(float value) => HybridBlend = value;
 
-                case CharacterProperty.OrcRace:
-                    return OrcRace;
+        public void SetFemaleMale(float value) => FemaleMale = value;
 
-                case CharacterProperty.Female:
-                    return Female;
+        // Head Properties
+        public void SetFacialEarScale(float value) => FacialEarScale = value;
 
-                case CharacterProperty.Male:
-                    return Male;
+        public void SetFacialEarLobeSize(float value) => FacialEarLobeSize = value;
 
-                case CharacterProperty.FemaleHuman:
-                    return FemaleHuman;
+        public void SetFacialEarsOut(float value) => FacialEarsOut = value;
 
-                case CharacterProperty.MaleHuman:
-                    return MaleHuman;
+        public void SetFacialBrowWide(float value) => FacialBrowWide = value;
 
-                case CharacterProperty.FemaleElf:
-                    return FemaleElf;
+        public void SetFacialBrowForward(float value) => FacialBrowForward = value;
 
-                case CharacterProperty.MaleElf:
-                    return MaleElf;
+        public void SetFacialCheekbonesInOut(float value) => FacialCheekbonesInOut = value;
 
-                case CharacterProperty.FemaleOrc:
-                    return FemaleOrc;
+        public void SetFacialCheeksGauntFull(float value) => FacialCheeksGauntFull = value;
 
-                case CharacterProperty.MaleOrc:
-                    return MaleOrc;
+        public void SetFacialChinTipLength(float value) => FacialChinTipLength = value;
 
-                case CharacterProperty.EarScale:
-                    return EarScale;
+        public void SetFacialChinTipWidth(float value) => FacialChinTipWidth = value;
 
-                case CharacterProperty.EarLobeSize:
-                    return EarLobeSize;
+        public void SetFacialJawDown(float value) => FacialJawDown = value;
 
-                case CharacterProperty.EarsOut:
-                    return EarsOut;
+        public void SetFacialJawWide(float value) => FacialJawWide = value;
 
-                case CharacterProperty.BrowWide:
-                    return BrowWide;
+        public void SetFacialLipTopThinFull(float value) => FacialLipTopThinFull = value;
 
-                case CharacterProperty.BrowForward:
-                    return BrowForward;
+        public void SetFacialLipBotThinFull(float value) => FacialLipBotThinFull = value;
 
-                case CharacterProperty.FacialCheekbonesInOut:
-                    return FacialCheekbonesInOut;
+        public void SetFacialMouthCrease(float value) => FacialMouthCrease = value;
 
-                case CharacterProperty.FacialCheeksGauntFull:
-                    return FacialCheeksGauntFull;
+        public void SetFacialMouthWidth(float value) => FacialMouthWidth = value;
 
-                case CharacterProperty.FacialChinTipLength:
-                    return FacialChinTipLength;
+        public void SetFacialMouthOut(float value) => FacialMouthOut = value;
 
-                case CharacterProperty.FacialChinTipWidth:
-                    return FacialChinTipWidth;
+        public void SetFacialNoseAngle(float value) => FacialNoseAngle = value;
 
-                case CharacterProperty.FacialJawDown:
-                    return FacialJawDown;
+        public void SetFacialNoseBulb(float value) => FacialNoseBulb = value;
 
-                case CharacterProperty.FacialJawWide:
-                    return FacialJawWide;
+        public void SetFacialNoseBridgeDepth(float value) => FacialNoseBridgeDepth = value;
 
-                case CharacterProperty.FacialLipTopThinFull:
-                    return FacialLipTopThinFull;
+        public void SetFacialNoseBridgeWidth(float value) => FacialNoseBridgeWidth = value;
 
-                case CharacterProperty.FacialLipBotThinFull:
-                    return FacialLipBotThinFull;
+        public void SetFacialNoseLength(float value) => FacialNoseLength = value;
 
-                case CharacterProperty.FacialMouthCrease:
-                    return FacialMouthCrease;
+        public void SetFacialNoseTipWidthInOut(float value) => FacialNoseTipWidthInOut = value;
 
-                case CharacterProperty.FacialMouthWidth:
-                    return FacialMouthWidth;
+        // Upper Body Properties
+        public void SetBodyMuscularMidHeavy(float value) => BodyMuscularMidHeavy = value;
 
-                case CharacterProperty.FacialMouthOut:
-                    return FacialMouthOut;
+        public void SetBodyWeightThinHeavy(float value) => BodyWeightThinHeavy = value;
 
-                case CharacterProperty.FacialNoseAngle:
-                    return FacialNoseAngle;
+        public void SetIsoBack(float value) => IsoBack = value;
 
-                case CharacterProperty.FacialNoseBulb:
-                    return FacialNoseBulb;
+        public void SetIsoBelly(float value) => IsoBelly = value;
 
-                case CharacterProperty.FacialNoseBridgeDepth:
-                    return FacialNoseBridgeDepth;
+        public void SetIsoBellyHeight(float value) => IsoBellyHeight = value;
 
-                case CharacterProperty.FacialNoseBridgeWidth:
-                    return FacialNoseBridgeWidth;
+        public void SetIsoBiceps(float value) => IsoBiceps = value;
 
-                case CharacterProperty.FacialNoseLength:
-                    return FacialNoseLength;
+        public void SetIsoBustSmallLarge(float value) => IsoBustSmallLarge = value;
 
-                case CharacterProperty.FacialNoseTipWidthInOut:
-                    return FacialNoseTipWidthInOut;
+        public void SetIsoButt(float value) => IsoButt = value;
 
-                case CharacterProperty.BodyMuscularMidHeavy:
-                    return BodyMuscularMidHeavy;
+        public void SetIsoDeltoids(float value) => IsoDeltoids = value;
 
-                case CharacterProperty.BodyWeightThinHeavy:
-                    return BodyWeightThinHeavy;
+        public void SetIsoForearms(float value) => IsoForearms = value;
 
-                case CharacterProperty.IsoBack:
-                    return IsoBack;
+        public void SetIsoPectorals(float value) => IsoPectorals = value;
 
-                case CharacterProperty.IsoBelly:
-                    return IsoBelly;
+        public void SetIsoRibcage(float value) => IsoRibcage = value;
 
-                case CharacterProperty.IsoBellyHeight:
-                    return IsoBellyHeight;
+        public void SetIsoTrunk(float value) => IsoTrunk = value;
 
-                case CharacterProperty.IsoBiceps:
-                    return IsoBiceps;
+        public void SetIsoTrapezius(float value) => IsoTrapezius = value;
 
-                case CharacterProperty.IsoBustSmallLarge:
-                    return IsoBustSmallLarge;
+        // Lower Body Properties
+        public void SetLegUpperIsoCalves(float value) => LegUpperIsoCalves = value;
 
-                case CharacterProperty.IsoButt:
-                    return IsoButt;
+        public void SetLegUpperIsoThighs(float value) => LegUpperIsoThighs = value;
 
-                case CharacterProperty.IsoDeltoids:
-                    return IsoDeltoids;
+        public void SetWaistIsoBulge(float value) => WaistIsoBulge = value;
 
-                case CharacterProperty.IsoForearms:
-                    return IsoForearms;
-
-                case CharacterProperty.IsoPectorals:
-                    return IsoPectorals;
-
-                case CharacterProperty.IsoRibcage:
-                    return IsoRibcage;
-
-                case CharacterProperty.IsoTrunk:
-                    return IsoTrunk;
-
-                case CharacterProperty.IsoTrapezius:
-                    return IsoTrapezius;
-
-                case CharacterProperty.LegUpperIsoCalves:
-                    return LegUpperIsoCalves;
-
-                case CharacterProperty.LegUpperIsoThighs:
-                    return LegUpperIsoThighs;
-
-                case CharacterProperty.WaistIsoBulge:
-                    return WaistIsoBulge;
-
-                default:
-                    Debug.LogWarning("Unsupported property: " + property.ToString());
-                    return 0.0f; // Return a default value or handle the error as needed.
-            }
-        }
-
-        #endregion Public Methods
-
-        #region Private Methods
+        #endregion Public Setters
     }
 }

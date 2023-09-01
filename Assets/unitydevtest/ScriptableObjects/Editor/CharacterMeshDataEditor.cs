@@ -55,7 +55,7 @@ public class CharacterMeshDataEditor : Editor
         {
             // Display the serialized float properties with their necessary ranges
             EditorGUILayout.BeginVertical();
-            characterMeshData.Female = EditorGUILayout.Slider("Female Slider", characterMeshData.Female, 0, 1f);
+            characterMeshData.FemaleMale = EditorGUILayout.Slider("Female Slider", characterMeshData.FemaleMale, 0, 1f);
             characterMeshData.Male = EditorGUILayout.Slider("Male Slider", characterMeshData.Male, 0, 1f);
             EditorGUILayout.EndVertical();
         }
@@ -64,11 +64,11 @@ public class CharacterMeshDataEditor : Editor
         if (showHeadProperties)
         {
             EditorGUILayout.BeginVertical();
-            characterMeshData.EarScale = EditorGUILayout.Slider("Ear Scale", characterMeshData.EarScale, 0f, 1f);
-            characterMeshData.EarLobeSize = EditorGUILayout.Slider("Ear Lobe Size", characterMeshData.EarLobeSize, 0f, 1f);
-            characterMeshData.EarsOut = EditorGUILayout.Slider("Ears Out", characterMeshData.EarsOut, 0f, 1f);
-            characterMeshData.BrowWide = EditorGUILayout.Slider("Brow Wide", characterMeshData.BrowWide, 0f, 1f);
-            characterMeshData.BrowForward = EditorGUILayout.Slider("Brow Forward", characterMeshData.BrowForward, 0f, 1f);
+            characterMeshData.FacialEarScale = EditorGUILayout.Slider("Facial Ear Scale", characterMeshData.FacialEarScale, 0f, 1f);
+            characterMeshData.FacialEarLobeSize = EditorGUILayout.Slider("Facial Ear Lobe Size", characterMeshData.FacialEarLobeSize, 0f, 1f);
+            characterMeshData.FacialEarsOut = EditorGUILayout.Slider("Facial Ears Out", characterMeshData.FacialEarsOut, 0f, 1f);
+            characterMeshData.FacialBrowWide = EditorGUILayout.Slider("Facial Brow Wide", characterMeshData.FacialBrowWide, 0f, 1f);
+            characterMeshData.FacialBrowForward = EditorGUILayout.Slider("Facial Brow Forward", characterMeshData.FacialBrowForward, 0f, 1f);
             characterMeshData.FacialCheekbonesInOut = EditorGUILayout.Slider("Facial Cheekbones In/Out", characterMeshData.FacialCheekbonesInOut, 0f, 1f);
             characterMeshData.FacialCheeksGauntFull = EditorGUILayout.Slider("Facial Cheeks Gaunt/Full", characterMeshData.FacialCheeksGauntFull, 0f, 1f);
             characterMeshData.FacialChinTipLength = EditorGUILayout.Slider("Facial Chin Tip Length", characterMeshData.FacialChinTipLength, 0f, 1f);
