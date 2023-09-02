@@ -27,12 +27,12 @@ namespace JoshBowersDEV.Characters
         ElfRace,
         OrcRace,
         FemaleMale,
-        RacialFemaleHuman,
-        RacialMaleHuman,
-        RacialFemaleElf,
-        RacialMaleElf,
-        RacialFemaleOrc,
-        RacialMaleOrc,
+        RacialFemHuman,
+        RacialMascHuman,
+        RacialFemElf,
+        RacialMascElf,
+        RacialFemOrc,
+        RacialMascOrc,
         FacialEarScale,
         FacialEarLobeSize,
         FacialEarsOut,
@@ -72,7 +72,8 @@ namespace JoshBowersDEV.Characters
         IsoTrapezius,
         LegUpperIsoCalves,
         LegUpperIsoThighs,
-        WaistIsoBulge
+        WaistIsoBulge,
+        IsoTriceps // Missed, adding it in alphabetical order would change several others
     }
 
     #endregion Enums
@@ -216,7 +217,7 @@ namespace JoshBowersDEV.Characters
                     default:
                         break;
                 }
-                FemaleMale = FemaleMale;
+                FemMasc = FemMasc;
                 SetProperty(ref _race, value);
             }
         }
@@ -273,45 +274,45 @@ namespace JoshBowersDEV.Characters
         public float OrcRace { get => _orcRace; set => SetProperty(ref _orcRace, value); }
 
         // Gender Properties
-        [SerializeField] private float _femaleMale;
+        [SerializeField] private float _femMasc;
 
-        public float FemaleMale
+        public float FemMasc
         {
-            get => _femaleMale;
+            get => _femMasc;
             set
             {
-                SetProperty(ref _femaleMale, value);
-                RacialFemaleHuman = CalculateRacialValue(HumanRace, false);
-                RacialMaleHuman = CalculateRacialValue(HumanRace, true);
-                RacialFemaleElf = CalculateRacialValue(ElfRace, false);
-                RacialMaleElf = CalculateRacialValue(ElfRace, true);
-                RacialFemaleOrc = CalculateRacialValue(OrcRace, false);
-                RacialMaleOrc = CalculateRacialValue(OrcRace, true);
+                SetProperty(ref _femMasc, value);
+                RacialFemHuman = CalculateRacialValue(HumanRace, false);
+                RacialMascHuman = CalculateRacialValue(HumanRace, true);
+                RacialFemElf = CalculateRacialValue(ElfRace, false);
+                RacialMascElf = CalculateRacialValue(ElfRace, true);
+                RacialFemOrc = CalculateRacialValue(OrcRace, false);
+                RacialMascOrc = CalculateRacialValue(OrcRace, true);
             }
         }
 
-        private float _racialFemaleHuman;
-        [Binding] public float RacialFemaleHuman { get => _racialFemaleHuman; set => SetProperty(ref _racialFemaleHuman, value); }
+        private float _racialFemHuman;
+        [Binding] public float RacialFemHuman { get => _racialFemHuman; set => SetProperty(ref _racialFemHuman, value); }
 
-        private float _racialMaleHuman;
-        [Binding] public float RacialMaleHuman { get => _racialMaleHuman; set => SetProperty(ref _racialMaleHuman, value); }
+        private float _racialMascHuman;
+        [Binding] public float RacialMascHuman { get => _racialMascHuman; set => SetProperty(ref _racialMascHuman, value); }
 
-        private float _racialFemaleElf;
-        [Binding] public float RacialFemaleElf { get => _racialFemaleElf; set => SetProperty(ref _racialFemaleElf, value); }
+        private float _racialFemElf;
+        [Binding] public float RacialFemElf { get => _racialFemElf; set => SetProperty(ref _racialFemElf, value); }
 
-        private float _racialMaleElf;
-        [Binding] public float RacialMaleElf { get => _racialMaleElf; set => SetProperty(ref _racialMaleElf, value); }
+        private float _racialMascElf;
+        [Binding] public float RacialMascElf { get => _racialMascElf; set => SetProperty(ref _racialMascElf, value); }
 
-        private float _racialFemaleOrc;
-        [Binding] public float RacialFemaleOrc { get => _racialFemaleOrc; set => SetProperty(ref _racialFemaleOrc, value); }
+        private float _racialFemOrc;
+        [Binding] public float RacialFemOrc { get => _racialFemOrc; set => SetProperty(ref _racialFemOrc, value); }
 
-        private float _racialMaleOrc;
-        [Binding] public float RacialMaleOrc { get => _racialMaleOrc; set => SetProperty(ref _racialMaleOrc, value); }
+        private float _racialMascOrc;
+        [Binding] public float RacialMascOrc { get => _racialMascOrc; set => SetProperty(ref _racialMascOrc, value); }
 
         // Helper that calculates gender/racial
         private float CalculateRacialValue(float raceMultiplier, bool isMale = true)
         {
-            float result = (isMale ? Mathf.Max(_femaleMale, 0) : Mathf.Max(-_femaleMale, 0)) * raceMultiplier;
+            float result = (isMale ? Mathf.Max(_femMasc, 0) : Mathf.Max(-_femMasc, 0)) * raceMultiplier;
             return result;
         }
 
@@ -418,6 +419,9 @@ namespace JoshBowersDEV.Characters
         [SerializeField] private float _isoTrapezius;
         [Binding] public float IsoTrapezius { get => _isoTrapezius; set => SetProperty(ref _isoTrapezius, value); }
 
+        [SerializeField] private float _isoTriceps;
+        [Binding] public float IsoTriceps { get => _isoTriceps; set => SetProperty(ref _isoTriceps, value); }
+
         #endregion Upper Body Properties
 
         #region Lower Body Properties
@@ -446,7 +450,7 @@ namespace JoshBowersDEV.Characters
 
         public void SetHybridBlend(float value) => HybridBlend = value;
 
-        public void SetFemaleMale(float value) => FemaleMale = value;
+        public void SetFemMasc(float value) => FemMasc = value;
 
         // Head Properties
         public void SetFacialEarScale(float value) => FacialEarScale = value;
@@ -523,6 +527,8 @@ namespace JoshBowersDEV.Characters
         public void SetIsoTrunk(float value) => IsoTrunk = value;
 
         public void SetIsoTrapezius(float value) => IsoTrapezius = value;
+
+        public void SetIsoTriceps(float value) => IsoTriceps = value;
 
         // Lower Body Properties
         public void SetLegUpperIsoCalves(float value) => LegUpperIsoCalves = value;

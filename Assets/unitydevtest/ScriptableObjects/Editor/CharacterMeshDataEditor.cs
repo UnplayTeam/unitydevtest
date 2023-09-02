@@ -55,7 +55,7 @@ public class CharacterMeshDataEditor : Editor
         {
             // Display the serialized float properties with their necessary ranges
             EditorGUILayout.BeginVertical();
-            characterMeshData.FemaleMale = EditorGUILayout.Slider("Female Slider", characterMeshData.FemaleMale, -100, 100f);
+            characterMeshData.FemMasc = EditorGUILayout.Slider("Female Slider", characterMeshData.FemMasc, -100, 100f);
             EditorGUILayout.EndVertical();
         }
 

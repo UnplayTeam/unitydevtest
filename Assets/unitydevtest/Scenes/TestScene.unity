@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0007719248}
+  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
   m_SizeDelta: {x: 0, y: 522.08}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &29720349
@@ -4513,9 +4513,39 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!137 &56346963969248851 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6926347273257202103, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!137 &178696695562490308 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6372440926999984971, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &241937264345764405 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 999298494077909129, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &362951099348401759 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6521834802998597088, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &401742896078604953 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2001471408023584963, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &630689548629531472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9013936508226638767, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &768601970299348921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9130466652688128710, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
   m_PrefabInstance: {fileID: 6932823405508735550}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &919132148317976858 stripped
@@ -4523,11 +4553,735 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1882048886000283979, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
   m_PrefabInstance: {fileID: 6932823405508735550}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &958326299582226692 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8777900206936301044, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1130186851781013120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2713004235721088058, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1154369614276119997 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8564744679679296443, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1194032531394977033 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3934897250941240571, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1333576492078504706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778827218120068347, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1815652712132911506 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6761472501543931715, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1905894066051069424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6645499051872464935, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1910435596424415212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6826768330751128552, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1952051655912971941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130186851781013120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 1194032531394977033}
+  SkinnedBindings:
+  - BlendShape: bs_arm_upper_R.arm_upper_R_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_pectorals
+    CharacterProperty: 48
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_triceps
+    CharacterProperty: 55
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_back
+    CharacterProperty: 39
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_biceps
+    CharacterProperty: 42
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_deltoids
+    CharacterProperty: 45
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+--- !u!1 &2445803506463170512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9223359042921375997, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2451164521901180760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333576492078504706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 401742896078604953}
+  SkinnedBindings:
+  - BlendShape: bs_foot_L.foot_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_foot_L.foot_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!137 &2575084954845395024 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4308813413921748541, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2575084954845395025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910435596424415212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 2575084954845395024}
+  SkinnedBindings:
+  - BlendShape: bs_waist.waist_iso_butt
+    CharacterProperty: 44
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_iso_bellyHeight
+    CharacterProperty: 41
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_iso_belly
+    CharacterProperty: 40
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_iso_thighs
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_iso_trunk
+    CharacterProperty: 50
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_iso_bulge
+    CharacterProperty: 54
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+--- !u!137 &2753077359996560424 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4479492537039706039, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &2805760605457073292 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 802893438999756830, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2939330386477129454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2513979726039382175, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2939330386477129455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939330386477129454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 958326299582226692}
+  SkinnedBindings:
+  - BlendShape: bs_arm_lower_R.arm_lower_R_iso_biceps
+    CharacterProperty: 42
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_R.arm_lower_R_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_R.arm_lower_R_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_R.arm_lower_R_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_lower_R.arm_lower_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_R.arm_lower_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_lower_R.arm_lower_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &2955734833895332575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905894066051069424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 1815652712132911506}
+  SkinnedBindings:
+  - BlendShape: eyelash_01_R.eyelash_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_R.eyelash_R_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_R.eyelash_R_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_R.eyelash_R_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_R.eyelash_R_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!1 &3344347508250322733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6478496791898758138, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3344347508250322734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3344347508250322733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 362951099348401759}
+  SkinnedBindings:
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_facial_brow_wide
+    CharacterProperty: 18
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_facial_brow_forward
+    CharacterProperty: 19
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_species_elf
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_species_elf1
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!1 &3359143471665828692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5896244773333327770, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &3911652425412271313 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1040059116386537925, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4181036387281134540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6776586736588213583, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4339525578783819777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4709932062580249173, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4698483710142512930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 667433307328782009, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &4810547450318449142 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2684295792470835596, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4893176500492087990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2200849339460854740, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &4936157019336854159 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6742690690774920325, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &4977967604874899612 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3008894999656910691, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4977967604874899613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339525578783819777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 4977967604874899612}
+  SkinnedBindings:
+  - BlendShape: bs_neck.neck_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_neck.neck_iso_neck
+    CharacterProperty: 47
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_iso_deltoids
+    CharacterProperty: 45
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_iso_back
+    CharacterProperty: 39
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_iso_trapezius
+    CharacterProperty: 51
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_neck.neck_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_neck.neck_facial_chin_tip_length
+    CharacterProperty: 22
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_facial_jaw_down
+    CharacterProperty: 24
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_facial_jaw_wide
+    CharacterProperty: 25
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
 --- !u!137 &5128211257865086109 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 487027076128001436, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
   m_PrefabInstance: {fileID: 6932823405508735550}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &5173794096099162012 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5539964269665903635, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5173794096099162013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4698483710142512930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 5173794096099162012}
+  SkinnedBindings:
+  - BlendShape: bs_arm_lower_L.arm_lower_L_iso_biceps
+    CharacterProperty: 42
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_L.arm_lower_L_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_L.arm_lower_L_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_L.arm_lower_L_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_lower_L.arm_lower_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_L.arm_lower_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_lower_L.arm_lower_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!1 &5198800464961029420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1105946157096959582, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5231584678652094486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630689548629531472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 2753077359996560424}
+  SkinnedBindings:
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_calves
+    CharacterProperty: 52
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_bellyHeight
+    CharacterProperty: 41
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_belly
+    CharacterProperty: 40
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_butt
+    CharacterProperty: 44
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_thighs
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_trunk
+    CharacterProperty: 50
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_upper_R.leg_upper_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_upper_R.leg_upper_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!1 &5306279935134675285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8250280477903062839, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5499631621726506928 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1320921320113727614, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5499631621726506929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181036387281134540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 5499631621726506928}
+  SkinnedBindings:
+  - BlendShape: bs_foot_R.foot_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_foot_R.foot_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!1 &5547085175580823770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1055349486647122614, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5685216098029671409 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2336977280284637188, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5789119606251568673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5297594194103177063, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5789119606251568674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789119606251568673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 5685216098029671409}
+  SkinnedBindings:
+  - BlendShape: bs_hand_R.hand_R_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hand_R.hand_R_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hand_R.hand_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_hand_R.hand_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
 --- !u!114 &5866666020603689435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4542,6 +5296,153 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterMeshData: {fileID: 11400000, guid: 1e33f1ba7f1b01649875c6a3c71ef784, type: 2}
   _isHybrid: 0
+--- !u!137 &5993593773272586978 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 570336637739377767, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5993593773272586979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198800464961029420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 5993593773272586978}
+  SkinnedBindings:
+  - BlendShape: bs_leg_lower_R.leg_lower_R_iso_calves
+    CharacterProperty: 52
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_R.leg_lower_R_iso_thighs
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_R.leg_lower_R_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_R.leg_lower_R_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_lower_R.leg_lower_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_R.leg_lower_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_lower_R.leg_lower_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!137 &6160406308780956303 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7931720615526990564, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6160406308780956304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3359143471665828692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 6160406308780956303}
+  SkinnedBindings:
+  - BlendShape: eyelash_01_L.eyelash_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_L.eyelash_L_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_L.eyelash_L_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_L.eyelash_L_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_L.eyelash_L_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!1 &6462079237548880455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 522607288832101944, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6462079237548880456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462079237548880455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 56346963969248851}
+  SkinnedBindings:
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_species_elf
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_species_elf1
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_facial_brow_forward
+    CharacterProperty: 19
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_facial_brow_wide
+    CharacterProperty: 18
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
 --- !u!1001 &6932823405508735550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4698,6 +5599,18 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[10]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6521834802998597088, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521834802998597088, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521834802998597088, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7129796487679981753, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 28
@@ -4838,6 +5751,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8784877385047029168, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784877385047029168, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4857,18 +5778,680 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5099587357111390649, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9200022132453416229}
+    - targetCorrespondingSourceObject: {fileID: 6478496791898758138, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3344347508250322734}
+    - targetCorrespondingSourceObject: {fileID: 522607288832101944, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6462079237548880456}
+    - targetCorrespondingSourceObject: {fileID: 5896244773333327770, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6160406308780956304}
+    - targetCorrespondingSourceObject: {fileID: 6645499051872464935, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2955734833895332575}
+    - targetCorrespondingSourceObject: {fileID: 2200849339460854740, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7765710607452236945}
+    - targetCorrespondingSourceObject: {fileID: 8250280477903062839, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8132978180866099090}
     - targetCorrespondingSourceObject: {fileID: 2161372213944760153, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8808273340778526857}
     - targetCorrespondingSourceObject: {fileID: 2161372213944760153, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8808273340778526858}
+    - targetCorrespondingSourceObject: {fileID: 9223359042921375997, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7498231610704886887}
+    - targetCorrespondingSourceObject: {fileID: 4709932062580249173, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4977967604874899613}
+    - targetCorrespondingSourceObject: {fileID: 9130466652688128710, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7082675584761142776}
+    - targetCorrespondingSourceObject: {fileID: 1778827218120068347, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2451164521901180760}
+    - targetCorrespondingSourceObject: {fileID: 2756106707083780597, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8543146292689892020}
+    - targetCorrespondingSourceObject: {fileID: 804137494198972901, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7636665209072365619}
+    - targetCorrespondingSourceObject: {fileID: 6776586736588213583, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5499631621726506929}
+    - targetCorrespondingSourceObject: {fileID: 1105946157096959582, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5993593773272586979}
+    - targetCorrespondingSourceObject: {fileID: 9013936508226638767, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5231584678652094486}
+    - targetCorrespondingSourceObject: {fileID: 6826768330751128552, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2575084954845395025}
+    - targetCorrespondingSourceObject: {fileID: 667433307328782009, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5173794096099162013}
+    - targetCorrespondingSourceObject: {fileID: 3642764873991396935, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8950380197898887581}
+    - targetCorrespondingSourceObject: {fileID: 1055349486647122614, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7243827171696338786}
+    - targetCorrespondingSourceObject: {fileID: 2513979726039382175, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2939330386477129455}
+    - targetCorrespondingSourceObject: {fileID: 2713004235721088058, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1952051655912971941}
+    - targetCorrespondingSourceObject: {fileID: 5297594194103177063, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5789119606251568674}
+    - targetCorrespondingSourceObject: {fileID: 955649063010907593, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8896746811927166851}
   m_SourcePrefab: {fileID: 100100000, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+--- !u!114 &7082675584761142776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768601970299348921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 1154369614276119997}
+  SkinnedBindings:
+  - BlendShape: bs_nose.nose_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_nose.nose_facial_cheeks_gauntShape
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_nose.nose_facial_nose_bridge_depth
+    CharacterProperty: 33
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_mouth_out
+    CharacterProperty: 30
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_tip_width_in
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_nose.nose_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_bridge_width
+    CharacterProperty: 34
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_angle
+    CharacterProperty: 31
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_tip_width_out
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_lip_top_fullness
+    CharacterProperty: 26
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_brow_forward
+    CharacterProperty: 19
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_lip_top_thin
+    CharacterProperty: 26
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_nose.nose_facial_mouth_width
+    CharacterProperty: 29
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_bulb
+    CharacterProperty: 32
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_length
+    CharacterProperty: 35
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_blend_facial_cheekbones_in
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_nose.nose_blend_facial_cheekbones_out
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
 --- !u!137 &7160418863742004837 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7883241262334285542, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
   m_PrefabInstance: {fileID: 6932823405508735550}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7243827171696338786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5547085175580823770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 4936157019336854159}
+  SkinnedBindings:
+  - BlendShape: bs_hand_L.hand_L_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hand_L.hand_L_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hand_L.hand_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_hand_L.hand_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!137 &7498231610704886886 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7129796487679981753, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7498231610704886887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445803506463170512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 7498231610704886886}
+  SkinnedBindings:
+  - BlendShape: bs_mouth.mouth_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_facial_chin_tip_length
+    CharacterProperty: 22
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_chin_tip_width
+    CharacterProperty: 23
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_mouth_out
+    CharacterProperty: 30
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_bridge_width
+    CharacterProperty: 34
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_jaw_wide
+    CharacterProperty: 25
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_lip_top_thin
+    CharacterProperty: 26
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_facial_nose_bulb
+    CharacterProperty: 32
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_mouth_width
+    CharacterProperty: 29
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_tip_width_out
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_lip_bot_thin
+    CharacterProperty: 27
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_facial_cheeks_gaunt
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_facial_jaw_down
+    CharacterProperty: 24
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_tip_width_in
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_facial_lip_top_fullness
+    CharacterProperty: 26
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_length
+    CharacterProperty: 35
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_angle
+    CharacterProperty: 31
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_bridge_depth
+    CharacterProperty: 33
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_lip_bot_fullness
+    CharacterProperty: 27
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_blend_facial_cheekbones_in
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_blend_facial_cheekbones_out
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!1 &7636665209072365618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 804137494198972901, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7636665209072365619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636665209072365618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 2805760605457073292}
+  SkinnedBindings:
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_calves
+    CharacterProperty: 52
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_belly
+    CharacterProperty: 40
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_bellyHeight
+    CharacterProperty: 41
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_thighs
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_trunk
+    CharacterProperty: 50
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_butt
+    CharacterProperty: 44
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_upper_L.leg_upper_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_upper_L.leg_upper_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!137 &7765710607452236944 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3216191540066963209, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7765710607452236945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893176500492087990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 7765710607452236944}
+  SkinnedBindings:
+  - BlendShape: bs_eyemask.eyemask_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_eyemask.eyemask_facial_nose_tip_width_in
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_eyemask.eyemask_facial_nose_bulb
+    CharacterProperty: 32
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_nose_bridge_depth
+    CharacterProperty: 33
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_brow_forward
+    CharacterProperty: 19
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_nose_length
+    CharacterProperty: 35
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_nose_tip_width_out
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_cheeks_gaunt
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_eyemask.eyemask_facial_brow_wide
+    CharacterProperty: 18
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_nose_bridge_width
+    CharacterProperty: 34
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_blend_facial_cheekbones_in
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_eyemask.eyemask_blend_facial_cheekbones_out
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &8132978180866099090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306279935134675285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 241937264345764405}
+  SkinnedBindings:
+  - BlendShape: bs_hair001_t1.hair001_t1_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hair001_t1.hair001_t1__orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hair001_t1.hair001_t1__orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!137 &8381323880722849142 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5300617609445197587, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8543146292689892019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2756106707083780597, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8543146292689892020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8543146292689892019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 3911652425412271313}
+  SkinnedBindings:
+  - BlendShape: bs_leg_lower_L.leg_lower_L_iso_thighs
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_L.leg_lower_L_iso_calves
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_L.leg_lower_L_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_L.leg_lower_L_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_lower_L.leg_lower_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_L.leg_lower_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_lower_L.leg_lower_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
 --- !u!1 &8808273340778526856 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2161372213944760153, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
@@ -5166,6 +6749,184 @@ MonoBehaviour:
   viewAdapterOptions: {fileID: 0}
   viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
   viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
+--- !u!1 &8896746811927166850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 955649063010907593, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8896746811927166851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8896746811927166850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 4810547450318449142}
+  SkinnedBindings:
+  - BlendShape: bs_torso.torso_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_torso.torso_iso_butt
+    CharacterProperty: 44
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_belly
+    CharacterProperty: 40
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_bellyHeight
+    CharacterProperty: 41
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_deltoids
+    CharacterProperty: 45
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_biceps
+    CharacterProperty: 42
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_pectorals
+    CharacterProperty: 48
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_ribcage
+    CharacterProperty: 49
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_trunk
+    CharacterProperty: 50
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_back
+    CharacterProperty: 39
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_trapezius
+    CharacterProperty: 51
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_bust_large
+    CharacterProperty: 43
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_bust_small
+    CharacterProperty: 43
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_torso.torso_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+--- !u!1 &8950380197898887580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3642764873991396935, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+  m_PrefabInstance: {fileID: 6932823405508735550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8950380197898887581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8950380197898887580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 8381323880722849142}
+  SkinnedBindings:
+  - BlendShape: bs_arm_upper_L.arm_upper_L_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_pectorals
+    CharacterProperty: 48
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_biceps
+    CharacterProperty: 42
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_back
+    CharacterProperty: 39
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_triceps
+    CharacterProperty: 55
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_deltoids
+    CharacterProperty: 45
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_upper_L.arm_upper_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
 --- !u!1 &9200022132453416226 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5099587357111390649, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}

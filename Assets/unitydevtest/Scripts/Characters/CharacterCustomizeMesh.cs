@@ -94,44 +94,44 @@ namespace JoshBowersDEV.Characters
         [Binding]
         public float FemaleMale
         {
-            get => CharacterMeshData.FemaleMale;
-            set => CharacterMeshData.SetFemaleMale(value);
+            get => CharacterMeshData.FemMasc;
+            set => CharacterMeshData.SetFemMasc(value);
         }
 
         [Binding]
         public float RacialFemaleHuman
         {
-            get => CharacterMeshData.RacialFemaleHuman;
+            get => CharacterMeshData.RacialFemHuman;
         }
 
         [Binding]
         public float RacialMaleHuman
         {
-            get => CharacterMeshData.RacialMaleHuman;
+            get => CharacterMeshData.RacialMascHuman;
         }
 
         [Binding]
         public float RacialFemaleElf
         {
-            get => CharacterMeshData.RacialFemaleElf;
+            get => CharacterMeshData.RacialFemElf;
         }
 
         [Binding]
         public float RacialMaleElf
         {
-            get => CharacterMeshData.RacialMaleElf;
+            get => CharacterMeshData.RacialMascElf;
         }
 
         [Binding]
         public float RacialFemaleOrc
         {
-            get => CharacterMeshData.RacialFemaleOrc;
+            get => CharacterMeshData.RacialFemOrc;
         }
 
         [Binding]
         public float RacialMaleOrc
         {
-            get => CharacterMeshData.RacialMaleOrc;
+            get => CharacterMeshData.RacialMascOrc;
         }
 
         #endregion Racial and Gender Properties
