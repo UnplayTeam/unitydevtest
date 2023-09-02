@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityWeld.Binding;
 
@@ -63,6 +65,7 @@ namespace JoshBowersDEV.Characters
         IsoButt,
         IsoDeltoids,
         IsoForearms,
+        IsoNeck,
         IsoPectorals,
         IsoRibcage,
         IsoTrunk,
@@ -78,17 +81,13 @@ namespace JoshBowersDEV.Characters
     [Binding]
     public class CharacterMeshData : BindableScriptableObjectBase, ISerializationCallbackReceiver
     {
-        #region Constants
+        #region Variables
 
         public const float BLENDSHAPE_MAX = 100f;
 
-        #endregion Constants
+        private List<ICharacterCustomizeListener> _listeners = new List<ICharacterCustomizeListener>();
 
-        #region Events
-
-        public Action<string, float> PropertyChangedEvent;
-
-        #endregion Events
+        #endregion Variables
 
         #region Overrides
 
@@ -102,7 +101,7 @@ namespace JoshBowersDEV.Characters
             OnPropertyChanged(propertyName);
 
             float floatValue = Convert.ToSingle(value); // Convert the generic value to a float.
-            PropertyChangedEvent?.Invoke(propertyName, floatValue);
+            AlertListeners(propertyName, floatValue);
             return true;
         }
 
@@ -123,6 +122,35 @@ namespace JoshBowersDEV.Characters
         }
 
         #endregion Unity Callbacks
+
+        #region Public Methods
+
+        public void AddListener(ICharacterCustomizeListener listener)
+        {
+            if (_listeners == null)
+                _listeners = new List<ICharacterCustomizeListener>();
+            _listeners.Add(listener);
+        }
+
+        public void RemoveListener(ICharacterCustomizeListener listener)
+        {
+            _listeners.Remove(listener);
+        }
+
+        #endregion Public Methods
+
+        #region Private Methods
+
+        private void AlertListeners(string propertyName, float value)
+        {
+            int index = _listeners.Count;
+            for (int i = 0; i < index; i++)
+            {
+                _listeners[i].HandlePropertyChange(propertyName, value);
+            }
+        }
+
+        #endregion Private Methods
 
         #region Racial and Gender Properties
 
@@ -284,7 +312,6 @@ namespace JoshBowersDEV.Characters
         private float CalculateRacialValue(float raceMultiplier, bool isMale = true)
         {
             float result = (isMale ? Mathf.Max(_femaleMale, 0) : Mathf.Max(-_femaleMale, 0)) * raceMultiplier;
-            Debug.Log($"Calculating racial value: {raceMultiplier} = {result}, is male? = {isMale}");
             return result;
         }
 
@@ -378,6 +405,8 @@ namespace JoshBowersDEV.Characters
         [Binding] public float IsoButt { get => _isoButt; set => SetProperty(ref _isoButt, value); }
         [SerializeField] private float _isoDeltoids;
         [Binding] public float IsoDeltoids { get => _isoDeltoids; set => SetProperty(ref _isoDeltoids, value); }
+        [SerializeField] private float _isoNeck;
+        [Binding] public float IsoNeck { get => _isoNeck; set => SetProperty(ref _isoNeck, value); }
         [SerializeField] private float _isoForearms;
         [Binding] public float IsoForearms { get => _isoForearms; set => SetProperty(ref _isoForearms, value); }
         [SerializeField] private float _isoPectorals;
@@ -484,6 +513,8 @@ namespace JoshBowersDEV.Characters
         public void SetIsoDeltoids(float value) => IsoDeltoids = value;
 
         public void SetIsoForearms(float value) => IsoForearms = value;
+
+        public void SetIsoNeck(float value) => IsoNeck = value;
 
         public void SetIsoPectorals(float value) => IsoPectorals = value;
 

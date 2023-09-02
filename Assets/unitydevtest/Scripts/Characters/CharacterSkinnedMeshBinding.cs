@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityWeld.Binding;
 
@@ -38,7 +39,7 @@ namespace JoshBowersDEV.Characters
     /// Used to bind specific <see cref="SkinnedMeshRenderer"/> values to <see cref="CharacterMeshData"/> values based on weighted values.
     /// </summary>
     [RequireComponent(typeof(SkinnedMeshRenderer))]
-    public class CharacterSkinnedMeshBinding : MonoBehaviour
+    public class CharacterSkinnedMeshBinding : MonoBehaviour, ICharacterCustomizeListener
     {
         #region Properties
 
@@ -50,27 +51,26 @@ namespace JoshBowersDEV.Characters
             get => _characterMeshData;
             set
             {
+                // Remove itself as a listener if we're changing data assets.
+                if (_characterMeshData != null)
+                    _characterMeshData.RemoveListener(this);
+
                 // Assign the new character data
                 _characterMeshData = value;
+
                 try
                 {
-                    // Clear previous event handler if there is one.
-                    _characterMeshData.PropertyChangedEvent = null;
-
                     // Subscribe to the property changed event.
-                    value.PropertyChangedEvent += HandlePropertyChange;
+                    _characterMeshData.AddListener(this);
 
                     // Go ahead and update each Blend Shape to the new character.
-                    for (int i = 0; i < SkinnedBindings.Count; i++)
-                    {
-                        SetBlendShapeWeight(SkinnedBindings[i].BlendShape, SkinnedBindings[i].CurrentValue);
-                    }
+                    InitializeDataValues();
 
                     Debug.Log("CharacterMeshData was set successfully.");
                 }
-                catch (System.Exception)
+                catch (System.Exception e)
                 {
-                    Debug.Log("CharacterMeshData was null");
+                    Debug.Log("CharacterMeshData was null: \n" + e.ToString());
                 }
             }
         }
@@ -138,9 +138,44 @@ namespace JoshBowersDEV.Characters
 
         #region Private Methods
 
-        private void HandlePropertyChange(string propertyName, float newValue)
+        // By using reflection, we can don't have to hardcode ourselves to the Character Data objects just in case properties are added/removed/changed
+        private void InitializeDataValues()
         {
-            Debug.Log($"{propertyName} was updated to {newValue}");
+            PropertyInfo[] properties = CharacterMeshData.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+
+            foreach (PropertyInfo property in properties)
+            {
+                // Get the name of the property
+                string propertyName = property.Name;
+
+                // Get the value of the property
+                object propertyValue = property.GetValue(CharacterMeshData);
+                float convertedValue;
+                try
+                {
+                    convertedValue = (float)propertyValue;
+                    HandlePropertyChange(propertyName, convertedValue);
+                }
+                catch (System.Exception)
+                {
+                    continue;
+                }
+
+                Debug.Log($"Property Name: {propertyName}, Value: {propertyValue}");
+            }
+        }
+
+        private void SetBlendShapeWeight(string blendShape, float currentValue)
+        {
+            SkinnedMeshRenderer.SetBlendShapeWeight(SkinnedMeshRenderer.sharedMesh.GetBlendShapeIndex(blendShape), currentValue);
+        }
+
+        #endregion Private Methods
+
+        #region Interface Methods
+
+        public void HandlePropertyChange(string propertyName, float newValue)
+        {
             foreach (var skin in SkinnedBindings)
             {
                 if (propertyName == skin.CharacterProperty.ToString())
@@ -161,11 +196,6 @@ namespace JoshBowersDEV.Characters
             }
         }
 
-        private void SetBlendShapeWeight(string blendShape, float currentValue)
-        {
-            SkinnedMeshRenderer.SetBlendShapeWeight(SkinnedMeshRenderer.sharedMesh.GetBlendShapeIndex(blendShape), currentValue);
-        }
-
-        #endregion Private Methods
+        #endregion Interface Methods
     }
 }

@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00030889147}
+  m_AnchoredPosition: {x: 0, y: 0.0007719248}
   m_SizeDelta: {x: 0, y: 522.08}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &29720349
@@ -3183,7 +3183,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1687875957}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9998762
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4759,11 +4759,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7883241262334285542, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883241262334285542, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[3]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7883241262334285542, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[4]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883241262334285542, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[5]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7883241262334285542, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
@@ -4845,10 +4853,10 @@ PrefabInstance:
       addedObject: {fileID: 8857218435805758616}
     - targetCorrespondingSourceObject: {fileID: 5099587357111390649, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9200022132453416227}
+      addedObject: {fileID: 9200022132453416228}
     - targetCorrespondingSourceObject: {fileID: 5099587357111390649, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9200022132453416228}
+      addedObject: {fileID: 9200022132453416229}
     - targetCorrespondingSourceObject: {fileID: 2161372213944760153, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8808273340778526857}
@@ -4881,7 +4889,157 @@ MonoBehaviour:
   _skinnedMeshRenderer: {fileID: 7160418863742004837}
   SkinnedBindings:
   - BlendShape: bs_head.head_species_orc_fem
-    CharacterProperty: 0
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_iso_trapezius
+    CharacterProperty: 51
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_iso_neck
+    CharacterProperty: 47
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_head.head_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_head.head_facial_nose_bridge_width
+    CharacterProperty: 34
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_mouth_width
+    CharacterProperty: 29
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_length
+    CharacterProperty: 35
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_tip_width_out
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_bulb
+    CharacterProperty: 32
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_bridge_depth
+    CharacterProperty: 33
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_brow_forward
+    CharacterProperty: 19
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_mouth_out
+    CharacterProperty: 30
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_ears_out
+    CharacterProperty: 17
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_jaw_down
+    CharacterProperty: 24
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_jaw_wide
+    CharacterProperty: 25
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_chin_tip_length
+    CharacterProperty: 22
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_brow_wide
+    CharacterProperty: 18
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_angle
+    CharacterProperty: 31
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_tip_width_in
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_head.head_facial_chin_tip_width
+    CharacterProperty: 23
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_cheeks_gaunt
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_head.head_blend_facial_cheekbones_in
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_head.head_blend_facial_cheekbones_out
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_species_elf_fem
+    CharacterProperty: 11
     Weight: 1
     _currentValue: 0
     IsInvertedValue: 0
@@ -5013,20 +5171,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5099587357111390649, guid: c74f366124ae50c4d86b7e23dee704ea, type: 3}
   m_PrefabInstance: {fileID: 6932823405508735550}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9200022132453416227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9200022132453416226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _skinnedMeshRenderer: {fileID: 5128211257865086109}
-  SkinnedBindings: []
 --- !u!114 &9200022132453416228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5044,3 +5188,87 @@ MonoBehaviour:
   viewAdapterOptions: {fileID: 0}
   viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
   viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
+--- !u!114 &9200022132453416229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200022132453416226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 5128211257865086109}
+  SkinnedBindings:
+  - BlendShape: bs_ear_R.ear_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_ear_lobe
+    CharacterProperty: 16
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_jaw_down
+    CharacterProperty: 24
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_ears_out
+    CharacterProperty: 17
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_jaw_wide
+    CharacterProperty: 25
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_ear_scale
+    CharacterProperty: 15
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_cheeks_gaunt
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_ear_R.ear_R_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
