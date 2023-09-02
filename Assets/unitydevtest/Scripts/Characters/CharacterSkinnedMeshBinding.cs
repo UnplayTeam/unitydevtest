@@ -140,17 +140,23 @@ namespace JoshBowersDEV.Characters
 
         private void HandlePropertyChange(string propertyName, float newValue)
         {
-            Debug.Log(propertyName + " changed to " + newValue);
+            Debug.Log($"{propertyName} was updated to {newValue}");
             foreach (var skin in SkinnedBindings)
             {
                 if (propertyName == skin.CharacterProperty.ToString())
                 {
+                    float val;
+                    // If it's a two-way slider, make sure we feed the absolute value for sliders meant to be inverted.
+                    if (skin.IsInvertedValue)
+                        val = (newValue < 0f) ? Mathf.Abs(newValue) : 0;
+                    else
+                        val = newValue;
+
                     // Update the current value.
-                    skin.CurrentValue = newValue;
+                    skin.CurrentValue = val;
 
                     // Set the blend shape weight.
                     SetBlendShapeWeight(skin.BlendShape, skin.CurrentValue);
-                    Debug.Log(skin.BlendShape + " was set to " + skin.CurrentValue);
                 }
             }
         }

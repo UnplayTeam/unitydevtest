@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbb2baff4eb10b4aa51da94465a5894, type: 3}
   m_Name: DefaultMale
   m_EditorClassIdentifier: 
-  _isHybrid: 1
-  _race: 2
-  _firstRace: 0
+  _isHybrid: 0
+  _race: 0
+  _firstRace: 2
   _secondRace: 1
   _hybridBlend: 0.745
-  _female: 1
-  _male: 0
-  _earScale: 100
-  _earLobeSize: 0
-  _earsOut: 0
-  _browWide: 0
-  _browForward: 0
+  _humanRace: 1
+  _elfRace: 0
+  _orcRace: 0
+  _femaleMale: 1.4285684
+  _facialEarScale: 0
+  _facialEarLobeSize: 0
+  _facialEarsOut: 0
+  _facialBrowWide: 0
+  _facialBrowForward: 0
   _facialCheekbonesInOut: 0
   _facialCheeksGauntFull: 0
   _facialChinTipLength: 0

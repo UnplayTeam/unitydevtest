@@ -95,6 +95,7 @@ namespace JoshBowersDEV.Characters
         public float FemaleMale
         {
             get => CharacterMeshData.FemaleMale;
+            set => CharacterMeshData.SetFemaleMale(value);
         }
 
         [Binding]

@@ -24,19 +24,18 @@ namespace JoshBowersDEV.Characters
         HumanRace,
         ElfRace,
         OrcRace,
-        Female,
-        Male,
-        FemaleHuman,
-        MaleHuman,
-        FemaleElf,
-        MaleElf,
-        FemaleOrc,
-        MaleOrc,
-        EarScale,
-        EarLobeSize,
-        EarsOut,
-        BrowWide,
-        BrowForward,
+        FemaleMale,
+        RacialFemaleHuman,
+        RacialMaleHuman,
+        RacialFemaleElf,
+        RacialMaleElf,
+        RacialFemaleOrc,
+        RacialMaleOrc,
+        FacialEarScale,
+        FacialEarLobeSize,
+        FacialEarsOut,
+        FacialBrowWide,
+        FacialBrowForward,
         FacialCheekbonesInOut,
         FacialCheeksGauntFull,
         FacialChinTipLength,
@@ -77,8 +76,14 @@ namespace JoshBowersDEV.Characters
 
     [CreateAssetMenu(fileName = "Character", menuName = "Characters/Data")]
     [Binding]
-    public class CharacterMeshData : BindableScriptableObjectBase
+    public class CharacterMeshData : BindableScriptableObjectBase, ISerializationCallbackReceiver
     {
+        #region Constants
+
+        public const float BLENDSHAPE_MAX = 100f;
+
+        #endregion Constants
+
         #region Events
 
         public Action<string, float> PropertyChangedEvent;
@@ -103,6 +108,22 @@ namespace JoshBowersDEV.Characters
 
         #endregion Overrides
 
+        #region Unity Callbacks
+
+        public void OnBeforeSerialize()
+        {
+        }
+
+        public void OnAfterDeserialize()
+        {
+            if (RaceInt < 0 || RaceInt > 255)
+                RaceInt = 0;
+            else
+                RaceInt = RaceInt;
+        }
+
+        #endregion Unity Callbacks
+
         #region Racial and Gender Properties
 
         [SerializeField]
@@ -115,7 +136,7 @@ namespace JoshBowersDEV.Characters
             set => SetProperty(ref _isHybrid, value);
         }
 
-        private int _raceInt = -1;
+        private int _raceInt = 0;
 
         [Binding]
         public int RaceInt
@@ -123,9 +144,18 @@ namespace JoshBowersDEV.Characters
             get => _raceInt;
             set
             {
-                SetProperty(ref _raceInt, value);
-                byte tryVal = Convert.ToByte(value);
-                Race = (Race)tryVal;
+                try
+                {
+                    SetProperty(ref _raceInt, value);
+                    byte val = Convert.ToByte(value);
+                    Race = (Race)val;
+                    Debug.Log("Successfully changed race to: " + Race.ToString());
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError(value + " was not a valid byte: \n " + e.ToString());
+                    throw;
+                }
             }
         }
 
@@ -138,38 +168,36 @@ namespace JoshBowersDEV.Characters
             get => _race;
             set
             {
-                if (!_isHybrid)
+                switch (value)
                 {
-                    switch (value)
-                    {
-                        case Race.Human:
-                            SetRaceProperties(1.0f, 0f, 0f);
-                            break;
+                    case Race.Human:
+                        SetRaceProperties(1, 0f, 0f);
+                        Debug.Log("Human selected");
+                        break;
 
-                        case Race.Elf:
-                            SetRaceProperties(0f, 1.0f, 0f);
-                            break;
+                    case Race.Elf:
+                        SetRaceProperties(0f, 1, 0f);
+                        Debug.Log("Elf selected");
+                        break;
 
-                        case Race.Orc:
-                            SetRaceProperties(0f, 0f, 1f);
-                            break;
+                    case Race.Orc:
+                        SetRaceProperties(0f, 0f, 1);
+                        Debug.Log("Orc selected");
+                        break;
 
-                        default:
-                            break;
-                    }
-                    SetProperty(ref _race, value);
+                    default:
+                        break;
                 }
+                FemaleMale = FemaleMale;
+                SetProperty(ref _race, value);
             }
         }
 
         private void SetRaceProperties(float humanValue, float elfValue, float orcValue)
         {
-            if (!_isHybrid)
-            {
-                HumanRace = humanValue;
-                ElfRace = elfValue;
-                OrcRace = orcValue;
-            }
+            HumanRace = humanValue;
+            ElfRace = elfValue;
+            OrcRace = orcValue;
         }
 
         #region Disabled for now, out of scope.
@@ -198,26 +226,67 @@ namespace JoshBowersDEV.Characters
 
         #endregion Disabled for now, out of scope.
 
-        [Binding]
-        public float HumanRace { get; private set; }
+        [SerializeField]
+        private float _humanRace;
 
         [Binding]
-        public float ElfRace { get; private set; }
+        public float HumanRace { get => _humanRace; set => SetProperty(ref _humanRace, value); }
+
+        [SerializeField]
+        private float _elfRace;
 
         [Binding]
-        public float OrcRace { get; private set; }
+        public float ElfRace { get => _elfRace; set => SetProperty(ref _elfRace, value); }
+
+        [SerializeField]
+        private float _orcRace;
+
+        [Binding]
+        public float OrcRace { get => _orcRace; set => SetProperty(ref _orcRace, value); }
 
         // Gender Properties
         [SerializeField] private float _femaleMale;
 
-        public float FemaleMale { get => _femaleMale; set => SetProperty(ref _femaleMale, value); }
+        public float FemaleMale
+        {
+            get => _femaleMale;
+            set
+            {
+                SetProperty(ref _femaleMale, value);
+                RacialFemaleHuman = CalculateRacialValue(HumanRace, false);
+                RacialMaleHuman = CalculateRacialValue(HumanRace, true);
+                RacialFemaleElf = CalculateRacialValue(ElfRace, false);
+                RacialMaleElf = CalculateRacialValue(ElfRace, true);
+                RacialFemaleOrc = CalculateRacialValue(OrcRace, false);
+                RacialMaleOrc = CalculateRacialValue(OrcRace, true);
+            }
+        }
 
-        [Binding] public float RacialFemaleHuman => ((FemaleMale < 0) ? Mathf.Abs(FemaleMale) : 0) * HumanRace;
-        [Binding] public float RacialMaleHuman => ((FemaleMale > 0) ? FemaleMale : 0) * HumanRace;
-        [Binding] public float RacialFemaleElf => ((FemaleMale < 0) ? Mathf.Abs(FemaleMale) : 0) * ElfRace;
-        [Binding] public float RacialMaleElf => ((FemaleMale > 0) ? FemaleMale : 0) * ElfRace;
-        [Binding] public float RacialFemaleOrc => ((FemaleMale < 0) ? Mathf.Abs(FemaleMale) : 0) * OrcRace;
-        [Binding] public float RacialMaleOrc => ((FemaleMale > 0) ? FemaleMale : 0) * OrcRace;
+        private float _racialFemaleHuman;
+        [Binding] public float RacialFemaleHuman { get => _racialFemaleHuman; set => SetProperty(ref _racialFemaleHuman, value); }
+
+        private float _racialMaleHuman;
+        [Binding] public float RacialMaleHuman { get => _racialMaleHuman; set => SetProperty(ref _racialMaleHuman, value); }
+
+        private float _racialFemaleElf;
+        [Binding] public float RacialFemaleElf { get => _racialFemaleElf; set => SetProperty(ref _racialFemaleElf, value); }
+
+        private float _racialMaleElf;
+        [Binding] public float RacialMaleElf { get => _racialMaleElf; set => SetProperty(ref _racialMaleElf, value); }
+
+        private float _racialFemaleOrc;
+        [Binding] public float RacialFemaleOrc { get => _racialFemaleOrc; set => SetProperty(ref _racialFemaleOrc, value); }
+
+        private float _racialMaleOrc;
+        [Binding] public float RacialMaleOrc { get => _racialMaleOrc; set => SetProperty(ref _racialMaleOrc, value); }
+
+        // Helper that calculates gender/racial
+        private float CalculateRacialValue(float raceMultiplier, bool isMale = true)
+        {
+            float result = (isMale ? Mathf.Max(_femaleMale, 0) : Mathf.Max(-_femaleMale, 0)) * raceMultiplier;
+            Debug.Log($"Calculating racial value: {raceMultiplier} = {result}, is male? = {isMale}");
+            return result;
+        }
 
         // Head Properties
         [SerializeField] private float _facialEarScale;
