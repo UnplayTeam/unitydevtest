@@ -13,26 +13,26 @@ MonoBehaviour:
   m_Name: DefaultMale
   m_EditorClassIdentifier: 
   IsEditableInEditor: 1
-  NumOfListeners: 26
+  NumOfListeners: 0
   _isHybrid: 0
   _race: 1
   _firstRace: 2
   _secondRace: 1
-  _hybridBlend: 0.745
+  _hybridBlend: 0
   _humanRace: 0
   _elfRace: 1
   _orcRace: 0
   _femMasc: -100
-  _facialEarScale: 31.746042
-  _facialEarLobeSize: 0
+  _facialEarScale: 31.3
+  _facialEarLobeSize: 54
   _facialEarsOut: 13.437498
-  _facialBrowWide: 0
+  _facialBrowWide: 35.1
   _facialBrowForward: 0
   _facialCheekbonesInOut: 17.777802
   _facialCheeksGauntFull: 0
   _facialChinTipLength: 0
-  _facialChinTipWidth: 0
-  _facialJawDown: 0
+  _facialChinTipWidth: 50.2
+  _facialJawDown: 49
   _facialJawWide: 0
   _facialLipTopThinFull: 0
   _facialLipBotThinFull: 0
@@ -42,25 +42,25 @@ MonoBehaviour:
   _facialNoseAngle: 0
   _facialNoseBulb: 0
   _facialNoseBridgeDepth: 0
-  _facialNoseBridgeWidth: 0
+  _facialNoseBridgeWidth: 0.4
   _facialNoseLength: 0
   _facialNoseTipWidthInOut: 0
-  _bodyMuscularMidHeavy: 0
-  _bodyWeightThinHeavy: 9.466469
-  _isoBack: 38.18468
-  _isoBelly: 10.158781
-  _isoBellyHeight: 42.1
-  _isoBiceps: 44.6
-  _isoBustSmallLarge: 100
-  _isoButt: 44.3
+  _bodyMuscularMidHeavy: 84.3
+  _bodyWeightThinHeavy: -5.9
+  _isoBack: 74.1
+  _isoBelly: 0
+  _isoBellyHeight: 49.4
+  _isoBiceps: 51.3
+  _isoBustSmallLarge: 2
+  _isoButt: 0
   _isoDeltoids: 77.8349
   _isoNeck: 0
-  _isoForearms: 100
-  _isoPectorals: 100
-  _isoRibcage: 97.2
-  _isoTrunk: 100
+  _isoForearms: 68.3
+  _isoPectorals: 75.7
+  _isoRibcage: 74.5
+  _isoTrunk: 82
   _isoTrapezius: 0
   _isoTriceps: 0
-  _legUpperIsoCalves: 0
+  _legUpperIsoCalves: 22.4
   _legUpperIsoThighs: 0
   _waistIsoBulge: 0

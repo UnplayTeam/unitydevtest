@@ -5,6 +5,7 @@ namespace JoshBowersDEV.Characters.Editor
 {
     public class CharacterMeshDataEditorWindow : EditorWindow
     {
+        private Vector2 scrollPosition;
         private CharacterMeshData meshData;
 
         [MenuItem("unitydevtest/Character Mesh Data Editor")]
@@ -17,6 +18,8 @@ namespace JoshBowersDEV.Characters.Editor
         {
             meshData = EditorGUILayout.ObjectField("Character Mesh Data", meshData, typeof(CharacterMeshData), false) as CharacterMeshData;
 
+            Undo.RecordObject(meshData, "Modified Character Mesh Data");
+
             if (meshData == null)
             {
                 EditorGUILayout.LabelField("Please assign a Character Mesh Data.");
@@ -25,19 +28,25 @@ namespace JoshBowersDEV.Characters.Editor
 
             EditorGUILayout.Space();
 
+            if (GUILayout.Button("Assign Values"))
+            {
+                meshData.InitializeListeners();
+            }
+
+            scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
             EditorGUILayout.LabelField("Set Slider Values:");
 
             // Set Race
             meshData.SetRace((Race)EditorGUILayout.EnumPopup("Race", meshData.Race));
 
-            // Set First Race
-            meshData.SetFirstRace((Race)EditorGUILayout.EnumPopup("First Race", meshData.FirstRace));
+            //// Set First Race
+            //meshData.SetFirstRace((Race)EditorGUILayout.EnumPopup("First Race", meshData.FirstRace));
 
-            // Set Second Race
-            meshData.SetSecondRace((Race)EditorGUILayout.EnumPopup("Second Race", meshData.SecondRace));
+            //// Set Second Race
+            //meshData.SetSecondRace((Race)EditorGUILayout.EnumPopup("Second Race", meshData.SecondRace));
 
-            // Set Hybrid Blend
-            meshData.SetHybridBlend(EditorGUILayout.Slider("Hybrid Blend", meshData.HybridBlend, -100, 100));
+            //// Set Hybrid Blend
+            //meshData.SetHybridBlend(EditorGUILayout.Slider("Hybrid Blend", meshData.HybridBlend, -100, 100));
 
             // Set FemMasc
             meshData.SetFemMasc(EditorGUILayout.Slider("FemMasc", meshData.FemMasc, -100, 100));
@@ -90,6 +99,7 @@ namespace JoshBowersDEV.Characters.Editor
             meshData.SetLegUpperIsoThighs(EditorGUILayout.Slider("Leg Upper ISO Thighs", meshData.LegUpperIsoThighs, 0, 100));
             meshData.SetWaistIsoBulge(EditorGUILayout.Slider("Waist ISO Bulge", meshData.WaistIsoBulge, 0, 100));
 
+            EditorGUILayout.EndScrollView();
             EditorGUILayout.Space();
 
             if (GUILayout.Button("Apply"))

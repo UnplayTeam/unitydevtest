@@ -145,6 +145,15 @@ namespace JoshBowersDEV.Characters
             _listeners.Remove(listener);
         }
 
+        public void InitializeListeners()
+        {
+            int index = _listeners.Count;
+            for (int i = 0; i < index; i++)
+            {
+                _listeners[i].InitializeDataValues();
+            }
+        }
+
         #endregion Public Methods
 
         #region Private Methods

@@ -7,7 +7,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityWeld.Binding;
 
-namespace JoshBowersDEV.Characters
+namespace JoshBowersDEV.Characters.Editor
 {
     [Serializable]
     public class SkinnedBindingListWrapper

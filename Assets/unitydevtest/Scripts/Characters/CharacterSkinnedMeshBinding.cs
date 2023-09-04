@@ -161,8 +161,8 @@ namespace JoshBowersDEV.Characters
                     else
                         val = (newValue > 0f) ? newValue : 0;
 
-                    // Update the current value.
-                    skin.CurrentValue = val;
+                    // Update the current value, multiplie times weight in case minor adjustments need to be made.
+                    skin.CurrentValue = val * skin.Weight;
 
                     // Set the blend shape weight.
                     SetBlendShapeWeight(skin.BlendShape, skin.CurrentValue);
@@ -171,6 +171,7 @@ namespace JoshBowersDEV.Characters
         }
 
         // By using reflection, we can don't have to hardcode ourselves to the Character Data objects just in case properties are added/removed/changed
+        [ExecuteInEditMode]
         public void InitializeDataValues()
         {
             PropertyInfo[] properties = CharacterMeshData.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
@@ -187,6 +188,7 @@ namespace JoshBowersDEV.Characters
                 {
                     convertedValue = (float)propertyValue;
                     HandlePropertyChange(propertyName, convertedValue);
+                    Debug.Log("Property Updated.");
                 }
                 catch (System.Exception)
                 {
