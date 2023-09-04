@@ -16,7 +16,7 @@ namespace JoshBowersDEV.Characters
     }
 
     [CustomEditor(typeof(CharacterSkinnedMeshBinding))]
-    public class CharacterSkinnedMeshBindingEditor : Editor
+    public class CharacterSkinnedMeshBindingEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {

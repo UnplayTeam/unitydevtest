@@ -4,5 +4,7 @@ using UnityEngine;
 
 public interface ICharacterCustomizeListener
 {
+    public void InitializeDataValues() { }
+
     public void HandlePropertyChange(string propertyName, float newValue) { }
 }

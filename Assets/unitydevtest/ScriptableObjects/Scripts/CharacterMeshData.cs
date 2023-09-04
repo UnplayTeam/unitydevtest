@@ -88,11 +88,13 @@ namespace JoshBowersDEV.Characters
 
         private List<ICharacterCustomizeListener> _listeners = new List<ICharacterCustomizeListener>();
 
-        #endregion Variables
+        [Tooltip("Use this in order to see character adjustments in editor.")]
+        public bool IsEditableInEditor = false;
 
-        #region Overrides
+        [SerializeField]
+        public int NumOfListeners;
 
-        // Override for alerting non-weld members that a change has been made
+        [SerializeField]
         protected override bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
         {
             if (Equals(storage, value))
@@ -106,16 +108,21 @@ namespace JoshBowersDEV.Characters
             return true;
         }
 
-        #endregion Overrides
+        #endregion Variables
 
         #region Unity Callbacks
 
         public void OnBeforeSerialize()
         {
+            NumOfListeners = _listeners.Count;
         }
 
         public void OnAfterDeserialize()
         {
+            if (!IsEditableInEditor)
+                _listeners.Clear();
+
+            NumOfListeners = _listeners.Count;
             if (RaceInt < 0 || RaceInt > 255)
                 RaceInt = 0;
             else
@@ -201,17 +208,17 @@ namespace JoshBowersDEV.Characters
                 {
                     case Race.Human:
                         SetRaceProperties(1, 0f, 0f);
-                        Debug.Log("Human selected");
+                        //Debug.Log("Human selected");
                         break;
 
                     case Race.Elf:
                         SetRaceProperties(0f, 1, 0f);
-                        Debug.Log("Elf selected");
+                        //Debug.Log("Elf selected");
                         break;
 
                     case Race.Orc:
                         SetRaceProperties(0f, 0f, 1);
-                        Debug.Log("Orc selected");
+                        //Debug.Log("Orc selected");
                         break;
 
                     default:

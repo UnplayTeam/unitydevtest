@@ -356,6 +356,7 @@ namespace JoshBowersDEV.Characters
         public float IsoDeltoids
         {
             get => CharacterMeshData.IsoDeltoids;
+            set => CharacterMeshData.SetIsoDeltoids(value);
         }
 
         [Binding]
@@ -391,6 +392,13 @@ namespace JoshBowersDEV.Characters
         {
             get => CharacterMeshData.IsoTrapezius;
             set => CharacterMeshData.SetIsoTrapezius(value);
+        }
+
+        [Binding]
+        public float IsoTriceps
+        {
+            get => CharacterMeshData.IsoTriceps;
+            set => CharacterMeshData.SetIsoTriceps(value);
         }
 
         #endregion Upper Body Properties

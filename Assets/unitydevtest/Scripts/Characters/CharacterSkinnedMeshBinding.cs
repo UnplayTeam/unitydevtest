@@ -138,8 +138,40 @@ namespace JoshBowersDEV.Characters
 
         #region Private Methods
 
+        private void SetBlendShapeWeight(string blendShape, float currentValue)
+        {
+            SkinnedMeshRenderer.SetBlendShapeWeight(SkinnedMeshRenderer.sharedMesh.GetBlendShapeIndex(blendShape), currentValue);
+        }
+
+        #endregion Private Methods
+
+        #region Interface Methods
+
+        [ExecuteInEditMode]
+        public void HandlePropertyChange(string propertyName, float newValue)
+        {
+            foreach (var skin in SkinnedBindings)
+            {
+                if (propertyName == skin.CharacterProperty.ToString())
+                {
+                    float val;
+                    // If it's a two-way slider, make sure we feed the absolute value for sliders meant to be inverted.
+                    if (skin.IsInvertedValue)
+                        val = (newValue < 0f) ? Mathf.Abs(newValue) : 0;
+                    else
+                        val = (newValue > 0f) ? newValue : 0;
+
+                    // Update the current value.
+                    skin.CurrentValue = val;
+
+                    // Set the blend shape weight.
+                    SetBlendShapeWeight(skin.BlendShape, skin.CurrentValue);
+                }
+            }
+        }
+
         // By using reflection, we can don't have to hardcode ourselves to the Character Data objects just in case properties are added/removed/changed
-        private void InitializeDataValues()
+        public void InitializeDataValues()
         {
             PropertyInfo[] properties = CharacterMeshData.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 
@@ -161,38 +193,7 @@ namespace JoshBowersDEV.Characters
                     continue;
                 }
 
-                Debug.Log($"Property Name: {propertyName}, Value: {propertyValue}");
-            }
-        }
-
-        private void SetBlendShapeWeight(string blendShape, float currentValue)
-        {
-            SkinnedMeshRenderer.SetBlendShapeWeight(SkinnedMeshRenderer.sharedMesh.GetBlendShapeIndex(blendShape), currentValue);
-        }
-
-        #endregion Private Methods
-
-        #region Interface Methods
-
-        public void HandlePropertyChange(string propertyName, float newValue)
-        {
-            foreach (var skin in SkinnedBindings)
-            {
-                if (propertyName == skin.CharacterProperty.ToString())
-                {
-                    float val;
-                    // If it's a two-way slider, make sure we feed the absolute value for sliders meant to be inverted.
-                    if (skin.IsInvertedValue)
-                        val = (newValue < 0f) ? Mathf.Abs(newValue) : 0;
-                    else
-                        val = newValue;
-
-                    // Update the current value.
-                    skin.CurrentValue = val;
-
-                    // Set the blend shape weight.
-                    SetBlendShapeWeight(skin.BlendShape, skin.CurrentValue);
-                }
+                //Debug.Log($"Property Name: {propertyName}, Value: {propertyValue}");
             }
         }
 
