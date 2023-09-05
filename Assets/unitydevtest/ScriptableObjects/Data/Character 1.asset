@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbb2baff4eb10b4aa51da94465a5894, type: 3}
+  m_Name: Character 1
+  m_EditorClassIdentifier: 
+  NumOfListeners: 28
+  _isHybrid: 0
+  _race: 2
+  _firstRace: 2
+  _secondRace: 1
+  _hybridBlend: 0
+  _humanRace: 0
+  _elfRace: 0
+  _orcRace: 1
+  _femMasc: 100
+  _facialEarScale: 72.32578
+  _facialEarLobeSize: 25.95557
+  _facialEarsOut: 64.453476
+  _facialBrowWide: 72.55814
+  _facialBrowForward: 0
+  _facialCheekbonesInOut: 17.777802
+  _facialCheeksGauntFull: 0
+  _facialChinTipLength: 0
+  _facialChinTipWidth: 50.2
+  _facialJawDown: 49
+  _facialJawWide: 0
+  _facialLipTopThinFull: 0
+  _facialLipBotThinFull: 0
+  _facialMouthCrease: 0
+  _facialMouthWidth: 0
+  _facialMouthOut: 0
+  _facialNoseAngle: 0
+  _facialNoseBulb: 0
+  _facialNoseBridgeDepth: 0
+  _facialNoseBridgeWidth: 0.4
+  _facialNoseLength: 0
+  _facialNoseTipWidthInOut: 0
+  _bodyMuscularMidHeavy: 17.320644
+  _bodyWeightThinHeavy: 33.135284
+  _isoBack: 0
+  _isoBelly: 0
+  _isoBellyHeight: 0
+  _isoBiceps: 31.294336
+  _isoBustSmallLarge: 22.325838
+  _isoButt: 62.588673
+  _isoDeltoids: 62.830193
+  _isoNeck: 0
+  _isoForearms: 39.791092
+  _isoPectorals: 56.1939
+  _isoRibcage: 56.494366
+  _isoTrunk: 0
+  _isoTrapezius: 0
+  _isoTriceps: 53.058167
+  _legUpperIsoCalves: 61.412193
+  _legUpperIsoThighs: 39.49153
+  _waistIsoBulge: 0
