@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityWeld.Binding;
 
@@ -88,9 +87,6 @@ namespace JoshBowersDEV.Characters
 
         private List<ICharacterCustomizeListener> _listeners = new List<ICharacterCustomizeListener>();
 
-        [Tooltip("Use this in order to see character adjustments in editor.")]
-        public bool IsEditableInEditor = false;
-
         [SerializeField]
         public int NumOfListeners;
 
@@ -119,14 +115,7 @@ namespace JoshBowersDEV.Characters
 
         public void OnAfterDeserialize()
         {
-            if (!IsEditableInEditor)
-                _listeners.Clear();
-
             NumOfListeners = _listeners.Count;
-            if (RaceInt < 0 || RaceInt > 255)
-                RaceInt = 0;
-            else
-                RaceInt = RaceInt;
         }
 
         #endregion Unity Callbacks

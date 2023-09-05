@@ -1,8 +1,11 @@
-using JoshBowersDEV.Characters;
 using UnityEditor;
 
 namespace JoshBowersDEV.Characters.Editor
 {
+    /// <summary>
+    /// Custom editor class for <see cref="CharacterMeshData"/> that allows for a more guided approach when building
+    /// a character through the data asset itself.
+    /// </summary>
     [CustomEditor(typeof(CharacterMeshData))]
     public class CharacterMeshDataEditor : UnityEditor.Editor
     {
@@ -15,7 +18,6 @@ namespace JoshBowersDEV.Characters.Editor
         {
             CharacterMeshData characterMeshData = (CharacterMeshData)target;
 
-            characterMeshData.IsEditableInEditor = EditorGUILayout.Toggle("Is Editable in Editor?", characterMeshData.IsEditableInEditor);
             EditorGUILayout.LabelField("Num Of Listeners", characterMeshData.NumOfListeners.ToString());
 
             characterMeshData.IsHybrid = EditorGUILayout.Toggle("Is a Hybrid?", characterMeshData.IsHybrid);

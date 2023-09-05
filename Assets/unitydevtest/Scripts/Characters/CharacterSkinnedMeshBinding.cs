@@ -1,10 +1,15 @@
+using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityWeld.Binding;
 
 namespace JoshBowersDEV.Characters
 {
+    /// <summary>
+    /// Simple class for containing data for a specific BlendShape target.
+    /// </summary>
     [Binding]
     [System.Serializable]
     public class SkinnedBinding : BindableBase
@@ -36,7 +41,7 @@ namespace JoshBowersDEV.Characters
     }
 
     /// <summary>
-    /// Used to bind specific <see cref="SkinnedMeshRenderer"/> values to <see cref="CharacterMeshData"/> values based on weighted values.
+    /// Used to bind specific <see cref="SkinnedMeshRenderer"/> BlendShape values to <see cref="CharacterMeshData"/> values.
     /// </summary>
     [RequireComponent(typeof(SkinnedMeshRenderer))]
     public class CharacterSkinnedMeshBinding : MonoBehaviour, ICharacterCustomizeListener
@@ -64,13 +69,11 @@ namespace JoshBowersDEV.Characters
                     _characterMeshData.AddListener(this);
 
                     // Go ahead and update each Blend Shape to the new character.
-                    InitializeDataValues();
-
-                    Debug.Log("CharacterMeshData was set successfully.");
+                    Init();
                 }
                 catch (System.Exception e)
                 {
-                    Debug.Log("CharacterMeshData was null: \n" + e.ToString());
+                    // Do nothing
                 }
             }
         }
@@ -88,6 +91,9 @@ namespace JoshBowersDEV.Characters
 
         #region Editor Methods
 
+        /// <summary>
+        /// Allows editor access for automatically filling out the <see cref="SkinnedBindings"/> list with the current BlendShapes.
+        /// </summary>
         public void FillSkinnedBindings()
         {
             if (_skinnedMeshRenderer == null)
@@ -147,34 +153,24 @@ namespace JoshBowersDEV.Characters
 
         #region Interface Methods
 
-        [ExecuteInEditMode]
-        public void HandlePropertyChange(string propertyName, float newValue)
+        /// <summary>
+        /// Async void that allows <see cref="InitializeDataValues"/> to be used within properties.
+        /// </summary>
+        public async void Init()
         {
-            foreach (var skin in SkinnedBindings)
-            {
-                if (propertyName == skin.CharacterProperty.ToString())
-                {
-                    float val;
-                    // If it's a two-way slider, make sure we feed the absolute value for sliders meant to be inverted.
-                    if (skin.IsInvertedValue)
-                        val = (newValue < 0f) ? Mathf.Abs(newValue) : 0;
-                    else
-                        val = (newValue > 0f) ? newValue : 0;
-
-                    // Update the current value, multiplie times weight in case minor adjustments need to be made.
-                    skin.CurrentValue = val * skin.Weight;
-
-                    // Set the blend shape weight.
-                    SetBlendShapeWeight(skin.BlendShape, skin.CurrentValue);
-                }
-            }
+            await InitializeDataValues();
         }
 
-        // By using reflection, we can don't have to hardcode ourselves to the Character Data objects just in case properties are added/removed/changed
+        /// <summary>
+        /// Initialize the current data values by using reflection, which doesn't require us to hardcode ourselves to specific Character Data property names just in case properties are added/removed/changed
+        /// </summary>
+        /// <returns></returns>
         [ExecuteInEditMode]
-        public void InitializeDataValues()
+        public async Task InitializeDataValues()
         {
             PropertyInfo[] properties = CharacterMeshData.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+
+            List<Tuple<string, float>> keyValues = new List<Tuple<string, float>>();
 
             foreach (PropertyInfo property in properties)
             {
@@ -187,15 +183,51 @@ namespace JoshBowersDEV.Characters
                 try
                 {
                     convertedValue = (float)propertyValue;
-                    HandlePropertyChange(propertyName, convertedValue);
-                    Debug.Log("Property Updated.");
+                    keyValues.Add(new Tuple<string, float>(propertyName, convertedValue));
                 }
                 catch (System.Exception)
                 {
                     continue;
                 }
+            }
+            int index = keyValues.Count;
+            await new WaitForUpdate(); // Back to main thread for Unity behaviours.
 
-                //Debug.Log($"Property Name: {propertyName}, Value: {propertyValue}");
+            for (int i = 0; i < index; i++)
+            {
+                HandlePropertyChange(keyValues[i].Item1, keyValues[i].Item2);
+            }
+        }
+
+        /// <summary>
+        /// Check's each <see cref="SkinnedBinding"/> and searches for a propertyName match, then updates the corresponding Blend Shape with the new value.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        /// <param name="newValue"></param>
+        [ExecuteInEditMode]
+        public async void HandlePropertyChange(string propertyName, float newValue)
+        {
+            foreach (var skin in SkinnedBindings)
+            {
+                if (propertyName == skin.CharacterProperty.ToString())
+                {
+                    float val;
+                    // If it's a two-way slider, make sure we feed the absolute value for sliders meant to be inverted.
+                    if (skin.IsInvertedValue)
+                        val = (newValue < 0f) ? Mathf.Abs(newValue) : 0;
+                    else
+                        val = (newValue > 0f) ? newValue : 0;
+
+                    // Todo: Finish two-way communication between other objects and the current value, as of now the weighted blendshape updates that are supposed to update based on other features being changed, does not update the other sliders and assets that have direct control of that blendshape/property.
+                    // Updates the current value, multiplie times weight in case minor adjustments need to be made.
+                    //skin.CurrentValue = val * skin.Weight;
+
+                    skin.CurrentValue = val;
+
+                    // Set the blend shape weight.
+                    SetBlendShapeWeight(skin.BlendShape, skin.CurrentValue);
+                    await Task.Delay(1);
+                }
             }
         }
 

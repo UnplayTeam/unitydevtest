@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityWeld.Binding;
 
 namespace JoshBowersDEV.Characters
 {
     /// <summary>
-    /// Bindable mono for exposing current Mesh information.
+    /// Bindable mono for exposing current Mesh information for Read/Write, and gives a binding pointer for any children
+    /// utilizing UnityWeld that need specific data.
     /// </summary>
     [Binding]
     public class CharacterCustomizeMesh : BindableBehaviourBase
@@ -20,14 +19,13 @@ namespace JoshBowersDEV.Characters
         public CharacterMeshData CharacterMeshData
         {
             get => _characterMeshData;
-            set => _characterMeshData = value;
+            set => SetProperty(ref _characterMeshData, value);
         }
 
         #endregion Properties
 
         #region Racial and Gender Properties
 
-        [SerializeField]
         private bool _isHybrid;
 
         [Binding]

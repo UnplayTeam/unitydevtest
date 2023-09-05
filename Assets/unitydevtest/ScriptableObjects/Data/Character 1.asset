@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cbb2baff4eb10b4aa51da94465a5894, type: 3}
-  m_Name: DefaultMale
+  m_Name: Character 1
   m_EditorClassIdentifier: 
   IsEditableInEditor: 1
   NumOfListeners: 0
   _isHybrid: 0
-  _race: 1
+  _race: 2
   _firstRace: 2
   _secondRace: 1
   _hybridBlend: 0
   _humanRace: 0
-  _elfRace: 1
-  _orcRace: 0
-  _femMasc: -100
-  _facialEarScale: 31.3
-  _facialEarLobeSize: 54
-  _facialEarsOut: 13.437498
-  _facialBrowWide: 35.1
+  _elfRace: 0
+  _orcRace: 1
+  _femMasc: 100
+  _facialEarScale: 72.32578
+  _facialEarLobeSize: 25.95557
+  _facialEarsOut: 64.453476
+  _facialBrowWide: 72.55814
   _facialBrowForward: 0
   _facialCheekbonesInOut: 17.777802
   _facialCheeksGauntFull: 0
@@ -45,22 +45,22 @@ MonoBehaviour:
   _facialNoseBridgeWidth: 0.4
   _facialNoseLength: 0
   _facialNoseTipWidthInOut: 0
-  _bodyMuscularMidHeavy: 84.3
-  _bodyWeightThinHeavy: -5.9
-  _isoBack: 74.1
+  _bodyMuscularMidHeavy: 6.2755466
+  _bodyWeightThinHeavy: -7.3632836
+  _isoBack: 77.10092
   _isoBelly: 0
-  _isoBellyHeight: 49.4
-  _isoBiceps: 51.3
-  _isoBustSmallLarge: 2
-  _isoButt: 0
-  _isoDeltoids: 77.8349
+  _isoBellyHeight: 25.39252
+  _isoBiceps: 89.49672
+  _isoBustSmallLarge: 26.007484
+  _isoButt: 60.4
+  _isoDeltoids: 62.830193
   _isoNeck: 0
-  _isoForearms: 68.3
-  _isoPectorals: 75.7
-  _isoRibcage: 74.5
-  _isoTrunk: 82
-  _isoTrapezius: 0
-  _isoTriceps: 0
-  _legUpperIsoCalves: 22.4
-  _legUpperIsoThighs: 0
+  _isoForearms: 39.791092
+  _isoPectorals: 56.1939
+  _isoRibcage: 56.494366
+  _isoTrunk: 57.99252
+  _isoTrapezius: 36.01127
+  _isoTriceps: 42.013115
+  _legUpperIsoCalves: 61.412193
+  _legUpperIsoThighs: 45.014034
   _waistIsoBulge: 0
