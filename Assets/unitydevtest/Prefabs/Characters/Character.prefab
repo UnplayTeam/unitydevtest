@@ -334,6 +334,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5879992046837725705}
   - component: {fileID: 6926347273257202103}
+  - component: {fileID: 6185885321482146881}
+  - component: {fileID: 2099821339392304633}
   m_Layer: 0
   m_Name: eyebrow001_R
   m_TagString: Untagged
@@ -494,6 +496,67 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.034640525, y: 0.68676865, z: 0.0703613}
     m_Extent: {x: 0.026885, y: 0.008810282, z: 0.01775198}
   m_DirtyAABB: 0
+--- !u!114 &6185885321482146881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522607288832101944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 6926347273257202103}
+  SkinnedBindings:
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_species_elf
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_species_elf1
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_facial_brow_forward
+    CharacterProperty: 19
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_R.eyebrow001_R_facial_brow_wide
+    CharacterProperty: 18
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &2099821339392304633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522607288832101944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &530083451253361184
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +601,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4617014149090742128}
   - component: {fileID: 5539964269665903635}
+  - component: {fileID: 8469433320827452827}
+  - component: {fileID: 9173473473041792823}
   m_Layer: 0
   m_Name: arm_lower_L
   m_TagString: Untagged
@@ -619,6 +684,72 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.38206273, y: -0.11789787, z: -0.008536711}
     m_Extent: {x: 0.13594466, y: 0.10653184, z: 0.08470799}
   m_DirtyAABB: 0
+--- !u!114 &8469433320827452827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667433307328782009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 5539964269665903635}
+  SkinnedBindings:
+  - BlendShape: bs_arm_lower_L.arm_lower_L_iso_biceps
+    CharacterProperty: 42
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_L.arm_lower_L_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_L.arm_lower_L_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_L.arm_lower_L_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_lower_L.arm_lower_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_L.arm_lower_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_lower_L.arm_lower_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &9173473473041792823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667433307328782009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &667819503010112038
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +880,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3139182544412768267}
   - component: {fileID: 802893438999756830}
+  - component: {fileID: 1216908907436151659}
+  - component: {fileID: 5935370772213264468}
   m_Layer: 0
   m_Name: leg_upper_L
   m_TagString: Untagged
@@ -830,6 +963,92 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.11491229, y: -0.23321375, z: 0.0003129542}
     m_Extent: {x: 0.12187539, y: 0.23196694, z: 0.14273398}
   m_DirtyAABB: 0
+--- !u!114 &1216908907436151659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804137494198972901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 802893438999756830}
+  SkinnedBindings:
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_calves
+    CharacterProperty: 52
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_belly
+    CharacterProperty: 40
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_bellyHeight
+    CharacterProperty: 41
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_thighs
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_trunk
+    CharacterProperty: 50
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_iso_butt
+    CharacterProperty: 44
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_upper_L.leg_upper_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_L.leg_upper_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_upper_L.leg_upper_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &5935370772213264468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804137494198972901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &955649063010907593
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +1059,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3440125232898655108}
   - component: {fileID: 2684295792470835596}
+  - component: {fileID: 1031913449494015957}
+  - component: {fileID: 4278359565567442098}
   m_Layer: 0
   m_Name: torso
   m_TagString: Untagged
@@ -945,6 +1166,122 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0021134913, y: 0.26175955, z: 0.0023452938}
     m_Extent: {x: 0.29570183, y: 0.30934134, z: 0.21867199}
   m_DirtyAABB: 0
+--- !u!114 &1031913449494015957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955649063010907593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 2684295792470835596}
+  SkinnedBindings:
+  - BlendShape: bs_torso.torso_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_torso.torso_iso_butt
+    CharacterProperty: 44
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_belly
+    CharacterProperty: 40
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_bellyHeight
+    CharacterProperty: 41
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_deltoids
+    CharacterProperty: 45
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_biceps
+    CharacterProperty: 42
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_pectorals
+    CharacterProperty: 48
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_ribcage
+    CharacterProperty: 49
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_trunk
+    CharacterProperty: 50
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_back
+    CharacterProperty: 39
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_trapezius
+    CharacterProperty: 51
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_bust_large
+    CharacterProperty: 43
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_iso_bust_small
+    CharacterProperty: 43
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_torso.torso_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_torso.torso_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+--- !u!114 &4278359565567442098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955649063010907593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &960783714715547063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1387,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7103390472611321224}
   - component: {fileID: 6742690690774920325}
+  - component: {fileID: 1728935985705140550}
+  - component: {fileID: 6742026777934072089}
   m_Layer: 0
   m_Name: hand_L
   m_TagString: Untagged
@@ -1147,6 +1486,57 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.28939712, y: -0.029324718, z: 0.022214767}
     m_Extent: {x: 0.13339747, y: 0.10032504, z: 0.10401565}
   m_DirtyAABB: 0
+--- !u!114 &1728935985705140550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055349486647122614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 6742690690774920325}
+  SkinnedBindings:
+  - BlendShape: bs_hand_L.hand_L_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hand_L.hand_L_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hand_L.hand_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_hand_L.hand_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &6742026777934072089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055349486647122614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &1069399022411537820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1578,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8833291877812476066}
   - component: {fileID: 570336637739377767}
+  - component: {fileID: 1855057597985833734}
+  - component: {fileID: 7163192296928603610}
   m_Layer: 0
   m_Name: leg_lower_R
   m_TagString: Untagged
@@ -1268,6 +1660,72 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.1373587, y: -0.6102814, z: -0.07578367}
     m_Extent: {x: 0.08339693, y: 0.21488416, z: 0.119307995}
   m_DirtyAABB: 0
+--- !u!114 &1855057597985833734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105946157096959582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 570336637739377767}
+  SkinnedBindings:
+  - BlendShape: bs_leg_lower_R.leg_lower_R_iso_calves
+    CharacterProperty: 52
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_R.leg_lower_R_iso_thighs
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_R.leg_lower_R_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_R.leg_lower_R_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_lower_R.leg_lower_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_R.leg_lower_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_lower_R.leg_lower_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &7163192296928603610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105946157096959582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &1182067340592657105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,6 +2079,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6026765427401220650}
   - component: {fileID: 2001471408023584963}
+  - component: {fileID: 6058947303128490966}
+  - component: {fileID: 1320072409502172231}
   m_Layer: 0
   m_Name: foot_L
   m_TagString: Untagged
@@ -1700,6 +2160,47 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.88592255, y: 0.010241555, z: 0.067229554}
     m_Extent: {x: 0.14203194, y: 0.06402339, z: 0.17499474}
   m_DirtyAABB: 0
+--- !u!114 &6058947303128490966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778827218120068347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 2001471408023584963}
+  SkinnedBindings:
+  - BlendShape: bs_foot_L.foot_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_foot_L.foot_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &1320072409502172231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778827218120068347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &1797891923497154124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +2211,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2396022585564073665}
   - component: {fileID: 6372440926999984971}
+  - component: {fileID: 4216950303044897448}
+  - component: {fileID: 5096334655278878741}
   m_Layer: 0
   m_Name: ear_L
   m_TagString: Untagged
@@ -1870,6 +2373,107 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0907664, y: 0.66551495, z: -0.0405254}
     m_Extent: {x: 0.03955594, y: 0.054840177, z: 0.053312086}
   m_DirtyAABB: 0
+--- !u!114 &4216950303044897448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797891923497154124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
+--- !u!114 &5096334655278878741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797891923497154124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 6372440926999984971}
+  SkinnedBindings:
+  - BlendShape: bs_ear_L.ear_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_ear_L.ear_L_facial_jaw_downShape
+    CharacterProperty: 24
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_facial_cheeks_gaunt
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_ear_L.ear_L_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_facial_ear_scale
+    CharacterProperty: 15
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_facial_jaw_wide
+    CharacterProperty: 25
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_facial_ear_lobe
+    CharacterProperty: 16
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_facial_ears_out
+    CharacterProperty: 17
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_L.ear_L_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
 --- !u!1 &1882048886000283979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,6 +2484,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8368281758278720968}
   - component: {fileID: 586601441386675789}
+  - component: {fileID: 7050551075961004746}
+  - component: {fileID: 4776383370799915141}
+  - component: {fileID: 3051050145463191363}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1925,6 +2532,52 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &7050551075961004746
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882048886000283979}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.42, y: 2.19, z: 1}
+  m_Center: {x: 0, y: 1.02, z: 0}
+--- !u!114 &4776383370799915141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882048886000283979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c5b393ececf2d40be5c12f44cc962f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterMeshData: {fileID: 11400000, guid: 1e33f1ba7f1b01649875c6a3c71ef784, type: 2}
+--- !u!114 &3051050145463191363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882048886000283979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6cbcbf96a8226489e0977f2c46dd8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1929023926259793725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,6 +2780,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7381075271621295251}
   - component: {fileID: 7883241262334285542}
+  - component: {fileID: 8563951207506195215}
+  - component: {fileID: 6996793017321269336}
   m_Layer: 0
   m_Name: head
   m_TagString: Untagged
@@ -2287,6 +2942,192 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000003207475, y: 0.6537944, z: -0.008063085}
     m_Extent: {x: 0.075915545, y: 0.11303091, z: 0.08882434}
   m_DirtyAABB: 0
+--- !u!114 &8563951207506195215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161372213944760153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 7883241262334285542}
+  SkinnedBindings:
+  - BlendShape: bs_head.head_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_iso_trapezius
+    CharacterProperty: 51
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_iso_neck
+    CharacterProperty: 47
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_head.head_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_head.head_facial_nose_bridge_width
+    CharacterProperty: 34
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_mouth_width
+    CharacterProperty: 29
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_length
+    CharacterProperty: 35
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_tip_width_out
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_bulb
+    CharacterProperty: 32
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_bridge_depth
+    CharacterProperty: 33
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_brow_forward
+    CharacterProperty: 19
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_mouth_out
+    CharacterProperty: 30
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_ears_out
+    CharacterProperty: 17
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_jaw_down
+    CharacterProperty: 24
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_jaw_wide
+    CharacterProperty: 25
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_chin_tip_length
+    CharacterProperty: 22
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_brow_wide
+    CharacterProperty: 18
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_angle
+    CharacterProperty: 31
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_nose_tip_width_in
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_head.head_facial_chin_tip_width
+    CharacterProperty: 23
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_facial_cheeks_gaunt
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_head.head_blend_facial_cheekbones_in
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_head.head_blend_facial_cheekbones_out
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_head.head_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &6996793017321269336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161372213944760153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &2200849339460854740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,6 +3138,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8039176238420366360}
   - component: {fileID: 3216191540066963209}
+  - component: {fileID: 767235890351258072}
+  - component: {fileID: 9162860701438486548}
   m_Layer: 0
   m_Name: eyemask
   m_TagString: Untagged
@@ -2457,6 +3300,127 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0000025816262, y: 0.67787886, z: 0.060570724}
     m_Extent: {x: 0.06923379, y: 0.031259745, z: 0.025845833}
   m_DirtyAABB: 0
+--- !u!114 &767235890351258072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2200849339460854740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 3216191540066963209}
+  SkinnedBindings:
+  - BlendShape: bs_eyemask.eyemask_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_eyemask.eyemask_facial_nose_tip_width_in
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_eyemask.eyemask_facial_nose_bulb
+    CharacterProperty: 32
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_nose_bridge_depth
+    CharacterProperty: 33
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_brow_forward
+    CharacterProperty: 19
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_nose_length
+    CharacterProperty: 35
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_nose_tip_width_out
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_cheeks_gaunt
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_eyemask.eyemask_facial_brow_wide
+    CharacterProperty: 18
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_nose_bridge_width
+    CharacterProperty: 34
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_blend_facial_cheekbones_in
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_eyemask.eyemask_blend_facial_cheekbones_out
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyemask.eyemask_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &9162860701438486548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2200849339460854740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &2217382054517549228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,6 +3623,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6553707858066349623}
   - component: {fileID: 8777900206936301044}
+  - component: {fileID: 6387434682716750371}
+  - component: {fileID: 2843070740379106928}
   m_Layer: 0
   m_Name: arm_lower_R
   m_TagString: Untagged
@@ -2740,6 +3706,72 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.38634884, y: 0.11620179, z: -0.008271746}
     m_Extent: {x: 0.13174182, y: 0.11424482, z: 0.0847473}
   m_DirtyAABB: 0
+--- !u!114 &6387434682716750371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513979726039382175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 8777900206936301044}
+  SkinnedBindings:
+  - BlendShape: bs_arm_lower_R.arm_lower_R_iso_biceps
+    CharacterProperty: 42
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_R.arm_lower_R_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_R.arm_lower_R_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_R.arm_lower_R_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_lower_R.arm_lower_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_lower_R.arm_lower_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_lower_R.arm_lower_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &2843070740379106928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513979726039382175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &2519784027803250822
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,6 +3972,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8987843283840785308}
   - component: {fileID: 3934897250941240571}
+  - component: {fileID: 1302592771220075458}
+  - component: {fileID: 6091486125495206724}
   m_Layer: 0
   m_Name: arm_upper_R
   m_TagString: Untagged
@@ -3022,6 +4056,97 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.057729878, y: -0.23389885, z: 0.05356447}
     m_Extent: {x: 0.18388048, y: 0.1500743, z: 0.13308723}
   m_DirtyAABB: 0
+--- !u!114 &1302592771220075458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713004235721088058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 3934897250941240571}
+  SkinnedBindings:
+  - BlendShape: bs_arm_upper_R.arm_upper_R_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_pectorals
+    CharacterProperty: 48
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_triceps
+    CharacterProperty: 55
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_back
+    CharacterProperty: 39
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_biceps
+    CharacterProperty: 42
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_biceps
+    CharacterProperty: 37
+    Weight: 0.25
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_deltoids
+    CharacterProperty: 45
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_R.arm_upper_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+--- !u!114 &6091486125495206724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713004235721088058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &2734733858379403898
 GameObject:
   m_ObjectHideFlags: 0
@@ -3096,6 +4221,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3069834003389946873}
   - component: {fileID: 1040059116386537925}
+  - component: {fileID: 4567809517488086247}
+  - component: {fileID: 1728621931993541433}
   m_Layer: 0
   m_Name: leg_lower_L
   m_TagString: Untagged
@@ -3176,6 +4303,72 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.13722786, y: -0.6101538, z: -0.075751245}
     m_Extent: {x: 0.08294351, y: 0.215007, z: 0.11931646}
   m_DirtyAABB: 0
+--- !u!114 &4567809517488086247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756106707083780597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 1040059116386537925}
+  SkinnedBindings:
+  - BlendShape: bs_leg_lower_L.leg_lower_L_iso_thighs
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_L.leg_lower_L_iso_calves
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_L.leg_lower_L_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_L.leg_lower_L_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_lower_L.leg_lower_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_lower_L.leg_lower_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_lower_L.leg_lower_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &1728621931993541433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756106707083780597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &2787992422275371246
 GameObject:
   m_ObjectHideFlags: 0
@@ -4202,6 +5395,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3701836778120282090}
   - component: {fileID: 5300617609445197587}
+  - component: {fileID: 8893795140993817436}
+  - component: {fileID: 4467587086875932793}
   m_Layer: 0
   m_Name: arm_upper_L
   m_TagString: Untagged
@@ -4284,6 +5479,92 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.054862127, y: 0.22374833, z: 0.052721713}
     m_Extent: {x: 0.1801871, y: 0.14520386, z: 0.13366047}
   m_DirtyAABB: 0
+--- !u!114 &8893795140993817436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642764873991396935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 5300617609445197587}
+  SkinnedBindings:
+  - BlendShape: bs_arm_upper_L.arm_upper_L_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_pectorals
+    CharacterProperty: 48
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_biceps
+    CharacterProperty: 42
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_back
+    CharacterProperty: 39
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_triceps
+    CharacterProperty: 55
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_deltoids
+    CharacterProperty: 45
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_arm_upper_L.arm_upper_L_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_arm_upper_L.arm_upper_L_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &4467587086875932793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3642764873991396935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &3648941772631922791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4906,6 +6187,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8586153837099979086}
   - component: {fileID: 3008894999656910691}
+  - component: {fileID: 1670536362370495413}
+  - component: {fileID: 1386470915827080892}
   m_Layer: 0
   m_Name: neck
   m_TagString: Untagged
@@ -5066,6 +6349,127 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00070403516, y: 0.53532857, z: -0.03995721}
     m_Extent: {x: 0.122671, y: 0.07320315, z: 0.096738115}
   m_DirtyAABB: 0
+--- !u!114 &1670536362370495413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709932062580249173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 3008894999656910691}
+  SkinnedBindings:
+  - BlendShape: bs_neck.neck_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_neck.neck_iso_neck
+    CharacterProperty: 47
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_iso_deltoids
+    CharacterProperty: 45
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_iso_back
+    CharacterProperty: 39
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_iso_trapezius
+    CharacterProperty: 51
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_neck.neck_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_neck.neck_facial_chin_tip_length
+    CharacterProperty: 22
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_facial_jaw_down
+    CharacterProperty: 24
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_facial_jaw_wide
+    CharacterProperty: 25
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_neck.neck_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &1386470915827080892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709932062580249173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &4717738804204223109
 GameObject:
   m_ObjectHideFlags: 0
@@ -5427,6 +6831,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1797666381811469749}
   - component: {fileID: 487027076128001436}
+  - component: {fileID: 438342132787029368}
+  - component: {fileID: 7124881925739767725}
   m_Layer: 0
   m_Name: ear_R
   m_TagString: Untagged
@@ -5587,6 +6993,107 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.085533634, y: 0.66436744, z: -0.039592512}
     m_Extent: {x: 0.03926932, y: 0.05364868, z: 0.052381694}
   m_DirtyAABB: 0
+--- !u!114 &438342132787029368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099587357111390649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
+--- !u!114 &7124881925739767725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099587357111390649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 487027076128001436}
+  SkinnedBindings:
+  - BlendShape: bs_ear_R.ear_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_ear_lobe
+    CharacterProperty: 16
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_jaw_down
+    CharacterProperty: 24
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_ears_out
+    CharacterProperty: 17
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_jaw_wide
+    CharacterProperty: 25
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_ear_scale
+    CharacterProperty: 15
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_facial_cheeks_gaunt
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_ear_R.ear_R_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_ear_R.ear_R_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
 --- !u!1 &5107815223956584131
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,6 +7374,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4746071062791200011}
   - component: {fileID: 2336977280284637188}
+  - component: {fileID: 7469572941122052183}
+  - component: {fileID: 3248885287473839089}
   m_Layer: 0
   m_Name: hand_R
   m_TagString: Untagged
@@ -5964,6 +7473,57 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.28943342, y: 0.029084094, z: 0.022245765}
     m_Extent: {x: 0.13342476, y: 0.10014301, z: 0.10407391}
   m_DirtyAABB: 0
+--- !u!114 &7469572941122052183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297594194103177063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 2336977280284637188}
+  SkinnedBindings:
+  - BlendShape: bs_hand_R.hand_R_iso_forearms
+    CharacterProperty: 46
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hand_R.hand_R_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hand_R.hand_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_hand_R.hand_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &3248885287473839089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297594194103177063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &5303925102776718983
 GameObject:
   m_ObjectHideFlags: 0
@@ -6630,6 +8190,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7198422872091341731}
   - component: {fileID: 7931720615526990564}
+  - component: {fileID: 1361247691018443921}
+  - component: {fileID: 3414636425148558596}
   m_Layer: 0
   m_Name: eyelash_L
   m_TagString: Untagged
@@ -6711,6 +8273,62 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.092439726, y: 0.035948265, z: -0.07840093}
     m_Extent: {x: 0.008225311, y: 0.021164313, z: 0.009955429}
   m_DirtyAABB: 0
+--- !u!114 &1361247691018443921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896244773333327770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 7931720615526990564}
+  SkinnedBindings:
+  - BlendShape: eyelash_01_L.eyelash_L_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_L.eyelash_L_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_L.eyelash_L_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_L.eyelash_L_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_L.eyelash_L_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &3414636425148558596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896244773333327770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &5957379306901541974
 GameObject:
   m_ObjectHideFlags: 0
@@ -7144,6 +8762,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7449463255012417726}
   - component: {fileID: 6521834802998597088}
+  - component: {fileID: 1622992077845533055}
+  - component: {fileID: 5049781212211418785}
   m_Layer: 0
   m_Name: eyebrow001_L
   m_TagString: Untagged
@@ -7304,6 +8924,67 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.034640264, y: 0.68676865, z: 0.0703613}
     m_Extent: {x: 0.026885003, y: 0.008810282, z: 0.017751973}
   m_DirtyAABB: 0
+--- !u!114 &1622992077845533055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6478496791898758138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 6521834802998597088}
+  SkinnedBindings:
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_facial_brow_wide
+    CharacterProperty: 18
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_facial_brow_forward
+    CharacterProperty: 19
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_species_elf
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_species_elf1
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_eyebrow001_L.eyebrow001_L_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &5049781212211418785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6478496791898758138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &6493911122195341886
 GameObject:
   m_ObjectHideFlags: 0
@@ -7470,6 +9151,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5722756557858348544}
   - component: {fileID: 6761472501543931715}
+  - component: {fileID: 305256079002953163}
+  - component: {fileID: 7811381274321893284}
   m_Layer: 0
   m_Name: eyelash_R
   m_TagString: Untagged
@@ -7551,6 +9234,62 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.092439756, y: -0.0359487, z: -0.078400925}
     m_Extent: {x: 0.0082253255, y: 0.02116431, z: 0.009955436}
   m_DirtyAABB: 0
+--- !u!114 &305256079002953163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645499051872464935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 6761472501543931715}
+  SkinnedBindings:
+  - BlendShape: eyelash_01_R.eyelash_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_R.eyelash_R_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_R.eyelash_R_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_R.eyelash_R_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: eyelash_01_R.eyelash_R_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &7811381274321893284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645499051872464935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &6678496513144188948
 GameObject:
   m_ObjectHideFlags: 0
@@ -7658,6 +9397,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7890392851530902935}
   - component: {fileID: 1320921320113727614}
+  - component: {fileID: 3623499483161864829}
+  - component: {fileID: 6212447995166971211}
   m_Layer: 0
   m_Name: foot_R
   m_TagString: Untagged
@@ -7737,6 +9478,47 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.8858919, y: -0.010326276, z: 0.06724027}
     m_Extent: {x: 0.14198661, y: 0.06398519, z: 0.17498231}
   m_DirtyAABB: 0
+--- !u!114 &3623499483161864829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776586736588213583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 1320921320113727614}
+  SkinnedBindings:
+  - BlendShape: bs_foot_R.foot_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_foot_R.foot_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &6212447995166971211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776586736588213583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &6789064385416101166
 GameObject:
   m_ObjectHideFlags: 0
@@ -7810,6 +9592,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2859699662934673086}
   - component: {fileID: 4308813413921748541}
+  - component: {fileID: 8681282985695643992}
+  - component: {fileID: 7903065565113940713}
   m_Layer: 0
   m_Name: waist
   m_TagString: Untagged
@@ -7890,6 +9674,92 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00024808198, y: -0.02322695, z: 0.030827612}
     m_Extent: {x: 0.18706805, y: 0.10343377, z: 0.16996062}
   m_DirtyAABB: 0
+--- !u!114 &8681282985695643992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826768330751128552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 4308813413921748541}
+  SkinnedBindings:
+  - BlendShape: bs_waist.waist_iso_butt
+    CharacterProperty: 44
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_iso_bellyHeight
+    CharacterProperty: 41
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_iso_belly
+    CharacterProperty: 40
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_iso_thighs
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_iso_trunk
+    CharacterProperty: 50
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_iso_bulge
+    CharacterProperty: 54
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_waist.waist_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_waist.waist_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+--- !u!114 &7903065565113940713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826768330751128552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &6827077342548446932
 GameObject:
   m_ObjectHideFlags: 0
@@ -8240,6 +10110,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7074084206832438741}
   - component: {fileID: 1732959575754822452}
+  - component: {fileID: 3438546518184230795}
+  - component: {fileID: 5468851746688058991}
   m_Layer: 0
   m_Name: teeth_canine_bot_R
   m_TagString: Untagged
@@ -8400,6 +10272,47 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.025663132, y: 0.6142523, z: 0.07570729}
     m_Extent: {x: 0.013366526, y: 0.02028656, z: 0.011931874}
   m_DirtyAABB: 0
+--- !u!114 &3438546518184230795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043652751948503706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 1732959575754822452}
+  SkinnedBindings:
+  - BlendShape: bs_canine_bot_R.teeth_canine_bot_R
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_canine_bot_R.teeth_canine_bot_R
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &5468851746688058991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043652751948503706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &7110656056514320161
 GameObject:
   m_ObjectHideFlags: 0
@@ -8943,6 +10856,8 @@ GameObject:
   m_Component:
   - component: {fileID: 754409319775494588}
   - component: {fileID: 8784877385047029168}
+  - component: {fileID: 926302497327454315}
+  - component: {fileID: 1497990298794505510}
   m_Layer: 0
   m_Name: teeth_canine_bot_L
   m_TagString: Untagged
@@ -9103,6 +11018,47 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.025662916, y: 0.6142523, z: 0.07570729}
     m_Extent: {x: 0.013366519, y: 0.02028656, z: 0.011931874}
   m_DirtyAABB: 0
+--- !u!114 &926302497327454315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8067344786874772848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 8784877385047029168}
+  SkinnedBindings:
+  - BlendShape: bs_canine_bot_L.teeth_canine_bot_L
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_canine_bot_L.teeth_canine_bot_L
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &1497990298794505510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8067344786874772848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &8146004692194655415
 GameObject:
   m_ObjectHideFlags: 0
@@ -9303,6 +11259,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6042593290641932516}
   - component: {fileID: 999298494077909129}
+  - component: {fileID: 8612611533215583327}
+  - component: {fileID: 7353041458896413922}
   m_Layer: 0
   m_Name: hair001_t1
   m_TagString: Untagged
@@ -9463,6 +11421,52 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0011587404, y: 0.6877626, z: -0.028291415}
     m_Extent: {x: 0.08540405, y: 0.100102305, z: 0.10396622}
   m_DirtyAABB: 0
+--- !u!114 &8612611533215583327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250280477903062839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 999298494077909129}
+  SkinnedBindings:
+  - BlendShape: bs_hair001_t1.hair001_t1_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hair001_t1.hair001_t1__orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_hair001_t1.hair001_t1__orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &7353041458896413922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250280477903062839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &8274276873502242531
 GameObject:
   m_ObjectHideFlags: 0
@@ -10073,6 +12077,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5068471396359867640}
   - component: {fileID: 4479492537039706039}
+  - component: {fileID: 8539446524871710075}
+  - component: {fileID: 8073267387081028236}
   m_Layer: 0
   m_Name: leg_upper_R
   m_TagString: Untagged
@@ -10154,6 +12160,92 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.11517868, y: -0.2341212, z: 0.00018309057}
     m_Extent: {x: 0.122209005, y: 0.2303069, z: 0.142674}
   m_DirtyAABB: 0
+--- !u!114 &8539446524871710075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9013936508226638767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 4479492537039706039}
+  SkinnedBindings:
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_calves
+    CharacterProperty: 52
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_bellyHeight
+    CharacterProperty: 41
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_belly
+    CharacterProperty: 40
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_butt
+    CharacterProperty: 44
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_thighs
+    CharacterProperty: 53
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_iso_trunk
+    CharacterProperty: 50
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_body_muscular_heavy
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_body_muscular_mid
+    CharacterProperty: 37
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_upper_R.leg_upper_R_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_leg_upper_R.leg_upper_R_body_weight_thin
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_leg_upper_R.leg_upper_R_body_weight_heavy
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &8073267387081028236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9013936508226638767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &9029431315640428017
 GameObject:
   m_ObjectHideFlags: 0
@@ -10195,6 +12287,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5527869794685052091}
   - component: {fileID: 8564744679679296443}
+  - component: {fileID: 6735687130730192131}
+  - component: {fileID: 7443077963971543250}
   m_Layer: 0
   m_Name: nose
   m_TagString: Untagged
@@ -10355,6 +12449,152 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0000001322478, y: 0.6488642, z: 0.09318132}
     m_Extent: {x: 0.02256337, y: 0.027399957, z: 0.023900919}
   m_DirtyAABB: 0
+--- !u!114 &6735687130730192131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9130466652688128710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 8564744679679296443}
+  SkinnedBindings:
+  - BlendShape: bs_nose.nose_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_nose.nose_facial_cheeks_gauntShape
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_nose.nose_facial_nose_bridge_depth
+    CharacterProperty: 33
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_mouth_out
+    CharacterProperty: 30
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_tip_width_in
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_nose.nose_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_bridge_width
+    CharacterProperty: 34
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_angle
+    CharacterProperty: 31
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_tip_width_out
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_lip_top_fullness
+    CharacterProperty: 26
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_brow_forward
+    CharacterProperty: 19
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_lip_top_thin
+    CharacterProperty: 26
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_nose.nose_facial_mouth_width
+    CharacterProperty: 29
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_bulb
+    CharacterProperty: 32
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_facial_nose_length
+    CharacterProperty: 35
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_blend_facial_cheekbones_in
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_nose.nose_blend_facial_cheekbones_out
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_nose.nose_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &7443077963971543250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9130466652688128710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
 --- !u!1 &9223359042921375997
 GameObject:
   m_ObjectHideFlags: 0
@@ -10365,6 +12605,8 @@ GameObject:
   m_Component:
   - component: {fileID: 46137064860923998}
   - component: {fileID: 7129796487679981753}
+  - component: {fileID: 43482730554038023}
+  - component: {fileID: 679103775968681172}
   m_Layer: 0
   m_Name: mouth
   m_TagString: Untagged
@@ -10525,3 +12767,174 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000015649945, y: 0.6016152, z: 0.06844184}
     m_Extent: {x: 0.05234311, y: 0.05065459, z: 0.026511658}
   m_DirtyAABB: 0
+--- !u!114 &43482730554038023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9223359042921375997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d2d80e650bb843a970da5a6aae6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinnedMeshRenderer: {fileID: 7129796487679981753}
+  SkinnedBindings:
+  - BlendShape: bs_mouth.mouth_gender_fem
+    CharacterProperty: 9
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_species_orc_fem
+    CharacterProperty: 13
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_species_orc_masc
+    CharacterProperty: 14
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_body_weight_thin_head
+    CharacterProperty: 38
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_facial_chin_tip_length
+    CharacterProperty: 22
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_chin_tip_width
+    CharacterProperty: 23
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_mouth_out
+    CharacterProperty: 30
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_bridge_width
+    CharacterProperty: 34
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_jaw_wide
+    CharacterProperty: 25
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_lip_top_thin
+    CharacterProperty: 26
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_facial_nose_bulb
+    CharacterProperty: 32
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_mouth_width
+    CharacterProperty: 29
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_mouth_crease
+    CharacterProperty: 28
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_tip_width_out
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_lip_bot_thin
+    CharacterProperty: 27
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_facial_cheeks_gaunt
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_facial_jaw_down
+    CharacterProperty: 24
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_tip_width_in
+    CharacterProperty: 36
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_facial_lip_top_fullness
+    CharacterProperty: 26
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_length
+    CharacterProperty: 35
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_angle
+    CharacterProperty: 31
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_cheeks_full
+    CharacterProperty: 21
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_nose_bridge_depth
+    CharacterProperty: 33
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_facial_lip_bot_fullness
+    CharacterProperty: 27
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_blend_facial_cheekbones_in
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 1
+  - BlendShape: bs_mouth.mouth_blend_facial_cheekbones_out
+    CharacterProperty: 20
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_species_elf_masc
+    CharacterProperty: 12
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+  - BlendShape: bs_mouth.mouth_species_elf_fem
+    CharacterProperty: 11
+    Weight: 1
+    _currentValue: 0
+    IsInvertedValue: 0
+--- !u!114 &679103775968681172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9223359042921375997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43352902310e02e4895b9d70a80c740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAutoConnection: 1
+  viewAdapterId: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelPropertyName: JoshBowersDEV.Characters.CharacterCustomizeMesh.CharacterMeshData
+  viewPropertyName: JoshBowersDEV.Characters.CharacterSkinnedMeshBinding.CharacterMeshData
