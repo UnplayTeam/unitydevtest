@@ -1,17 +1,17 @@
 using UnityEngine;
-using System;
 
-public class CustomizationPanel : MonoBehaviour
+public partial class CustomizationPanel : MonoBehaviour
 {
     [SerializeField] private CharacterAttributeInventory attributeInventory;
 
-    public void SetFemale()
-    {
-        attributeInventory.SetAttribute("gender_fem", 100);
-    }
+    private CharacterData characterData;
 
-    public void SetMale()
+    private void Start()
     {
-        attributeInventory.SetAttribute("gender_fem", 0);
+        characterData = new CharacterData
+        {
+            bodyType = BodyType.Masculine,
+            species = Species.Human
+        };
     }
 }
