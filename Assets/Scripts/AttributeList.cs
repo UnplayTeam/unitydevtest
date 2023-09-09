@@ -11,4 +11,8 @@ public class AttributeList
     // Body Weight
     public const string ATTRIBUTE_WEIGHT_HEAVY = "body_weight_heavy";
     public const string ATTRIBUTE_WEIGHT_THIN = "body_weight_thin";
+
+    // Muscularity
+    public const string ATTRIBUTE_MUSCULARITY_HEAVY = "body_muscular_heavy";
+    public const string ATTRIBUTE_MUSCULARITY_MID = "body_muscular_mid";
 }
