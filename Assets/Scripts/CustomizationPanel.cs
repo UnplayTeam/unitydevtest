@@ -5,16 +5,11 @@ public partial class CustomizationPanel : MonoBehaviour
     [SerializeField] private CharacterAttributeInventory attributeInventory;
     [SerializeField] private GameObject[] tabs;
 
-    private CharacterData characterData;
     private int tabIndex;
 
     private void Start()
     {
-        characterData = new CharacterData
-        {
-            bodyType = BodyType.Masculine,
-            species = Species.Human
-        };
+        SetupBasicPanel();
     }
 
     public void NextTab()
@@ -27,7 +22,8 @@ public partial class CustomizationPanel : MonoBehaviour
     public void PreviousTab()
     {
         tabs[tabIndex].SetActive(false);
-        tabIndex = Mathf.Abs(--tabIndex) % tabs.Length;
+        tabIndex--;
+        if (tabIndex == -1) tabIndex = tabs.Length - 1;
         tabs[tabIndex].SetActive(true);
     }
 }
