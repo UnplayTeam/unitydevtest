@@ -26,4 +26,9 @@ public partial class CustomizationPanel : MonoBehaviour
         if (tabIndex == -1) tabIndex = tabs.Length - 1;
         tabs[tabIndex].SetActive(true);
     }
+
+    public void SetAttributeValue(string attributeId, float value)
+    {
+        attributeInventory.SetAttribute(attributeId, value);
+    }
 }

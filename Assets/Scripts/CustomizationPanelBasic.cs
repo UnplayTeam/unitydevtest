@@ -1,22 +1,23 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public enum Species
 {
     Human,
-    Orc,
-    Elf
+    Elf,
+    Orc
 }
 
 public partial class CustomizationPanel : MonoBehaviour
 {
+    [SerializeField] Slider bodyTypeSlider;
     [SerializeField] private SpeciesToggleSlider humanToggleSlider;
     [SerializeField] private SpeciesToggleSlider elfToggleSlider;
     [SerializeField] private SpeciesToggleSlider orcToggleSlider;
 
     private List<SpeciesToggleSlider> speciesToggleSliders = new();
-    private float bodyTypeFemValue;
 
     private const float ATTRIBUTE_SLIDER_ADJUSTMENT = 100;
 
@@ -25,12 +26,6 @@ public partial class CustomizationPanel : MonoBehaviour
         speciesToggleSliders.Add(humanToggleSlider);
         speciesToggleSliders.Add(elfToggleSlider);
         speciesToggleSliders.Add(orcToggleSlider);
-    }
-
-    public void BodyTypeUpdated(float value)
-    {
-        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_GENDER_FEM, value * ATTRIBUTE_SLIDER_ADJUSTMENT);
-        bodyTypeFemValue = value;
     }
 
     public void SpeciesToggledOn(SpeciesToggleSlider toggledSlider)
@@ -148,10 +143,10 @@ public partial class CustomizationPanel : MonoBehaviour
 
     private void UpdateSpeciesAttributes()
     {
-        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ELF_FEM, elfToggleSlider.slider.value * bodyTypeFemValue * ATTRIBUTE_SLIDER_ADJUSTMENT);
-        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ELF_MASC, elfToggleSlider.slider.value * (1 - bodyTypeFemValue) * ATTRIBUTE_SLIDER_ADJUSTMENT);
-        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ORC_FEM, orcToggleSlider.slider.value * bodyTypeFemValue * ATTRIBUTE_SLIDER_ADJUSTMENT);
-        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ORC_MASC, orcToggleSlider.slider.value * (1 - bodyTypeFemValue) * ATTRIBUTE_SLIDER_ADJUSTMENT);
+        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ELF_FEM, elfToggleSlider.slider.value * bodyTypeSlider.value * ATTRIBUTE_SLIDER_ADJUSTMENT);
+        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ELF_MASC, elfToggleSlider.slider.value * (1 - bodyTypeSlider.value) * ATTRIBUTE_SLIDER_ADJUSTMENT);
+        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ORC_FEM, orcToggleSlider.slider.value * bodyTypeSlider.value * ATTRIBUTE_SLIDER_ADJUSTMENT);
+        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ORC_MASC, orcToggleSlider.slider.value * (1 - bodyTypeSlider.value) * ATTRIBUTE_SLIDER_ADJUSTMENT);
         attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ORC_CANINE, orcToggleSlider.slider.value * ATTRIBUTE_SLIDER_ADJUSTMENT);
     }
 }
