@@ -3,12 +3,13 @@ using UnityEngine.UI;
 
 public class SpeciesToggleSlider : MonoBehaviour
 {
-    [SerializeField] CustomizationPanel customizationPanel;
     public Species species;
     public Toggle toggle;
     public Slider slider;
 
-    public bool ignoreSliderValueChange;
+    [SerializeField] CustomizationPanel customizationPanel;
+
+    private bool ignoreSliderValueChange;
 
     public void Toggle(bool isOn)
     {
@@ -24,17 +25,20 @@ public class SpeciesToggleSlider : MonoBehaviour
 
     public void TurnOffSlider()
     {
-        ignoreSliderValueChange = true;
-        slider.value = 0;
+        SetSliderValueSilent(0);
         slider.gameObject.SetActive(false);
-        ignoreSliderValueChange = false;
     }
 
     public void TurnOnSlider(float value)
     {
+        SetSliderValueSilent(value);
+        slider.gameObject.SetActive(true);
+    }
+
+    public void SetSliderValueSilent(float value)
+    {
         ignoreSliderValueChange = true;
         slider.value = value;
-        slider.gameObject.SetActive(true);
         ignoreSliderValueChange = false;
     }
 
@@ -42,6 +46,6 @@ public class SpeciesToggleSlider : MonoBehaviour
     {
         if (ignoreSliderValueChange) return;
 
-        customizationPanel.SpeciesSliderValueChanged(this);
+        customizationPanel.SpeciesSliderValueChanged(slider.value, species);
     }
 }

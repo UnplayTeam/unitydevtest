@@ -10,6 +10,9 @@ public enum Species
     Orc
 }
 
+// CustomizationPanelSpecies is an extension of the CustomizationPanel partial class.
+// It controls logic to support the Species customization tab, which controls
+// the character models' body type and species attributes.
 public partial class CustomizationPanel : MonoBehaviour
 {
     [SerializeField] Slider bodyTypeSlider;
@@ -20,8 +23,13 @@ public partial class CustomizationPanel : MonoBehaviour
     private List<SpeciesToggleSlider> speciesToggleSliders = new();
 
     private const float ATTRIBUTE_SLIDER_ADJUSTMENT = 100;
+    private const string ATTRIBUTE_ELF_FEM = "species_elf_fem";
+    private const string ATTRIBUTE_ELF_MASC = "species_elf_masc";
+    private const string ATTRIBUTE_ORC_FEM = "species_orc_fem";
+    private const string ATTRIBUTE_ORC_MASC = "species_orc_masc";
+    private const string ATTRIBUTE_ORC_CANINE = "species_orc_canine";
 
-    private void SetupBasicPanel()
+    private void SetupSpeciesPanel()
     {
         speciesToggleSliders.Add(humanToggleSlider);
         speciesToggleSliders.Add(elfToggleSlider);
@@ -32,7 +40,7 @@ public partial class CustomizationPanel : MonoBehaviour
     {
         int activeSpeciesCount = speciesToggleSliders.Where(toggleSlider => toggleSlider.toggle.isOn == true).Count();
 
-        // If two toggle are on, the newly turned on toggle slider is set to 0 and the other is set to 1
+        // If two toggles are on, the newly turned on toggle slider is set to 0 and the other is set to 1
         if (activeSpeciesCount == 2)
         {
             foreach (SpeciesToggleSlider toggleSlider in speciesToggleSliders)
@@ -48,8 +56,6 @@ public partial class CustomizationPanel : MonoBehaviour
         {
             toggledSlider.TurnOnSlider(0);
         }
-
-        UpdateSpeciesAttributes();
     }
 
     public void SpeciesToggledOff(SpeciesToggleSlider toggledSlider)
@@ -59,6 +65,7 @@ public partial class CustomizationPanel : MonoBehaviour
         // Ensure one toggle is always on
         if (activeSpeciesCount == 0)
         {
+            // If attempting to turn off the only slider that's currently on, force the slider to stay on
             switch (toggledSlider.species)
             {
                 case Species.Human:
@@ -78,64 +85,62 @@ public partial class CustomizationPanel : MonoBehaviour
         // Turn off all sliders if only one species is active
         else if (activeSpeciesCount == 1)
         {
-            speciesToggleSliders.ForEach(toggleSlider => toggleSlider.TurnOffSlider());
-
             foreach (SpeciesToggleSlider toggleSlider in speciesToggleSliders)
             {
                 toggleSlider.TurnOffSlider();
+
+                // Set the one active slider's value to 1
                 if (toggleSlider.toggle.isOn)
                 {
-                    toggleSlider.ignoreSliderValueChange = true;
-                    toggleSlider.slider.value = 1;
-                    toggleSlider.ignoreSliderValueChange = false;
+                    toggleSlider.SetSliderValueSilent(1);
                 }
             }
+
+            UpdateSpeciesAttributes();
         }
         // Adjsut values for remaining sliders if two species are still active
         else
         {
+            // The value by which the remaining sliders will increase
             float otherSliderIncreaseValue = toggledSlider.slider.value / 2;
 
             foreach (SpeciesToggleSlider toggleSlider in speciesToggleSliders)
             {
                 if (toggleSlider.toggle.isOn)
                 {
-                    toggleSlider.ignoreSliderValueChange = true;
-                    toggleSlider.slider.value += otherSliderIncreaseValue;
-                    toggleSlider.ignoreSliderValueChange = false;
+                    toggleSlider.SetSliderValueSilent(toggleSlider.slider.value + otherSliderIncreaseValue);
                 }
                 else
                 {
                     toggleSlider.TurnOffSlider();
                 }
             }
-        }
 
-        UpdateSpeciesAttributes();
+            UpdateSpeciesAttributes();
+        }
     }
 
-    public void SpeciesSliderValueChanged(SpeciesToggleSlider changedToggleSlider)
+    public void SpeciesSliderValueChanged(float changedSliderValue, Species changedSliderSpecies)
     {
-        float changedSliderValue = changedToggleSlider.slider.value;
+        // The value that will be porportionally split between the other active sliders
         float remainingSlidersValue = 1 - changedSliderValue;
 
+        // The set of sliders that are active, but not currently changing
         List<SpeciesToggleSlider> otherSliders = speciesToggleSliders.Where(toggleSlider => toggleSlider.toggle.isOn &&
-            toggleSlider != changedToggleSlider).ToList();
+            toggleSlider.species != changedSliderSpecies).ToList();
 
 
+        // The sum total of the otherSliders slider values
         float otherSlidersCombinedValue = 0;
         otherSliders.ForEach(toggleSlider => otherSlidersCombinedValue += toggleSlider.slider.value);
 
 
-
+        // Set the values of the otherSliders to be their porportaional share of remainingSlidersValue,
+        // where the porportion is determined by the sliders' relative values
         foreach (SpeciesToggleSlider toggleSlider in otherSliders)
         {
-            toggleSlider.ignoreSliderValueChange = true;
-
             float sliderPortion = otherSlidersCombinedValue == 0 ? 1 : toggleSlider.slider.value / otherSlidersCombinedValue;
-            toggleSlider.slider.value = remainingSlidersValue * sliderPortion;
-
-            toggleSlider.ignoreSliderValueChange = false;
+            toggleSlider.SetSliderValueSilent(remainingSlidersValue * sliderPortion);
         }
 
         UpdateSpeciesAttributes();
@@ -143,11 +148,12 @@ public partial class CustomizationPanel : MonoBehaviour
 
     private void UpdateSpeciesAttributes()
     {
-        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ELF_FEM, elfToggleSlider.slider.value * bodyTypeSlider.value * ATTRIBUTE_SLIDER_ADJUSTMENT);
-        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ELF_MASC, elfToggleSlider.slider.value * (1 - bodyTypeSlider.value) * ATTRIBUTE_SLIDER_ADJUSTMENT);
-        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ORC_FEM, orcToggleSlider.slider.value * bodyTypeSlider.value * ATTRIBUTE_SLIDER_ADJUSTMENT);
-        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ORC_MASC, orcToggleSlider.slider.value * (1 - bodyTypeSlider.value) * ATTRIBUTE_SLIDER_ADJUSTMENT);
-        attributeInventory.SetAttribute(AttributeList.ATTRIBUTE_ORC_CANINE, orcToggleSlider.slider.value * ATTRIBUTE_SLIDER_ADJUSTMENT);
+        // Set each of the species attributes according to the current values of the body type and species sliders
+        attributeInventory.SetAttribute(ATTRIBUTE_ELF_FEM, elfToggleSlider.slider.value * bodyTypeSlider.value * ATTRIBUTE_SLIDER_ADJUSTMENT);
+        attributeInventory.SetAttribute(ATTRIBUTE_ELF_MASC, elfToggleSlider.slider.value * (1 - bodyTypeSlider.value) * ATTRIBUTE_SLIDER_ADJUSTMENT);
+        attributeInventory.SetAttribute(ATTRIBUTE_ORC_FEM, orcToggleSlider.slider.value * bodyTypeSlider.value * ATTRIBUTE_SLIDER_ADJUSTMENT);
+        attributeInventory.SetAttribute(ATTRIBUTE_ORC_MASC, orcToggleSlider.slider.value * (1 - bodyTypeSlider.value) * ATTRIBUTE_SLIDER_ADJUSTMENT);
+        attributeInventory.SetAttribute(ATTRIBUTE_ORC_CANINE, orcToggleSlider.slider.value * ATTRIBUTE_SLIDER_ADJUSTMENT);
     }
 }
 

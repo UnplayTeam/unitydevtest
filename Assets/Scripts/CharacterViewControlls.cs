@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
+// CharacterViewControlls contains logic to support the rotation and zoom buttons,
+// allowing a user to rotate the character model and zoom in to a pre-defined position
+// to closer inspect the model's face.
 public class CharacterViewControlls : MonoBehaviour
 {
     [SerializeField] private Transform characterTransfom;

@@ -2,6 +2,8 @@
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
+// A HoldButton is a button that continuously fires its onButtonHeld event
+// for as long as the button is held down.
 public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private UnityEvent onButtonHeld;
@@ -23,20 +25,5 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         isPressed = false;
-    }
-
-    public void SetButtonActive(bool isActive)
-    {
-        if (gameObject.activeInHierarchy == isActive)
-        {
-            return;
-        }
-
-        if (isActive == false)
-        {
-            isPressed = false;
-        }
-
-        gameObject.SetActive(isActive);
     }
 }

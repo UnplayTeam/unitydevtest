@@ -1,5 +1,9 @@
 using UnityEngine;
 
+// The CustomizationPanel is the primary UI element. It contains a set of
+// tabs, each of which contains controls for a specific region of the character model.
+// It serves as the connection between individual attribute sliders and the
+// attributeInventory (which in turns controls the chracter's mesh renderer blend shapes).
 public partial class CustomizationPanel : MonoBehaviour
 {
     [SerializeField] private CharacterAttributeInventory attributeInventory;
@@ -9,7 +13,7 @@ public partial class CustomizationPanel : MonoBehaviour
 
     private void Start()
     {
-        SetupBasicPanel();
+        SetupSpeciesPanel();
     }
 
     public void NextTab()
