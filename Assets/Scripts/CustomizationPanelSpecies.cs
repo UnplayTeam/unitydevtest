@@ -70,15 +70,15 @@ public partial class CustomizationPanel : MonoBehaviour
             {
                 case Species.Human:
                     if (!elfToggleSlider.toggle.isOn && !orcToggleSlider.toggle.isOn)
-                        toggledSlider.toggle.isOn = true;
+                        toggledSlider.SetToggleValueSilent(true);
                     break;
                 case Species.Elf:
                     if (!humanToggleSlider.toggle.isOn && !orcToggleSlider.toggle.isOn)
-                        toggledSlider.toggle.isOn = true;
+                        toggledSlider.SetToggleValueSilent(true);
                     break;
                 case Species.Orc:
                     if (!humanToggleSlider.toggle.isOn && !elfToggleSlider.toggle.isOn)
-                        toggledSlider.toggle.isOn = true;
+                        toggledSlider.SetToggleValueSilent(true);
                     break;
             }
         }
