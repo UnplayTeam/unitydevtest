@@ -7,28 +7,32 @@ using UnityEngine;
 public struct BSKeyAlias
 {
     public string key;
-    public string alias;
+    public string[] alias;
 
     public int IsAlias(string name)
 	{
-        return name.Contains(alias) ? alias.Length : -1;
+        int max = alias.Max(e => name.Contains(e) ? e.Length : -1);
+
+        return (int)Mathf.Max(max,name.Contains(key) ? key.Length : -1);
 	}
 }
 
 public struct BlendShape
 {
     public int index;
-    public Mesh mesh;
+    public SkinnedMeshRenderer renderer;
 
-    public BlendShape(int index, Mesh mesh)
+    public BlendShape(int index, SkinnedMeshRenderer renderer)
     {
         this.index = index;
-        this.mesh = mesh;
+        this.renderer = renderer;
     }
 }
 
 public class BlendShapeCollection : MonoBehaviour
 {
+    public static BlendShapeCollection Singleton = null;
+
     public BSKeyAlias[] _bsKeyAliases;
 
     private Dictionary<string, List<BlendShape>> m_collection;
@@ -36,6 +40,11 @@ public class BlendShapeCollection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Singleton != null)
+            Destroy(Singleton);
+
+        Singleton = this;
+
         m_collection = new Dictionary<string, List<BlendShape>>();
 
         SkinnedMeshRenderer[] renderers = GetComponentsInChildren<SkinnedMeshRenderer>();
@@ -65,13 +74,15 @@ public class BlendShapeCollection : MonoBehaviour
                     Debug.Log(m_collection.Count + ": " + key, renderer.gameObject);
                 }
 
-                m_collection[key].Add(new BlendShape(i,mesh));
+                m_collection[key].Add(new BlendShape(i,renderer));
             }
         }
 
+        var sortedKeys = m_collection.Keys.OrderBy(e => e);
+
         string allKeys = "";
         
-        foreach(string key in m_collection.Keys)
+        foreach(string key in sortedKeys)
 		{
             allKeys += key + "\n";
 		}
@@ -79,12 +90,12 @@ public class BlendShapeCollection : MonoBehaviour
         Debug.Log(allKeys);
     }
 
-    public string GetKeyFromAlias(string key)
+    private string GetKeyFromAlias(string key)
 	{
         int longestPart = 0;
         BSKeyAlias best = default(BSKeyAlias);
 
-        foreach(var alias in _bsKeyAliases)
+        foreach(BSKeyAlias alias in _bsKeyAliases)
 		{
             int part = alias.IsAlias(key);
             if (part > longestPart)
@@ -95,5 +106,13 @@ public class BlendShapeCollection : MonoBehaviour
 		}
 
         return best.key;
+	}
+
+    public void SetWeight(string key, float value)
+	{
+        foreach(var blendShape in m_collection[key])
+		{
+            blendShape.renderer.SetBlendShapeWeight(blendShape.index, value*100);
+		}
 	}
 }

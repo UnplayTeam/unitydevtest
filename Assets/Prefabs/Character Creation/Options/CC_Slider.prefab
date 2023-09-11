@@ -763,6 +763,7 @@ MonoBehaviour:
   _nameTextBox: {fileID: 9151151524476581696}
   _leftTextBox: {fileID: 1069653609552991172}
   _rightTextBox: {fileID: 1980777616495196645}
+  _slider: {fileID: 7244400619151169436}
 --- !u!114 &8277044542809174970
 MonoBehaviour:
   m_ObjectHideFlags: 0
