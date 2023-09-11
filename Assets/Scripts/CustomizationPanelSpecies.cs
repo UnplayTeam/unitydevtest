@@ -122,7 +122,7 @@ public partial class CustomizationPanel : MonoBehaviour
 
     public void SpeciesSliderValueChanged(float changedSliderValue, Species changedSliderSpecies)
     {
-        // The value that will be porportionally split between the other active sliders
+        // The value that will be proportionally split between the other active sliders
         float remainingSlidersValue = 1 - changedSliderValue;
 
         // The set of sliders that are active, but not currently changing
