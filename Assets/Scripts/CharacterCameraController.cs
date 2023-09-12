@@ -20,7 +20,10 @@ public class CharacterCameraController : MonoBehaviour
             {
                 MoveCharacterUpDown();
                 RotateCharacter();
+                _menu.gameObject.SetActive(false);
             }
+            else
+                _menu.gameObject.SetActive(true);
 
             if (Input.mouseScrollDelta != Vector2.zero)
                 ScrollCharcterCloser();

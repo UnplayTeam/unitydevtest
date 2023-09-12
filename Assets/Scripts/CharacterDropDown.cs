@@ -9,7 +9,7 @@ public class CharacterDropDown : MonoBehaviour
 	public TMPro.TextMeshProUGUI _nameTextBox;
 	public TMPro.TMP_Dropdown _DropDown;
 
-    int Value
+    public int Value
 	{
 		get
 		{

@@ -14,13 +14,13 @@ public class BiologyMenu : MonoBehaviour
         MixedHeritage
 	}
 
-    public CharacterDropDown _DD_Race;
+    public CharacterDropDown _dd_race;
 
-    public CharacterSlider _Slider_Human;
-    public CharacterSlider _Slider_Orc;
-    public CharacterSlider _Slider_Elf;
+    public CharacterSlider _slider_human;
+    public CharacterSlider _slider_orc;
+    public CharacterSlider _slider_elf;
 
-    public CharacterSlider _Slider_Sex;
+    public CharacterSlider _slider_sex;
 
     private float m_race_orc = 0;
     private float m_race_elf = 0;
@@ -33,32 +33,32 @@ public class BiologyMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _DD_Race.AddListener(UpdateRaceDD);
+        _dd_race.AddListener(UpdateRaceDD);
 
-        _Slider_Human.AddListener(UpdateHumanSlider);
-        _Slider_Orc.AddListener(UpdateOrcSlider);
-        _Slider_Elf.AddListener(UpdateElfSlider);
+        _slider_human.AddListener(UpdateHumanSlider);
+        _slider_orc.AddListener(UpdateOrcSlider);
+        _slider_elf.AddListener(UpdateElfSlider);
 
-        _Slider_Sex.AddListener(UpdateSexSlider);
+        _slider_sex.AddListener(UpdateSexSlider);
     }
 
 	private void OnDestroy()
 	{
-        _DD_Race.RemoveListener(UpdateRaceDD);
+        _dd_race.RemoveListener(UpdateRaceDD);
 
-        _Slider_Human.RemoveListener(UpdateHumanSlider);
-        _Slider_Orc.RemoveListener(UpdateOrcSlider);
-        _Slider_Elf.RemoveListener(UpdateElfSlider);
-        _Slider_Sex.RemoveListener(UpdateSexSlider);
+        _slider_human.RemoveListener(UpdateHumanSlider);
+        _slider_orc.RemoveListener(UpdateOrcSlider);
+        _slider_elf.RemoveListener(UpdateElfSlider);
+        _slider_sex.RemoveListener(UpdateSexSlider);
     }
 
 	private void UpdateRaceDD(int value)
 	{
         bool mixed = value == (int)RaceOptions.MixedHeritage;
 
-        _Slider_Human.gameObject.SetActive(mixed);
-        _Slider_Orc.gameObject.SetActive(mixed);
-        _Slider_Elf.gameObject.SetActive(mixed);
+        _slider_human.gameObject.SetActive(mixed);
+        _slider_orc.gameObject.SetActive(mixed);
+        _slider_elf.gameObject.SetActive(mixed);
 
 		switch ((RaceOptions)value)
 		{
@@ -76,9 +76,9 @@ public class BiologyMenu : MonoBehaviour
                 break;
             case RaceOptions.MixedHeritage:
                 m_adjusting = true;
-                _Slider_Human.Value = CalculateHuman();
-                _Slider_Orc.Value = m_race_orc;
-                _Slider_Elf.Value = m_race_elf;
+                _slider_human.Value = CalculateHuman();
+                _slider_orc.Value = m_race_orc;
+                _slider_elf.Value = m_race_elf;
                 m_adjusting = false;
                 break;
 		}
@@ -92,7 +92,7 @@ public class BiologyMenu : MonoBehaviour
 
         if (!m_adjusting)
         {
-            AdjustOtherRaceSliders(_Slider_Human, diff);
+            AdjustOtherRaceSliders(_slider_human, diff);
             UpdateModel();
         }
 	}
@@ -105,7 +105,7 @@ public class BiologyMenu : MonoBehaviour
 
         if (!m_adjusting)
         {
-            AdjustOtherRaceSliders(_Slider_Orc, diff);
+            AdjustOtherRaceSliders(_slider_orc, diff);
             UpdateModel();
         }
     }
@@ -118,7 +118,7 @@ public class BiologyMenu : MonoBehaviour
 
         if (!m_adjusting)
         {
-            AdjustOtherRaceSliders(_Slider_Elf, diff);
+            AdjustOtherRaceSliders(_slider_elf, diff);
             UpdateModel();
         }
     }
@@ -127,7 +127,7 @@ public class BiologyMenu : MonoBehaviour
 	{
         m_adjusting = true;
 
-        List<CharacterSlider> otherRaces = new List<CharacterSlider> { _Slider_Human , _Slider_Orc, _Slider_Elf };
+        List<CharacterSlider> otherRaces = new List<CharacterSlider> { _slider_human , _slider_orc, _slider_elf };
 
         otherRaces.Remove(ignore);
 

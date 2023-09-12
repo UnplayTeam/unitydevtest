@@ -60,13 +60,15 @@ public class BlendShapeCollection : MonoBehaviour
             {
                 string key = mesh.GetBlendShapeName(i);
 
-                key = key.Replace("bs_", "");
-                key = key.Replace(prefix, "");
-
                 string aliasName = GetKeyFromAlias(key);
 
                 if (aliasName != null)
                     key = aliasName;
+				else
+				{
+                    key = key.Replace("bs_", "");
+                    key = key.Replace(prefix, "");
+                }
 
                 if (!m_collection.ContainsKey(key))
                 {
@@ -114,5 +116,24 @@ public class BlendShapeCollection : MonoBehaviour
 		{
             blendShape.renderer.SetBlendShapeWeight(blendShape.index, value*100);
 		}
+	}
+
+    /// <summary>
+    /// This function is used for setting multiple blend shapes based on a single slider value. Leave keys null or empty to signify if they are not to be used.
+    /// </summary>
+    /// <param name="firstKey">This key weight is 1 when the value is 0 and is 0 when the value is 0.5 or above</param>
+    /// <param name="middleKey">This key weight approaches 1 based on how close the value is to 0.5 and approaches 0 when the value approaches 0 or 1</param>
+    /// <param name="endKey">This key weight is 1 when the value is 1 and is 0 when the value is 0.5 or below</param>
+    /// <param name="value">A value between 0 and 1 representing the slider lerp</param>
+    public void SetMultiBlendWeights(string firstKey, string middleKey, string endKey, float value)
+	{
+		if (!string.IsNullOrEmpty(firstKey))
+            SetWeight(firstKey, Mathf.Max(0.5f - value, 0) * 2);
+        
+        if (!string.IsNullOrEmpty(middleKey))
+            SetWeight(middleKey, 1-(Mathf.Abs(value - 0.5f) * 2));
+        
+        if (!string.IsNullOrEmpty(endKey))
+            SetWeight(endKey, Mathf.Max(value - 0.5f, 0) * 2);
 	}
 }
