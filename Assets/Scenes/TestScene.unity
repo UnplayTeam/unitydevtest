@@ -364,6 +364,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5262372447037900487, guid: a4a907648c983d643a522bf7f9af067f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5302532651294417665, guid: a4a907648c983d643a522bf7f9af067f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -630,6 +634,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1248772917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8886299618084676876, guid: a4a907648c983d643a522bf7f9af067f, type: 3}
+  m_PrefabInstance: {fileID: 711057531}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5a50928f4037c44a2cf5ee0d257db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1698445364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,7 +1706,13 @@ SkinnedMeshRenderer:
   - {fileID: 4782158013859955271}
   - {fileID: 8276905354852758548}
   - {fileID: 8962008326653393016}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 535264109987513638}
   m_AABB:
     m_Center: {x: -0.034640264, y: 0.68676865, z: 0.0703613}
@@ -2318,6 +2339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652254282656}
   - component: {fileID: 5866666020603689434}
+  - component: {fileID: 5866666020603689435}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -7673,6 +7695,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5866666020603689435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148317976858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992871361ea4fe444bab1b999a1e7be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterTransform: {fileID: 543450652254282656}
+  _menu: {fileID: 1248772917}
+  _moveSpeed: 1
+  _rotationSpeed: 180
+  _minY: -0.7
+  _maxY: 1
+  _minZ: 0
+  _maxZ: 9
 --- !u!1 &5904001798189540712
 GameObject:
   m_ObjectHideFlags: 0
@@ -10117,17 +10159,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bsKeyAliases:
   - key: gender_fem
-    alias: _gender_fem
+    alias:
+    - _gender_fem
   - key: species_orc_fem
-    alias: _orc_fem
+    alias:
+    - _orc_fem
   - key: species_orc_masc
-    alias: _orc_masc
+    alias:
+    - _orc_masc
   - key: species_elf_fem
-    alias: _elf_fem
+    alias:
+    - species_elf
+    - _elf_fem
   - key: species_elf_masc
-    alias: _elf_masc
+    alias:
+    - species_elf1
+    - _elf_masc
   - key: facial_teeth_canine_bot
-    alias: teeth_canine_bot
+    alias:
+    - teeth_canine_bot
 --- !u!4 &7979339706466851402
 Transform:
   m_ObjectHideFlags: 0
