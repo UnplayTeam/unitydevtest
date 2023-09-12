@@ -10,17 +10,20 @@ public class BodyMenu : MonoBehaviour
         FullBody,
         Torso,
         Arms,
-        Waist,
         Legs,
         None
 	}
 
     public CharacterDropDown _dd_focus;
 
+    public CameraTarget _fullBodyTarget;
+    public CameraTarget _torsoTarget;
+    public CameraTarget _armsTarget;
+    public CameraTarget _legsTarget;
+
     private CharacterSlider[] m_fullBodySliders;
     private CharacterSlider[] m_torsoSliders;
     private CharacterSlider[] m_armsSliders;
-    private CharacterSlider[] m_waistSliders;
     private CharacterSlider[] m_legsSliders;
 
     private FocusOptions m_curFocus = FocusOptions.None;
@@ -33,7 +36,6 @@ public class BodyMenu : MonoBehaviour
         SetActiveSliders(m_fullBodySliders,false);
         SetActiveSliders(m_torsoSliders, false);
         SetActiveSliders(m_armsSliders, false);
-        SetActiveSliders(m_waistSliders, false);
         SetActiveSliders(m_legsSliders, false);
 
         FocusUpdated(_dd_focus.Value);
@@ -41,14 +43,13 @@ public class BodyMenu : MonoBehaviour
         _dd_focus.AddListener(FocusUpdated);
     }
 
-    private void SortSliders()
+	private void SortSliders()
 	{
         List<CharacterSlider> allSliders = new List<CharacterSlider>(GetComponentsInChildren<CharacterSlider>());
 
         m_fullBodySliders = allSliders.Where(e => e.gameObject.name.StartsWith("FB")).ToArray();
         m_torsoSliders = allSliders.Where(e => e.gameObject.name.StartsWith("Torso")).ToArray();
         m_armsSliders = allSliders.Where(e => e.gameObject.name.StartsWith("Arms")).ToArray();
-        m_waistSliders = allSliders.Where(e => e.gameObject.name.StartsWith("Waist")).ToArray();
         m_legsSliders = allSliders.Where(e => e.gameObject.name.StartsWith("Legs")).ToArray();
     }
 
@@ -78,9 +79,6 @@ public class BodyMenu : MonoBehaviour
             case FocusOptions.Arms:
                 SetActiveSliders(m_armsSliders, false);
                 break;
-            case FocusOptions.Waist:
-                SetActiveSliders(m_waistSliders, false);
-                break;
             case FocusOptions.Legs:
                 SetActiveSliders(m_legsSliders, false);
                 break;
@@ -99,13 +97,30 @@ public class BodyMenu : MonoBehaviour
             case FocusOptions.Arms:
                 SetActiveSliders(m_armsSliders, true);
                 break;
-            case FocusOptions.Waist:
-                SetActiveSliders(m_waistSliders, true);
-                break;
             case FocusOptions.Legs:
                 SetActiveSliders(m_legsSliders, true);
                 break;
         }
 
+        ApplyCameraTarget();
+    }
+
+    public void ApplyCameraTarget()
+	{
+        switch (m_curFocus)
+        {
+            case FocusOptions.FullBody:
+                CharacterCameraController.Singleton.SetCameraTarget(_fullBodyTarget);
+                break;
+            case FocusOptions.Torso:
+                CharacterCameraController.Singleton.SetCameraTarget(_torsoTarget);
+                break;
+            case FocusOptions.Arms:
+                CharacterCameraController.Singleton.SetCameraTarget(_armsTarget);
+                break;
+            case FocusOptions.Legs:
+                CharacterCameraController.Singleton.SetCameraTarget(_legsTarget);
+                break;
+        }
     }
 }

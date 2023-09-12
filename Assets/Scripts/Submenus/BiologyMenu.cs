@@ -22,6 +22,8 @@ public class BiologyMenu : MonoBehaviour
 
     public CharacterSlider _slider_sex;
 
+    public CameraTarget _cameraTarget;
+
     private float m_race_orc = 0;
     private float m_race_elf = 0;
 
@@ -182,11 +184,19 @@ public class BiologyMenu : MonoBehaviour
 	{
         BlendShapeCollection.Singleton.SetWeight("gender_fem", m_femininity);
 
+        BlendShapeCollection.Singleton.SetWeight("facial_teeth_canine_bot", m_race_orc);
+        BlendShapeCollection.Singleton.SetMultiBlendWeights("", "body_muscular_mid", "body_muscular_heavy", m_race_orc);
         BlendShapeCollection.Singleton.SetWeight("species_orc_fem", m_femininity * m_race_orc);
         BlendShapeCollection.Singleton.SetWeight("species_orc_masc", (1-m_femininity) * m_race_orc);
 
+        BlendShapeCollection.Singleton.SetMultiBlendWeights("body_weight_heavy", "","body_weight_thin", Mathf.Max(m_race_elf * 0.8f,0.5f));
         BlendShapeCollection.Singleton.SetWeight("species_elf_fem", m_femininity * m_race_elf);
         BlendShapeCollection.Singleton.SetWeight("species_elf_masc", (1-m_femininity) * m_race_elf);
+	}
+
+	public void ApplyCameraTarget()
+	{
+        CharacterCameraController.Singleton.SetCameraTarget(_cameraTarget);
 	}
 
     private float CalculateHuman()

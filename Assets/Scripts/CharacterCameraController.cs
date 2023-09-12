@@ -1,8 +1,19 @@
 using UnityEngine;
 
+[System.Serializable]
+public struct CameraTarget
+{
+    public Transform targetTransform;
+    public float angle;
+    public float zoom;
+}
+
 public class CharacterCameraController : MonoBehaviour
 {
+    public static CharacterCameraController Singleton = null;
+
     public Transform _characterTransform; // Reference to the character's transform.
+    public Transform _cameraTransform;
 
     public Menu _menu;
 
@@ -11,11 +22,48 @@ public class CharacterCameraController : MonoBehaviour
     public float _minY = 0, _maxY = 0;
     public float _minZ = 0, _maxZ = 0;
 
+    public float _lerpTime = 1;
+
     private Vector3 m_lastMousePosition;
 
-    void Update()
+    private float m_lerpStartTime = -1;
+    private float m_startY = 0;
+    private float m_targetY = 0;
+    private float m_startZ = 0;
+    private float m_targetZ = 0;
+    private float m_startRot = 0;
+    private float m_targetRot = 0;
+
+	private void Start()
+	{
+        if (Singleton != null)
+            Destroy(Singleton);
+
+        Singleton = this;
+	}
+
+	void Update()
     {
-        if (!_menu._leftPanel.MouseHovering) {
+        if(m_lerpStartTime != -1)
+		{
+            float lerp = (Time.time - m_lerpStartTime)/_lerpTime;
+
+            float y = Mathf.Lerp(0, m_targetY, lerp)+m_startY;
+            float z = Mathf.Lerp(m_startZ, m_targetZ, lerp);
+
+            float angle = Mathf.LerpAngle(m_startRot, m_targetRot, lerp);
+
+            _characterTransform.position = new Vector3(0, y, z);
+            _characterTransform.eulerAngles = new Vector3(0, angle, 0);
+
+            if (lerp > 1)
+			{
+                _characterTransform.position = new Vector3(0, m_targetY + m_startY, m_targetZ);
+                _characterTransform.eulerAngles = new Vector3(0, m_targetRot, 0);
+                m_lerpStartTime = -1;
+			}
+		}
+        else if (!_menu._leftPanel.MouseHovering) {
             if (Input.GetMouseButton(1))
             {
                 MoveCharacterUpDown();
@@ -52,16 +100,24 @@ public class CharacterCameraController : MonoBehaviour
 
     private void RotateCharacter()
     {
-        // Get the current mouse position.
         Vector3 currentMousePosition = Input.mousePosition;
 
-        // Calculate the mouse delta (change in position).
         Vector3 mouseDelta = currentMousePosition - m_lastMousePosition;
 
-        // Rotate the character based on mouse movement.
         float rotationX = mouseDelta.x * _rotationSpeed * Time.deltaTime;
 
-        // Apply the rotation to the character's transform.
-        _characterTransform.Rotate(Vector3.up, rotationX);
+        _characterTransform.Rotate(Vector3.up, -rotationX);
+    }
+
+    public void SetCameraTarget(CameraTarget target)
+	{
+        m_lerpStartTime = Time.time;
+
+        m_startRot = _characterTransform.rotation.eulerAngles.y;
+        m_targetRot = target.angle;
+        m_startY = _characterTransform.position.y;
+        m_targetY = _cameraTransform.position.y - target.targetTransform.position.y;
+        m_startZ = _characterTransform.position.z;
+        m_targetZ = (target.zoom * (_maxZ - _minZ)) + _minZ;
     }
 }

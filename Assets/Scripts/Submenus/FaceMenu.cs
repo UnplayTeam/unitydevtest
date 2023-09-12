@@ -6,7 +6,7 @@ using UnityEngine;
 public class FaceMenu : MonoBehaviour
 {
     enum FocusOptions
-	{
+    {
         FullHead,
         Brow,
         Cheeks,
@@ -15,9 +15,12 @@ public class FaceMenu : MonoBehaviour
         Mouth,
         Jawbone,
         None
-	}
+    }
 
     public CharacterDropDown _dd_focus;
+
+    public CameraTarget _frontTarget;
+    public CameraTarget _cornerTarget;
 
     private CharacterSlider[] m_fullHeadSliders;
     private CharacterSlider[] m_browSliders;
@@ -33,21 +36,21 @@ public class FaceMenu : MonoBehaviour
     {
         SortSlideres();
 
-		SetActiveSliders(m_fullHeadSliders, false);
-		SetActiveSliders(m_browSliders, false);
-		SetActiveSliders(m_cheeksSliders, false);
-		SetActiveSliders(m_earsSliders, false);
-		SetActiveSliders(m_noseSliders, false);
-		SetActiveSliders(m_mouthSliders, false);
-		SetActiveSliders(m_jawboneSliders, false);
+        SetActiveSliders(m_fullHeadSliders, false);
+        SetActiveSliders(m_browSliders, false);
+        SetActiveSliders(m_cheeksSliders, false);
+        SetActiveSliders(m_earsSliders, false);
+        SetActiveSliders(m_noseSliders, false);
+        SetActiveSliders(m_mouthSliders, false);
+        SetActiveSliders(m_jawboneSliders, false);
 
         FocusUpdated(_dd_focus.Value);
 
-		_dd_focus.AddListener(FocusUpdated);
+        _dd_focus.AddListener(FocusUpdated);
     }
 
-	private void SortSlideres()
-	{
+    private void SortSlideres()
+    {
         List<CharacterSlider> allSliders = new List<CharacterSlider>(GetComponentsInChildren<CharacterSlider>());
 
         m_fullHeadSliders = allSliders.Where(e => e.gameObject.name.StartsWith("FH")).ToArray();
@@ -69,34 +72,34 @@ public class FaceMenu : MonoBehaviour
 
     private void FocusUpdated(int i)
     {
-        FocusOptions newFocus = (FocusOptions) i;
+        FocusOptions newFocus = (FocusOptions)i;
 
         if (m_curFocus == newFocus)
             return;
 
-		switch (m_curFocus)
-		{
-			case FocusOptions.FullHead:
+        switch (m_curFocus)
+        {
+            case FocusOptions.FullHead:
                 SetActiveSliders(m_fullHeadSliders, false);
                 break;
-			case FocusOptions.Brow:
+            case FocusOptions.Brow:
                 SetActiveSliders(m_browSliders, false);
                 break;
-			case FocusOptions.Cheeks:
+            case FocusOptions.Cheeks:
                 SetActiveSliders(m_cheeksSliders, false);
                 break;
-			case FocusOptions.Ears:
+            case FocusOptions.Ears:
                 SetActiveSliders(m_earsSliders, false);
                 break;
-			case FocusOptions.Nose:
+            case FocusOptions.Nose:
                 SetActiveSliders(m_noseSliders, false);
-				break;
+                break;
             case FocusOptions.Mouth:
                 SetActiveSliders(m_mouthSliders, false);
-				break;
+                break;
             case FocusOptions.Jawbone:
                 SetActiveSliders(m_jawboneSliders, false);
-				break;
+                break;
         }
 
         m_curFocus = newFocus;
@@ -125,5 +128,35 @@ public class FaceMenu : MonoBehaviour
                 SetActiveSliders(m_jawboneSliders, true);
                 break;
         }
+
+        ApplyCameraTarget();
     }
+
+    public void ApplyCameraTarget()
+    {
+		switch ((FocusOptions)_dd_focus.Value)
+		{
+			case FocusOptions.FullHead:
+                CharacterCameraController.Singleton.SetCameraTarget(_frontTarget);
+                break;
+			case FocusOptions.Brow:
+                CharacterCameraController.Singleton.SetCameraTarget(_frontTarget);
+                break;
+			case FocusOptions.Cheeks:
+                CharacterCameraController.Singleton.SetCameraTarget(_frontTarget);
+				break;
+            case FocusOptions.Ears:
+                CharacterCameraController.Singleton.SetCameraTarget(_cornerTarget);
+				break;
+            case FocusOptions.Nose:
+                CharacterCameraController.Singleton.SetCameraTarget(_cornerTarget);
+				break;
+            case FocusOptions.Mouth:
+                CharacterCameraController.Singleton.SetCameraTarget(_frontTarget);
+				break;
+            case FocusOptions.Jawbone:
+                CharacterCameraController.Singleton.SetCameraTarget(_cornerTarget);
+				break;
+        }
+	}
 }
