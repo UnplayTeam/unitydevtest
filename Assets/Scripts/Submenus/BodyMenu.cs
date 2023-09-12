@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BodyMenu : MonoBehaviour
 {
-	enum BodyPartOptions{
+	enum FocusOptions{
         FullBody,
         Torso,
         Arms,
@@ -15,11 +15,7 @@ public class BodyMenu : MonoBehaviour
         None
 	}
 
-    public CharacterDropDown _dd_bodyPart;
-
-    public CharacterSlider _slider_muscular;
-    public CharacterSlider _slider_weight;
-    public CharacterSlider _slider_bust;
+    public CharacterDropDown _dd_focus;
 
     private CharacterSlider[] m_fullBodySliders;
     private CharacterSlider[] m_torsoSliders;
@@ -27,7 +23,7 @@ public class BodyMenu : MonoBehaviour
     private CharacterSlider[] m_waistSliders;
     private CharacterSlider[] m_legsSliders;
 
-    private BodyPartOptions m_curBodyPart = BodyPartOptions.None;
+    private FocusOptions m_curFocus = FocusOptions.None;
 
     // Start is called before the first frame update
     void Start()
@@ -40,20 +36,15 @@ public class BodyMenu : MonoBehaviour
         SetActiveSliders(m_waistSliders, false);
         SetActiveSliders(m_legsSliders, false);
 
-        BodyPartUpdated(_dd_bodyPart.Value);
+        FocusUpdated(_dd_focus.Value);
 
-        _dd_bodyPart.AddListener(BodyPartUpdated);
-
-        _slider_muscular.AddListener(UpdateModel);
-        _slider_weight.AddListener(UpdateModel);
-        _slider_bust.AddListener(UpdateModel);
+        _dd_focus.AddListener(FocusUpdated);
     }
 
     private void SortSliders()
 	{
         List<CharacterSlider> allSliders = new List<CharacterSlider>(GetComponentsInChildren<CharacterSlider>());
 
-        //TODO: assign the other prefixes
         m_fullBodySliders = allSliders.Where(e => e.gameObject.name.StartsWith("FB")).ToArray();
         m_torsoSliders = allSliders.Where(e => e.gameObject.name.StartsWith("Torso")).ToArray();
         m_armsSliders = allSliders.Where(e => e.gameObject.name.StartsWith("Arms")).ToArray();
@@ -69,64 +60,52 @@ public class BodyMenu : MonoBehaviour
 		}
     }
 
-    #region LISTENERS_FUNCTIONS
-    private void BodyPartUpdated(int i)
+    private void FocusUpdated(int i)
     {
-        BodyPartOptions part = (BodyPartOptions)i;
+        FocusOptions part = (FocusOptions)i;
 
-        if (m_curBodyPart == part)
+        if (m_curFocus == part)
             return;
 
-        switch (m_curBodyPart)
+        switch (m_curFocus)
         {
-            case BodyPartOptions.FullBody:
+            case FocusOptions.FullBody:
                 SetActiveSliders(m_fullBodySliders, false);
                 break;
-            case BodyPartOptions.Torso:
+            case FocusOptions.Torso:
                 SetActiveSliders(m_torsoSliders, false);
                 break;
-            case BodyPartOptions.Arms:
+            case FocusOptions.Arms:
                 SetActiveSliders(m_armsSliders, false);
                 break;
-            case BodyPartOptions.Waist:
+            case FocusOptions.Waist:
                 SetActiveSliders(m_waistSliders, false);
                 break;
-            case BodyPartOptions.Legs:
+            case FocusOptions.Legs:
                 SetActiveSliders(m_legsSliders, false);
                 break;
         }
 
-        m_curBodyPart = part;
+        m_curFocus = part;
 
-        switch (m_curBodyPart)
+        switch (m_curFocus)
         {
-            case BodyPartOptions.FullBody:
+            case FocusOptions.FullBody:
                 SetActiveSliders(m_fullBodySliders, true);
                 break;
-            case BodyPartOptions.Torso:
+            case FocusOptions.Torso:
                 SetActiveSliders(m_torsoSliders, true);
                 break;
-            case BodyPartOptions.Arms:
+            case FocusOptions.Arms:
                 SetActiveSliders(m_armsSliders, true);
                 break;
-            case BodyPartOptions.Waist:
+            case FocusOptions.Waist:
                 SetActiveSliders(m_waistSliders, true);
                 break;
-            case BodyPartOptions.Legs:
+            case FocusOptions.Legs:
                 SetActiveSliders(m_legsSliders, true);
                 break;
         }
 
     }
-
-    void UpdateModel(float f)
-    {
-        BlendShapeCollection.Singleton.SetMultiBlendWeights("", "body_muscular_mid", "body_muscular_heavy", _slider_muscular.Value);
-
-        BlendShapeCollection.Singleton.SetMultiBlendWeights("body_weight_thin", "", "body_weight_heavy", _slider_weight.Value);
-
-        BlendShapeCollection.Singleton.SetMultiBlendWeights("iso_bust_small", "", "iso_bust_large", _slider_bust.Value);
-    }
-
-    #endregion
 }
