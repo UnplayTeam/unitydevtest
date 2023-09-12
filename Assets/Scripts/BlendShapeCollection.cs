@@ -110,6 +110,13 @@ public class BlendShapeCollection : MonoBehaviour
         return best.key;
 	}
 
+    public float GetWeight(string key)
+	{
+		BlendShape blendShape = m_collection[key][0];
+
+        return blendShape.renderer.GetBlendShapeWeight(blendShape.index);
+	}
+    
     public void SetWeight(string key, float value)
 	{
         foreach(var blendShape in m_collection[key])

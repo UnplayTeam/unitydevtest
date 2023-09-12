@@ -15,6 +15,8 @@ public class CharacterSlider : MonoBehaviour
 	public string _key = "";
 	public bool _invertWeight = false;
 
+	private bool m_ignoreUpdate = false;
+
 	public float Value
 	{
 		get
@@ -39,9 +41,29 @@ public class CharacterSlider : MonoBehaviour
 			RemoveListener(UpdateModel);
 	}
 
+	private void OnEnable()
+	{
+		if (!string.IsNullOrEmpty(_key))
+		{
+			m_ignoreUpdate = true;
+
+			float val = BlendShapeCollection.Singleton.GetWeight(_key);
+
+			if (_invertWeight)
+				val = 1 - val;
+
+			_slider.value = val;
+
+			m_ignoreUpdate = false;
+		}
+	}
+
 	private void UpdateModel(float i)
 	{
-		if(_invertWeight)
+		if (m_ignoreUpdate)
+			return;
+
+		if (_invertWeight)
 			BlendShapeCollection.Singleton.SetWeight(_key, 1.0f - _slider.value);
 		else
 			BlendShapeCollection.Singleton.SetWeight(_key, _slider.value);
