@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// The UI component controlling the blend
+/// </summary>
 public class BlendShapeSlider : MonoBehaviour
 {
     public string keyword;
@@ -13,6 +16,7 @@ public class BlendShapeSlider : MonoBehaviour
 
     private void Start()
     {
+        //Adding to the blendshape database based on keywords and positive/negative modifiers (i.e. in/out, masc/fem, etc.)
         CharacterCustomization.Instance.AddToKeywordDictionary
             (keyword, blendShapePositiveKeyword, blendShapeNegativeKeyword);
 
@@ -20,7 +24,7 @@ public class BlendShapeSlider : MonoBehaviour
         blendShapeNegativeKeyword = blendShapeNegativeKeyword.Trim();
         slider = GetComponent<Slider>();
     
-        //When slider is moved, then call function based on the blendshape name and pass float of slider
+        //When slider is moved, then call function based on the blendshape keyword and pass float of slider
         slider.onValueChanged.AddListener(value => 
             CharacterCustomization.Instance.ChangeBlendshapeValue(keyword, value));
         slider.onValueChanged.Invoke(slider.value);
