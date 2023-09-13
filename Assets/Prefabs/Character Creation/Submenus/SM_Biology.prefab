@@ -99,6 +99,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Human
       objectReference: {fileID: 0}
+    - target: {fileID: 7595043218008607327, guid: c6a8c1c2db04143408a960836cd05598, type: 3}
+      propertyPath: _dropDown
+      value: 
+      objectReference: {fileID: 8916898812231674359}
+    - target: {fileID: 8126266329346731067, guid: c6a8c1c2db04143408a960836cd05598, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8126266329346731067, guid: c6a8c1c2db04143408a960836cd05598, type: 3}
       propertyPath: m_Options.m_Options.Array.size
       value: 4
@@ -134,6 +142,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0da904e04063c94488e6ae22facc616d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8916898812231674359 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8126266329346731067, guid: c6a8c1c2db04143408a960836cd05598, type: 3}
+  m_PrefabInstance: {fileID: 826828424151958988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1101977823457047309
@@ -277,11 +296,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 111761674119951390, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 111761674119951390, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 192990206583174650, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}
       propertyPath: m_text
@@ -679,27 +698,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7784425759695548202, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7824449639614155500, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7824449639614155500, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7824449639614155500, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 364.5
       objectReference: {fileID: 0}
     - target: {fileID: 7824449639614155500, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 727
       objectReference: {fileID: 0}
     - target: {fileID: 7824449639614155500, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1469
       objectReference: {fileID: 0}
     - target: {fileID: 8293015602269136454, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -773,6 +792,10 @@ MonoBehaviour:
   _slider_orc: {fileID: 5009984616822831802}
   _slider_elf: {fileID: 8439575748941403772}
   _slider_sex: {fileID: 4769668770327182138}
+  _cameraTarget:
+    targetTransform: {fileID: 0}
+    angle: 0
+    zoom: 0
 --- !u!224 &7995520281008076080 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8293015602269136454, guid: 49056744dc4ff044fa84d432f1ee056b, type: 3}

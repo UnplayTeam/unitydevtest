@@ -52,12 +52,33 @@ public class CharacterSlider : MonoBehaviour
 		{
 			m_ignoreUpdate = true;
 
-			float val = BlendShapeCollection.Singleton.GetWeight(_key);
+			float val = BlendShapeCollection.GetBSWeight(_key)/100.0f;
 
 			if (_invertWeight)
 				val = 1 - val;
 
 			_slider.value = val;
+
+			m_ignoreUpdate = false;
+		}
+		else if(_tripleBlend)
+		{
+			m_ignoreUpdate = true;
+
+			float left = BlendShapeCollection.GetBSWeight(_leftKey) / 100.0f;
+			float middle = BlendShapeCollection.GetBSWeight(_middleKey) / 100.0f;
+			float right = BlendShapeCollection.GetBSWeight(_rightKey) / 100.0f;
+
+			if (left > 0)
+				_slider.value = (1 - left) / 2.0f;
+			else if (right > 0)
+				_slider.value = (right / 2.0f) + 0.5f;
+			else if ((left == 0 && right == 0) || middle == 1)
+				_slider.value = 0.5f;
+			else if (left == 0)
+				_slider.value = 1.0f - middle / 2.0f;
+			else
+				_slider.value = middle / 2.0f;
 
 			m_ignoreUpdate = false;
 		}
@@ -71,13 +92,13 @@ public class CharacterSlider : MonoBehaviour
 		if (!_tripleBlend)
 		{
 			if (_invertWeight)
-				BlendShapeCollection.Singleton.SetWeight(_key, 1.0f - _slider.value);
+				BlendShapeCollection.SetWeight(_key, 1.0f - _slider.value);
 			else
-				BlendShapeCollection.Singleton.SetWeight(_key, _slider.value);
+				BlendShapeCollection.SetWeight(_key, _slider.value);
 		}
 		else
 		{
-			BlendShapeCollection.Singleton.SetMultiBlendWeights(_leftKey, _middleKey, _rightKey, _slider.value);
+			BlendShapeCollection.SetMultiBlendWeights(_leftKey, _middleKey, _rightKey, _slider.value);
 		}
 	}
 

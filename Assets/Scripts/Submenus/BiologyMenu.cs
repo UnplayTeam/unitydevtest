@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class BiologyMenu : MonoBehaviour
 {
-
     enum RaceOptions
 	{
         Human,
@@ -42,9 +41,33 @@ public class BiologyMenu : MonoBehaviour
         _slider_elf.AddListener(UpdateElfSlider);
 
         _slider_sex.AddListener(UpdateSexSlider);
+
+        _dd_race.Value = (int)RaceOptions.Human;
     }
 
-	private void OnDestroy()
+	private void OnEnable()
+	{
+        m_adjusting = true;
+        
+        m_femininity = BlendShapeCollection.GetBSWeight("gender_fem")/100.0f;
+        _slider_sex.Value = m_femininity;
+
+        m_race_orc = (BlendShapeCollection.GetBSWeight("species_orc_fem") + BlendShapeCollection.GetBSWeight("species_orc_masc")) / 100.0f;
+        m_race_elf = (BlendShapeCollection.GetBSWeight("species_elf_fem") + BlendShapeCollection.GetBSWeight("species_elf_masc")) / 100.0f;
+
+        if(GetHumanValue() == 1)
+            _dd_race.Value = (int)RaceOptions.Human;
+        else if(m_race_orc == 1)
+            _dd_race.Value = (int)RaceOptions.Orc;
+        else if(m_race_elf == 1)
+            _dd_race.Value = (int)RaceOptions.Elf;
+		else
+            _dd_race.Value = (int)RaceOptions.MixedHeritage;
+
+        m_adjusting = false;
+    }
+
+    private void OnDestroy()
 	{
         _dd_race.RemoveListener(UpdateRaceDD);
 
@@ -78,19 +101,20 @@ public class BiologyMenu : MonoBehaviour
                 break;
             case RaceOptions.MixedHeritage:
                 m_adjusting = true;
-                _slider_human.Value = CalculateHuman();
+                _slider_human.Value = GetHumanValue();
                 _slider_orc.Value = m_race_orc;
                 _slider_elf.Value = m_race_elf;
                 m_adjusting = false;
-                break;
+                return;
 		}
 
-        UpdateModel();
+        if(!m_adjusting)
+            UpdateModel();
     }
 
     private void UpdateHumanSlider(float value)
 	{
-        float diff = value - CalculateHuman();
+        float diff = value - GetHumanValue();
 
         if (!m_adjusting)
         {
@@ -182,24 +206,24 @@ public class BiologyMenu : MonoBehaviour
 
     void UpdateModel()
 	{
-        BlendShapeCollection.Singleton.SetWeight("gender_fem", m_femininity);
+        BlendShapeCollection.SetWeight("gender_fem", m_femininity);
 
-        BlendShapeCollection.Singleton.SetWeight("facial_teeth_canine_bot", m_race_orc);
-        BlendShapeCollection.Singleton.SetMultiBlendWeights("", "body_muscular_mid", "body_muscular_heavy", m_race_orc);
-        BlendShapeCollection.Singleton.SetWeight("species_orc_fem", m_femininity * m_race_orc);
-        BlendShapeCollection.Singleton.SetWeight("species_orc_masc", (1-m_femininity) * m_race_orc);
+        BlendShapeCollection.SetWeight("facial_teeth_canine_bot", m_race_orc);
+        BlendShapeCollection.SetMultiBlendWeights("", "body_muscular_mid", "body_muscular_heavy", m_race_orc);
+        BlendShapeCollection.SetWeight("species_orc_fem", m_femininity * m_race_orc);
+        BlendShapeCollection.SetWeight("species_orc_masc", (1-m_femininity) * m_race_orc);
 
-        BlendShapeCollection.Singleton.SetMultiBlendWeights("body_weight_heavy", "","body_weight_thin", Mathf.Max(m_race_elf * 0.8f,0.5f));
-        BlendShapeCollection.Singleton.SetWeight("species_elf_fem", m_femininity * m_race_elf);
-        BlendShapeCollection.Singleton.SetWeight("species_elf_masc", (1-m_femininity) * m_race_elf);
+        BlendShapeCollection.SetMultiBlendWeights("body_weight_heavy", "","body_weight_thin", Mathf.Max(m_race_elf * 0.8f,0.5f));
+        BlendShapeCollection.SetWeight("species_elf_fem", m_femininity * m_race_elf);
+        BlendShapeCollection.SetWeight("species_elf_masc", (1-m_femininity) * m_race_elf);
 	}
 
 	public void ApplyCameraTarget()
 	{
-        CharacterCameraController.Singleton.SetCameraTarget(_cameraTarget);
+        CharacterCameraController.SetCameraTarget(_cameraTarget);
 	}
 
-    private float CalculateHuman()
+    private float GetHumanValue()
 	{
         return 1.0f - m_race_orc - m_race_elf; 
 	}

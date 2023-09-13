@@ -110,16 +110,16 @@ public class BodyMenu : MonoBehaviour
         switch (m_curFocus)
         {
             case FocusOptions.FullBody:
-                CharacterCameraController.Singleton.SetCameraTarget(_fullBodyTarget);
+                CharacterCameraController.SetCameraTarget(_fullBodyTarget);
                 break;
             case FocusOptions.Torso:
-                CharacterCameraController.Singleton.SetCameraTarget(_torsoTarget);
+                CharacterCameraController.SetCameraTarget(_torsoTarget);
                 break;
             case FocusOptions.Arms:
-                CharacterCameraController.Singleton.SetCameraTarget(_armsTarget);
+                CharacterCameraController.SetCameraTarget(_armsTarget);
                 break;
             case FocusOptions.Legs:
-                CharacterCameraController.Singleton.SetCameraTarget(_legsTarget);
+                CharacterCameraController.SetCameraTarget(_legsTarget);
                 break;
         }
     }

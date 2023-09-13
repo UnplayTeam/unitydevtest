@@ -137,25 +137,25 @@ public class FaceMenu : MonoBehaviour
 		switch ((FocusOptions)_dd_focus.Value)
 		{
 			case FocusOptions.FullHead:
-                CharacterCameraController.Singleton.SetCameraTarget(_frontTarget);
+                CharacterCameraController.SetCameraTarget(_frontTarget);
                 break;
 			case FocusOptions.Brow:
-                CharacterCameraController.Singleton.SetCameraTarget(_frontTarget);
+                CharacterCameraController.SetCameraTarget(_frontTarget);
                 break;
 			case FocusOptions.Cheeks:
-                CharacterCameraController.Singleton.SetCameraTarget(_frontTarget);
+                CharacterCameraController.SetCameraTarget(_frontTarget);
 				break;
             case FocusOptions.Ears:
-                CharacterCameraController.Singleton.SetCameraTarget(_cornerTarget);
+                CharacterCameraController.SetCameraTarget(_cornerTarget);
 				break;
             case FocusOptions.Nose:
-                CharacterCameraController.Singleton.SetCameraTarget(_cornerTarget);
+                CharacterCameraController.SetCameraTarget(_cornerTarget);
 				break;
             case FocusOptions.Mouth:
-                CharacterCameraController.Singleton.SetCameraTarget(_frontTarget);
+                CharacterCameraController.SetCameraTarget(_frontTarget);
 				break;
             case FocusOptions.Jawbone:
-                CharacterCameraController.Singleton.SetCameraTarget(_cornerTarget);
+                CharacterCameraController.SetCameraTarget(_cornerTarget);
 				break;
         }
 	}

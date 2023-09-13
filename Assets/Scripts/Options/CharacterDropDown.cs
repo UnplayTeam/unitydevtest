@@ -2,32 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class CharacterDropDown : MonoBehaviour
 {
-	// Start is called before the first frame update
+	
 	public TMPro.TextMeshProUGUI _nameTextBox;
-	public TMPro.TMP_Dropdown _DropDown;
+
+	public TMPro.TMP_Dropdown _dropDown;
 
     public int Value
 	{
 		get
 		{
-            return _DropDown.value;
+            return _dropDown.value;
 		}
 		set
 		{
-            _DropDown.value = value;
+            _dropDown.value = value;
 		}
 	}
 
 	public void AddListener(UnityAction<int> call)
 	{
-		_DropDown.onValueChanged.AddListener(call);
+		_dropDown.onValueChanged.AddListener(call);
 	}
 	
 	public void RemoveListener(UnityAction<int> call)
 	{
-		_DropDown.onValueChanged.RemoveListener(call);
+		_dropDown.onValueChanged.RemoveListener(call);
 	}
 }

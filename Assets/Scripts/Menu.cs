@@ -24,6 +24,7 @@ public class Menu : MonoBehaviour
     public BiologyMenu _biologyMenu;
     public BodyMenu _bodyMenu;
     public FaceMenu _faceMenu;
+    public IDMenu _iDMenu;
 
     private SubmenuOptions m_curMenu = SubmenuOptions.None;
 
@@ -70,13 +71,18 @@ public class Menu : MonoBehaviour
 
         _bodyMenu.gameObject.SetActive(newMenu == SubmenuOptions.Body);
 
-        if (newMenu == SubmenuOptions.Biology)
+        if (newMenu == SubmenuOptions.Body)
             _bodyMenu.ApplyCameraTarget();
 
         _faceMenu.gameObject.SetActive(newMenu == SubmenuOptions.Face);
 
         if (newMenu == SubmenuOptions.Face)
             _faceMenu.ApplyCameraTarget();
+
+        _iDMenu.gameObject.SetActive(newMenu == SubmenuOptions.ID);
+
+        if(newMenu == SubmenuOptions.ID)
+            _iDMenu.ApplyCameraTarget();
 
         _biologyButton.interactable = newMenu != SubmenuOptions.Biology;
         _bodyButton.interactable = newMenu != SubmenuOptions.Body;

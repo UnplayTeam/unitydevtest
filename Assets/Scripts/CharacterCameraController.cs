@@ -24,6 +24,8 @@ public class CharacterCameraController : MonoBehaviour
 
     public float _lerpTime = 1;
 
+    private GameObject m_menuObject;
+
     private Vector3 m_lastMousePosition;
 
     private float m_lerpStartTime = -1;
@@ -40,7 +42,9 @@ public class CharacterCameraController : MonoBehaviour
             Destroy(Singleton);
 
         Singleton = this;
-	}
+
+        m_menuObject = _menu.gameObject;
+    }
 
 	void Update()
     {
@@ -68,10 +72,10 @@ public class CharacterCameraController : MonoBehaviour
             {
                 MoveCharacterUpDown();
                 RotateCharacter();
-                _menu.gameObject.SetActive(false);
+                m_menuObject.SetActive(false);
             }
             else
-                _menu.gameObject.SetActive(true);
+                m_menuObject.SetActive(true);
 
             if (Input.mouseScrollDelta != Vector2.zero)
                 ScrollCharcterCloser();
@@ -86,7 +90,7 @@ public class CharacterCameraController : MonoBehaviour
 
         Vector3 mouseDelta = currentMousePosition - m_lastMousePosition;
 
-        float verticalMovement = -mouseDelta.y * _moveSpeed * Time.deltaTime;
+        float verticalMovement = mouseDelta.y * _moveSpeed * Time.deltaTime;
 
         _characterTransform.Translate(Vector3.up * verticalMovement, Space.Self);
         _characterTransform.position = new Vector3(0,Mathf.Clamp(transform.position.y, _minY, _maxY), transform.position.z);
@@ -109,7 +113,12 @@ public class CharacterCameraController : MonoBehaviour
         _characterTransform.Rotate(Vector3.up, -rotationX);
     }
 
-    public void SetCameraTarget(CameraTarget target)
+    public static void SetCameraTarget(CameraTarget target)
+	{
+        Singleton?.SingletonSetCameraTarget(target);
+    }
+
+    private void SingletonSetCameraTarget(CameraTarget target)
 	{
         m_lerpStartTime = Time.time;
 
