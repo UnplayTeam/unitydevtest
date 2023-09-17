@@ -55,7 +55,7 @@ namespace RPG.Character.Avatar {
     /// <returns>The held customization value associated with this group within this avatar instance</returns>
     public float GetBlendShapeValue (AvatarBaseMeshData.BlendShapeGroup blendShapeGroup) {
       foreach (AvatarCustomizationDataEntry entry in _CustomizationDataEntries) {
-        if (entry.GroupName == blendShapeGroup.BlendGroupName) {
+        if (entry.GroupName == blendShapeGroup.GroupName) {
           return entry.Value;
         }
       }
@@ -71,11 +71,11 @@ namespace RPG.Character.Avatar {
     public void SetBlendShapeValue (AvatarBaseMeshData.BlendShapeGroup blendShapeGroup, float value) {
       float clampedValue = Mathf.Clamp (value, 0f, 100f);
       AvatarCustomizationDataEntry newEntry = new() {
-        GroupName = blendShapeGroup.BlendGroupName,
+        GroupName = blendShapeGroup.GroupName,
         Value = clampedValue
       };
       for (int i = 0; i < _CustomizationDataEntries.Count; i++) {
-        if (_CustomizationDataEntries[i].GroupName == blendShapeGroup.BlendGroupName) {
+        if (_CustomizationDataEntries[i].GroupName == blendShapeGroup.GroupName) {
           _CustomizationDataEntries[i] = newEntry;
           RefreshEntry (newEntry);
           return;

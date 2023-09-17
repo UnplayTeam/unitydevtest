@@ -23,7 +23,8 @@ namespace RPG.Character.Avatar {
     
     [Serializable]
     public class BlendShapeGroup {
-      public string BlendGroupName;
+      public string GroupName;
+      public string Category;
       public List<BlendShapeData> BlendShapes = new ();
     }
     
@@ -36,7 +37,7 @@ namespace RPG.Character.Avatar {
     public List<BlendShapeGroup> BlendShapeGroups => _BlendShapeGroups;
     
     public bool TryGetBlendShapeGroup (string groupName, out BlendShapeGroup blendShapeGroup) {
-      blendShapeGroup = _BlendShapeGroups.FirstOrDefault (bsg => bsg.BlendGroupName == groupName);
+      blendShapeGroup = _BlendShapeGroups.FirstOrDefault (bsg => bsg.GroupName == groupName);
       return blendShapeGroup != null;
     }
     

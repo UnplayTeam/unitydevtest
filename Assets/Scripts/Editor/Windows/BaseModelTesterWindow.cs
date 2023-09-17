@@ -31,7 +31,7 @@ namespace RPG.Editor {
       foreach (AvatarBaseMeshData.BlendShapeGroup blendShapeGroup in _BaseMeshData.BlendShapeGroups) {
         using (new EditorGUILayout.HorizontalScope (GUI.skin.box)) {
           float currentValue = hasCharacterPawnAvatar ? _CharacterPawnAvatar.GetBlendShapeValue (blendShapeGroup) : 0f;
-          float sliderValue = EditorGUILayout.Slider (blendShapeGroup.BlendGroupName, currentValue, MeshUtils.BlendShapeWeightMin, MeshUtils.BlendShapeWeightMax);
+          float sliderValue = EditorGUILayout.Slider (blendShapeGroup.GroupName, currentValue, MeshUtils.BlendShapeWeightMin, MeshUtils.BlendShapeWeightMax);
           if (_CharacterPawnAvatar != null && Math.Abs (currentValue - sliderValue) > 0.01f) {
             _CharacterPawnAvatar.SetBlendShapeValue (blendShapeGroup, sliderValue);
           }
