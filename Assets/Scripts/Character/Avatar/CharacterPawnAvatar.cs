@@ -14,6 +14,8 @@ namespace RPG.Character.Avatar {
     // Used to speed up lookup in-game
     private Dictionary<string, SkinnedMeshRenderer> _CustomizableMeshesDictionary = new ();
     
+    public AvatarBaseMeshData BaseMeshData => _BaseMeshData;
+    
     /// <summary>
     /// Refreshes the avatar's meshes with the current customization data.
     /// </summary>
