@@ -138,6 +138,17 @@ namespace RPG.Character.Avatar {
     }
     
 #if UNITY_EDITOR
+    private void PrintAllBlendShapes (bool onlyNonZero = false) {
+      foreach (SkinnedMeshRenderer skinnedMeshRenderer in _CustomizableMeshes) {
+        for (int i = 0; i < skinnedMeshRenderer.sharedMesh.blendShapeCount; i++) {
+          float weight = skinnedMeshRenderer.GetBlendShapeWeight (i);
+          if (!onlyNonZero || weight > 0f) {
+            Debug.Log ($"{skinnedMeshRenderer.name} - {skinnedMeshRenderer.sharedMesh.GetBlendShapeName (i)}: {weight}");
+          }
+        }
+      }
+    }
+    
     [UnityEditor.CustomEditor (typeof(CharacterPawnAvatar))]
     public class CharacterAvatarHandlerEditor : UnityEditor.Editor {
       public override void OnInspectorGUI () {
@@ -148,6 +159,9 @@ namespace RPG.Character.Avatar {
         using (new UnityEditor.EditorGUILayout.VerticalScope (GUI.skin.box)) {
           if (GUILayout.Button ("Get All Customizable Meshes")) {
             avatarHandler.GetAllCustomizableMeshes ();
+          }
+          if (GUILayout.Button ("Print All Non-Zero BlendShapes")) {
+            avatarHandler.PrintAllBlendShapes (true);
           }
           if (GUILayout.Button ("Refresh Avatar")) {
             avatarHandler.RefreshAvatar ();
