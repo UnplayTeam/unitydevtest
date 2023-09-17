@@ -17,8 +17,8 @@ namespace RPG.Character.Avatar {
       public string BlendShapeName;
       public string MeshName;
       public int Index;
-      public float MinValue;
-      public float MaxValue;
+      public float MinValue = MeshUtils.BlendShapeWeightMin;
+      public float MaxValue = MeshUtils.BlendShapeWeightMax;
     }
     
     [Serializable]
@@ -32,6 +32,13 @@ namespace RPG.Character.Avatar {
     [SerializeField, HideInInspector] private List<BlendShapeData> _AllMeshBlendShapes;
     [SerializeField] private List<BlendShapeGroup> _BlendShapeGroups;
     
+    public string Key => _Key;
+    public List<BlendShapeGroup> BlendShapeGroups => _BlendShapeGroups;
+    
+    public bool TryGetBlendShapeGroup (string groupName, out BlendShapeGroup blendShapeGroup) {
+      blendShapeGroup = _BlendShapeGroups.FirstOrDefault (bsg => bsg.BlendGroupName == groupName);
+      return blendShapeGroup != null;
+    }
     
     
 #if UNITY_EDITOR
@@ -118,7 +125,7 @@ namespace RPG.Character.Avatar {
         // Min-Max slider
         float minValue = minValueProperty.floatValue;
         float maxValue = maxValueProperty.floatValue;
-        EditorGUI.MinMaxSlider(new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight), ref minValue, ref maxValue, 0f, 100f);
+        EditorGUI.MinMaxSlider(new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight, position.width, EditorGUIUtility.singleLineHeight), ref minValue, ref maxValue, MeshUtils.BlendShapeWeightMin, MeshUtils.BlendShapeWeightMax);
         minValue = EditorGUI.FloatField(new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight * 2, position.width / 2 - 5, EditorGUIUtility.singleLineHeight), "Min", minValue);
         maxValue = EditorGUI.FloatField(new Rect(position.x + position.width / 2 + 5, position.y + EditorGUIUtility.singleLineHeight * 2, position.width / 2 - 5, EditorGUIUtility.singleLineHeight), "Max", maxValue);
         minValueProperty.floatValue = minValue;
@@ -139,6 +146,7 @@ namespace RPG.Character.Avatar {
       private SerializedProperty _SerializedGroupList;
       private AvatarBaseMeshData _BaseMeshData;
       private bool _ShowFullList;
+      private int _ExpandedGroupIndex = -1;
       // Shared across all groups, it's fine for now but maybe fix before submission
       private string _SearchQuery = string.Empty;
 
@@ -169,42 +177,65 @@ namespace RPG.Character.Avatar {
             SerializedProperty listItem = _SerializedGroupList.GetArrayElementAtIndex (i);
             EditorGUILayout.PropertyField (listItem);
             if (listItem.isExpanded) {
-              int indentLevel = EditorGUI.indentLevel;
-              EditorGUI.indentLevel = indentLevel + 1;
-              using (new EditorGUILayout.VerticalScope (GUI.skin.box)) {
-                _SearchQuery = EditorGUILayout.TextField ("Search", _SearchQuery);
-                if (_SearchQuery.Length > 0) {
-                  BlendShapeData[] matches = _BaseMeshData._AllMeshBlendShapes
-                    .Where (data => data.BlendShapeName.Contains (_SearchQuery)).Take (3).ToArray ();
-                  foreach (BlendShapeData data in matches) {
-                    if (GUILayout.Button (data.BlendShapeName)) {
-                      SerializedProperty blendShapesList = listItem.FindPropertyRelative ("BlendShapes");
-                      int newIndex = blendShapesList.arraySize;
-                      blendShapesList.InsertArrayElementAtIndex(newIndex);
-                      SerializedProperty newBlendShape = blendShapesList.GetArrayElementAtIndex(newIndex);
-                      newBlendShape.FindPropertyRelative("BlendShapeName").stringValue = data.BlendShapeName;
-                      newBlendShape.FindPropertyRelative("MeshName").stringValue = data.MeshName;
-                      newBlendShape.FindPropertyRelative("Index").intValue = data.Index;
-                    }
-                  }
-                } else {
-                  EditorGUILayout.LabelField ("Search the available blend shapes by name");
+              if (_ExpandedGroupIndex != i) {
+                if (_ExpandedGroupIndex != -1) {
+                  SerializedProperty prevExpanded = _SerializedGroupList.GetArrayElementAtIndex (i);
+                  prevExpanded.isExpanded = false;
                 }
+                _ExpandedGroupIndex = i;
               }
-              EditorGUI.indentLevel = indentLevel;
+            } else if (_ExpandedGroupIndex == i) {
+              _ExpandedGroupIndex = -1;
             }
           } 
         }
-        
-        serializedObject.ApplyModifiedProperties();
+
+        int matchedCount = 0;
         using (new EditorGUILayout.VerticalScope (GUI.skin.box)) {
-          _ShowFullList = EditorGUILayout.Foldout(_ShowFullList, $"All Mesh Blend Shapes [{_BaseMeshData._AllMeshBlendShapes.Count}]");
+          _SearchQuery = EditorGUILayout.TextField ("Search", _SearchQuery);
+          if (_SearchQuery.Length > 0) {
+            BlendShapeData[] matches = _BaseMeshData._AllMeshBlendShapes
+              .Where (FilterBlendShapes).OrderBy(SortBlendShapes).ToArray ();
+            matchedCount = matches.Length;
+            EditorGUILayout.LabelField ($"Matches [{matchedCount}]");
+            foreach (BlendShapeData data in matches) {
+              GUI.enabled = _ExpandedGroupIndex != -1;
+              if (GUILayout.Button (data.BlendShapeName)) {
+                SerializedProperty expanded = _SerializedGroupList.GetArrayElementAtIndex (_ExpandedGroupIndex);
+                SerializedProperty blendShapesList = expanded.FindPropertyRelative ("BlendShapes");
+                int newIndex = blendShapesList.arraySize;
+                blendShapesList.InsertArrayElementAtIndex(newIndex);
+                SerializedProperty newBlendShape = blendShapesList.GetArrayElementAtIndex(newIndex);
+                newBlendShape.FindPropertyRelative ("BlendShapeName").stringValue = data.BlendShapeName;
+                newBlendShape.FindPropertyRelative ("MeshName").stringValue = data.MeshName;
+                newBlendShape.FindPropertyRelative ("Index").intValue = data.Index;
+                newBlendShape.FindPropertyRelative ("MinValue").floatValue = MeshUtils.BlendShapeWeightMin;
+                newBlendShape.FindPropertyRelative ("MaxValue").floatValue = MeshUtils.BlendShapeWeightMax;
+              }
+              GUI.enabled = true;
+            }
+          } else {
+            EditorGUILayout.LabelField ("Search the available blend shapes by name");
+          }
+          string prefix = _SearchQuery.Length == 0 ? "All" : "Remaining";
+          int remainingCount = _BaseMeshData._AllMeshBlendShapes.Count - matchedCount;
+          _ShowFullList = EditorGUILayout.Foldout(_ShowFullList, $"{prefix} Mesh Blend Shapes [{remainingCount}]");
           if (_ShowFullList) {
-            foreach (BlendShapeData data in _BaseMeshData._AllMeshBlendShapes) {
+            List<BlendShapeData> unmatchedList = _BaseMeshData._AllMeshBlendShapes.OrderBy (SortBlendShapes).ToList ();
+            foreach (BlendShapeData data in unmatchedList) {
               EditorGUILayout.LabelField ($"{data.BlendShapeName}");
             }
           }
         }
+        serializedObject.ApplyModifiedProperties();
+      }
+
+      private bool FilterBlendShapes (BlendShapeData data) {
+        return string.IsNullOrEmpty (_SearchQuery) || data.BlendShapeName.Contains (_SearchQuery, StringComparison.OrdinalIgnoreCase);
+      }
+
+      private string SortBlendShapes (BlendShapeData data) {
+        return data.BlendShapeName;
       }
     }
 #endif
