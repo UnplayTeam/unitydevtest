@@ -1441,5 +1441,26 @@ MonoBehaviour:
     MinValue: 0
     MaxValue: 1
   _BlendShapeGroups:
-  - BlendGroupName: 
-    BlendShapes: []
+  - GroupName: Stockiness
+    Category: Build
+    BlendShapes:
+    - BlendShapeName: bs_leg_upper_L.leg_upper_L_iso_trunk
+      MeshName: leg_upper_L
+      Index: 4
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_R.leg_upper_R_iso_trunk
+      MeshName: leg_upper_R
+      Index: 5
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_torso.torso_iso_trunk
+      MeshName: torso
+      Index: 9
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_waist.waist_iso_trunk
+      MeshName: waist
+      Index: 4
+      MinValue: 0
+      MaxValue: 100
