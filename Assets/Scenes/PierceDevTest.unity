@@ -2012,6 +2012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652254282656}
   - component: {fileID: 5866666020603689434}
+  - component: {fileID: 5866666020603689435}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -3899,7 +3900,18 @@ SkinnedMeshRenderer:
   - {fileID: 5411658956521830566}
   - {fileID: 6475012483907789340}
   - {fileID: 8305232183747696477}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 535264109987513638}
   m_AABB:
     m_Center: {x: 0.00024808198, y: -0.02322695, z: 0.030827612}
@@ -4051,7 +4063,18 @@ SkinnedMeshRenderer:
   - {fileID: 5729830673106895069}
   - {fileID: 1990713496870741753}
   - {fileID: 8305232183747696477}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 535264109987513638}
   m_AABB:
     m_Center: {x: 0.11517868, y: -0.2341212, z: 0.00018309057}
@@ -4126,7 +4149,18 @@ SkinnedMeshRenderer:
   - {fileID: 8305232183747696477}
   - {fileID: 4782158013859955271}
   - {fileID: 8276905354852758548}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 535264109987513638}
   m_AABB:
     m_Center: {x: -0.11491229, y: -0.23321375, z: 0.0003129542}
@@ -7366,6 +7400,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5866666020603689435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148317976858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d00881f8ac23975429e4201e7d6cff6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BaseMeshData: {fileID: 11400000, guid: 46fdc7e27cbedbd40a15c00d6ee42da1, type: 2}
+  _CustomizableMeshes:
+  - {fileID: 178696695562490308}
+  - {fileID: 5128211257865086109}
+  - {fileID: 362951099348401759}
+  - {fileID: 56346963969248851}
+  - {fileID: 6160406308780956303}
+  - {fileID: 1815652712132911506}
+  - {fileID: 7765710607452236944}
+  - {fileID: 241937264345764405}
+  - {fileID: 7160418863742004837}
+  - {fileID: 7498231610704886886}
+  - {fileID: 4977967604874899612}
+  - {fileID: 1154369614276119997}
+  - {fileID: 8128723741363794235}
+  - {fileID: 3967851595975486613}
+  - {fileID: 401742896078604953}
+  - {fileID: 3911652425412271313}
+  - {fileID: 2805760605457073292}
+  - {fileID: 5499631621726506928}
+  - {fileID: 5993593773272586978}
+  - {fileID: 2753077359996560424}
+  - {fileID: 2575084954845395024}
+  - {fileID: 5173794096099162012}
+  - {fileID: 8381323880722849142}
+  - {fileID: 4936157019336854159}
+  - {fileID: 958326299582226692}
+  - {fileID: 1194032531394977033}
+  - {fileID: 5685216098029671409}
+  - {fileID: 4810547450318449142}
+  _CustomizationDataEntries:
+  - GroupName: 
+    Value: 0
 --- !u!1 &5904001798189540712
 GameObject:
   m_ObjectHideFlags: 0
