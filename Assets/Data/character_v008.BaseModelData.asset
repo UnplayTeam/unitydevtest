@@ -1464,3 +1464,106 @@ MonoBehaviour:
       Index: 4
       MinValue: 0
       MaxValue: 100
+  - GroupName: Gender
+    Category: Gender
+    BlendShapes:
+    - BlendShapeName: bs_arm_lower_L.arm_lower_L_gender_fem
+      MeshName: arm_lower_L
+      Index: 4
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_lower_R.arm_lower_R_gender_fem
+      MeshName: arm_lower_R
+      Index: 4
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_upper_L.arm_upper_L_gender_fem
+      MeshName: arm_upper_L
+      Index: 8
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_upper_R.arm_upper_R_gender_fem
+      MeshName: arm_upper_R
+      Index: 8
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_ear_L.ear_L_gender_fem
+      MeshName: ear_L
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_ear_R.ear_R_gender_fem
+      MeshName: ear_R
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyemask.eyemask_gender_fem
+      MeshName: eyemask
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_hair001_t1.hair001_t1_gender_fem
+      MeshName: hair001_t1
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_head.head_gender_fem
+      MeshName: head
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_lower_L.leg_lower_L_gender_fem
+      MeshName: leg_lower_L
+      Index: 4
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_lower_R.leg_lower_R_gender_fem
+      MeshName: leg_lower_R
+      Index: 4
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_L.leg_upper_L_gender_fem
+      MeshName: leg_upper_L
+      Index: 8
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_R.leg_upper_R_gender_fem
+      MeshName: leg_upper_R
+      Index: 8
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_mouth.mouth_gender_fem
+      MeshName: mouth
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_neck.neck_gender_fem
+      MeshName: neck
+      Index: 6
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_nose.nose_gender_fem
+      MeshName: nose
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_torso.torso_gender_fem
+      MeshName: torso
+      Index: 14
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_waist.waist_gender_fem
+      MeshName: waist
+      Index: 8
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_L.eyelash_L_gender_fem
+      MeshName: eyelash_L
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_R.eyelash_R_gender_fem
+      MeshName: eyelash_R
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
