@@ -1441,31 +1441,8 @@ MonoBehaviour:
     MinValue: 0
     MaxValue: 1
   _BlendShapeGroups:
-  - GroupName: Stockiness
-    Category: Build
-    BlendShapes:
-    - BlendShapeName: bs_leg_upper_L.leg_upper_L_iso_trunk
-      MeshName: leg_upper_L
-      Index: 4
-      MinValue: 0
-      MaxValue: 100
-    - BlendShapeName: bs_leg_upper_R.leg_upper_R_iso_trunk
-      MeshName: leg_upper_R
-      Index: 5
-      MinValue: 0
-      MaxValue: 100
-    - BlendShapeName: bs_torso.torso_iso_trunk
-      MeshName: torso
-      Index: 9
-      MinValue: 0
-      MaxValue: 100
-    - BlendShapeName: bs_waist.waist_iso_trunk
-      MeshName: waist
-      Index: 4
-      MinValue: 0
-      MaxValue: 100
-  - GroupName: Gender
-    Category: Gender
+  - GroupName: Identity
+    Category: General
     BlendShapes:
     - BlendShapeName: bs_arm_lower_L.arm_lower_L_gender_fem
       MeshName: arm_lower_L
@@ -1565,5 +1542,567 @@ MonoBehaviour:
     - BlendShapeName: eyelash_01_R.eyelash_R_gender_fem
       MeshName: eyelash_R
       Index: 0
+      MinValue: 0
+      MaxValue: 100
+  - GroupName: Muscularity
+    Category: Build
+    BlendShapes:
+    - BlendShapeName: bs_arm_lower_L.arm_lower_L_body_muscular_heavy
+      MeshName: arm_lower_L
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_lower_L.arm_lower_L_body_muscular_mid
+      MeshName: arm_lower_L
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_lower_R.arm_lower_R_body_muscular_heavy
+      MeshName: arm_lower_R
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_lower_R.arm_lower_R_body_muscular_mid
+      MeshName: arm_lower_R
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_upper_L.arm_upper_L_body_muscular_heavy
+      MeshName: arm_upper_L
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_upper_L.arm_upper_L_body_muscular_mid
+      MeshName: arm_upper_L
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_upper_R.arm_upper_R_body_muscular_heavy
+      MeshName: arm_upper_R
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_upper_R.arm_upper_R_body_muscular_mid
+      MeshName: arm_upper_R
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_hand_L.hand_L_body_muscular_heavy
+      MeshName: hand_L
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_hand_R.hand_R_body_muscular_heavy
+      MeshName: hand_R
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_head.head_body_muscular_heavy
+      MeshName: head
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_lower_L.leg_lower_L_body_muscular_heavy
+      MeshName: leg_lower_L
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_lower_L.leg_lower_L_body_muscular_mid
+      MeshName: leg_lower_L
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_lower_R.leg_lower_R_body_muscular_heavy
+      MeshName: leg_lower_R
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_lower_R.leg_lower_R_body_muscular_mid
+      MeshName: leg_lower_R
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_L.leg_upper_L_body_muscular_heavy
+      MeshName: leg_upper_L
+      Index: 6
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_L.leg_upper_L_body_muscular_mid
+      MeshName: leg_upper_L
+      Index: 7
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_R.leg_upper_R_body_muscular_heavy
+      MeshName: leg_upper_R
+      Index: 6
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_R.leg_upper_R_body_muscular_mid
+      MeshName: leg_upper_R
+      Index: 7
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_neck.neck_body_muscular_heavy
+      MeshName: neck
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_neck.neck_body_muscular_mid
+      MeshName: neck
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_torso.torso_body_muscular_heavy
+      MeshName: torso
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_torso.torso_body_muscular_mid
+      MeshName: torso
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_waist.waist_body_muscular_heavy
+      MeshName: waist
+      Index: 6
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_waist.waist_body_muscular_mid
+      MeshName: waist
+      Index: 7
+      MinValue: 0
+      MaxValue: 100
+  - GroupName: Weight
+    Category: Build
+    BlendShapes:
+    - BlendShapeName: bs_arm_lower_L.arm_lower_L_body_weight_heavy
+      MeshName: arm_lower_L
+      Index: 6
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_lower_L.arm_lower_L_body_weight_thin
+      MeshName: arm_lower_L
+      Index: 5
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_lower_R.arm_lower_R_body_weight_heavy
+      MeshName: arm_lower_R
+      Index: 6
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_lower_R.arm_lower_R_body_weight_thin
+      MeshName: arm_lower_R
+      Index: 5
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_upper_L.arm_upper_L_body_weight_heavy
+      MeshName: arm_upper_L
+      Index: 10
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_upper_L.arm_upper_L_body_weight_thin
+      MeshName: arm_upper_L
+      Index: 9
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_upper_R.arm_upper_R_body_weight_heavy
+      MeshName: arm_upper_R
+      Index: 9
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_arm_upper_R.arm_upper_R_body_weight_thin
+      MeshName: arm_upper_R
+      Index: 10
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_ear_L.ear_L_body_weight_thin_head
+      MeshName: ear_L
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_ear_R.ear_R_body_weight_thin_head
+      MeshName: ear_R
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyemask.eyemask_body_weight_thin_head
+      MeshName: eyemask
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_foot_L.foot_L_body_weight_heavy
+      MeshName: foot_L
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_foot_L.foot_L_body_weight_thin
+      MeshName: foot_L
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_foot_R.foot_R_body_weight_heavy
+      MeshName: foot_R
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_foot_R.foot_R_body_weight_thin
+      MeshName: foot_R
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_hand_L.hand_L_body_weight_heavy
+      MeshName: hand_L
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_hand_L.hand_L_body_weight_thin
+      MeshName: hand_L
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_hand_R.hand_R_body_weight_heavy
+      MeshName: hand_R
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_hand_R.hand_R_body_weight_thin
+      MeshName: hand_R
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_head.head_body_weight_thin
+      MeshName: head
+      Index: 7
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_head.head_body_weight_thin_head
+      MeshName: head
+      Index: 6
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_lower_L.leg_lower_L_body_weight_heavy
+      MeshName: leg_lower_L
+      Index: 6
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_lower_L.leg_lower_L_body_weight_thin
+      MeshName: leg_lower_L
+      Index: 5
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_lower_R.leg_lower_R_body_weight_heavy
+      MeshName: leg_lower_R
+      Index: 6
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_lower_R.leg_lower_R_body_weight_thin
+      MeshName: leg_lower_R
+      Index: 5
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_L.leg_upper_L_body_weight_heavy
+      MeshName: leg_upper_L
+      Index: 10
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_L.leg_upper_L_body_weight_thin
+      MeshName: leg_upper_L
+      Index: 9
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_R.leg_upper_R_body_weight_heavy
+      MeshName: leg_upper_R
+      Index: 10
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_leg_upper_R.leg_upper_R_body_weight_thin
+      MeshName: leg_upper_R
+      Index: 9
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_mouth.mouth_body_weight_thin_head
+      MeshName: mouth
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_neck.neck_body_weight_heavy
+      MeshName: neck
+      Index: 9
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_neck.neck_body_weight_thin
+      MeshName: neck
+      Index: 10
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_neck.neck_body_weight_thin_head
+      MeshName: neck
+      Index: 11
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_nose.nose_body_weight_thin_head
+      MeshName: nose
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_torso.torso_body_weight_heavy
+      MeshName: torso
+      Index: 15
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_torso.torso_body_weight_thin
+      MeshName: torso
+      Index: 16
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_waist.waist_body_weight_heavy
+      MeshName: waist
+      Index: 9
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_waist.waist_body_weight_thin
+      MeshName: waist
+      Index: 10
+      MinValue: 0
+      MaxValue: 100
+  - GroupName: Orc
+    Category: Species
+    BlendShapes:
+    - BlendShapeName: bs_ear_L.ear_L_species_orc_fem
+      MeshName: ear_L
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_ear_L.ear_L_species_orc_masc
+      MeshName: ear_L
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_ear_R.ear_R_species_orc_fem
+      MeshName: ear_R
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_ear_R.ear_R_species_orc_masc
+      MeshName: ear_R
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyebrow001_L.eyebrow001_L_species_orc_fem
+      MeshName: eyebrow001_L
+      Index: 5
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyebrow001_L.eyebrow001_L_species_orc_masc
+      MeshName: eyebrow001_L
+      Index: 4
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyebrow001_R.eyebrow001_R_species_orc_fem
+      MeshName: eyebrow001_R
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyebrow001_R.eyebrow001_R_species_orc_masc
+      MeshName: eyebrow001_R
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyemask.eyemask_species_orc_fem
+      MeshName: eyemask
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyemask.eyemask_species_orc_masc
+      MeshName: eyemask
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_hair001_t1.hair001_t1__orc_fem
+      MeshName: hair001_t1
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_hair001_t1.hair001_t1__orc_masc
+      MeshName: hair001_t1
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_head.head_species_orc_fem
+      MeshName: head
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_head.head_species_orc_masc
+      MeshName: head
+      Index: 5
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_mouth.mouth_species_orc_fem
+      MeshName: mouth
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_mouth.mouth_species_orc_masc
+      MeshName: mouth
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_neck.neck_species_orc_fem
+      MeshName: neck
+      Index: 8
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_neck.neck_species_orc_masc
+      MeshName: neck
+      Index: 7
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_nose.nose_species_orc_fem
+      MeshName: nose
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_nose.nose_species_orc_masc
+      MeshName: nose
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_L.eyelash_L_orc_fem
+      MeshName: eyelash_L
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_L.eyelash_L_orc_masc
+      MeshName: eyelash_L
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_R.eyelash_R_orc_fem
+      MeshName: eyelash_R
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_R.eyelash_R_orc_masc
+      MeshName: eyelash_R
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+  - GroupName: Elf
+    Category: Species
+    BlendShapes:
+    - BlendShapeName: bs_ear_L.ear_L_species_elf_fem
+      MeshName: ear_L
+      Index: 12
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_ear_L.ear_L_species_elf_masc
+      MeshName: ear_L
+      Index: 13
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_ear_R.ear_R_species_elf_fem
+      MeshName: ear_R
+      Index: 12
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_ear_R.ear_R_species_elf_masc
+      MeshName: ear_R
+      Index: 13
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyebrow001_L.eyebrow001_L_species_elf
+      MeshName: eyebrow001_L
+      Index: 2
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyebrow001_L.eyebrow001_L_species_elf1
+      MeshName: eyebrow001_L
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyebrow001_R.eyebrow001_R_species_elf
+      MeshName: eyebrow001_R
+      Index: 0
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyebrow001_R.eyebrow001_R_species_elf1
+      MeshName: eyebrow001_R
+      Index: 1
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyemask.eyemask_species_elf_fem
+      MeshName: eyemask
+      Index: 17
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_eyemask.eyemask_species_elf_masc
+      MeshName: eyemask
+      Index: 16
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_head.head_species_elf_fem
+      MeshName: head
+      Index: 30
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_head.head_species_elf_masc
+      MeshName: head
+      Index: 29
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_mouth.mouth_species_elf_fem
+      MeshName: mouth
+      Index: 27
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_mouth.mouth_species_elf_masc
+      MeshName: mouth
+      Index: 26
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_neck.neck_species_elf_fem
+      MeshName: neck
+      Index: 17
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_neck.neck_species_elf_masc
+      MeshName: neck
+      Index: 16
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_nose.nose_species_elf_fem
+      MeshName: nose
+      Index: 21
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: bs_nose.nose_species_elf_masc
+      MeshName: nose
+      Index: 22
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_L.eyelash_L_elf_fem
+      MeshName: eyelash_L
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_L.eyelash_L_elf_masc
+      MeshName: eyelash_L
+      Index: 4
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_L.eyelash_L_elf_masc
+      MeshName: eyelash_L
+      Index: 4
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_R.eyelash_R_elf_fem
+      MeshName: eyelash_R
+      Index: 3
+      MinValue: 0
+      MaxValue: 100
+    - BlendShapeName: eyelash_01_R.eyelash_R_elf_masc
+      MeshName: eyelash_R
+      Index: 4
       MinValue: 0
       MaxValue: 100
