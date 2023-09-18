@@ -49,7 +49,14 @@ namespace RPG.Character.Avatar {
         }
       }
     }
-    
+
+    public float GetBlendShapeValue (string blendShapeGroupName) {
+      if (_BaseMeshData.TryGetBlendShapeGroup (blendShapeGroupName, out AvatarBaseMeshData.BlendShapeGroup blendShapeGroup)) {
+        return GetBlendShapeValue (blendShapeGroup);
+      }
+      return 0f;
+    }
+
     /// <summary>
     /// Get the value of a blend shape group held by this avatar.
     /// </summary>
@@ -63,7 +70,13 @@ namespace RPG.Character.Avatar {
       }
       return 0f;
     }
-    
+
+    public void SetBlendShapeValue (string blendShapeGroupName, float value) {
+      if (_BaseMeshData.TryGetBlendShapeGroup (blendShapeGroupName, out AvatarBaseMeshData.BlendShapeGroup blendShapeGroup)) {
+        SetBlendShapeValue (blendShapeGroup, value);
+      }
+    }
+
     /// <summary>
     /// Sets the value(s) of a BlendShapeGroup to the customizable meshes held by this avatar
     /// </summary>
