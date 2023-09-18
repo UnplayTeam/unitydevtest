@@ -6,12 +6,12 @@ using UnityEngine;
 namespace RPG.UI {
   public class MenuPanelCustomization : MonoBehaviour {
     [SerializeField] private CharacterPawnAvatar _CharacterPawnAvatar;
-    [SerializeField] private AvatarCustomizationCamera _Camera;
-    [SerializeField] private Transform _CameraTarget;
+    [SerializeField] private FocusCamera _Camera;
+    [SerializeField] private FocusCameraTarget _CameraTarget;
     [SerializeField] private UIBlendGroupControl[] _UIBlendGroupControls = Array.Empty<UIBlendGroupControl> ();
     
     public void FocusOnCameraTarget () {
-      _Camera.MoveCameraToPositionTarget(_CameraTarget);
+      _Camera.SetFocusCameraTarget(_CameraTarget);
     }
     
     // Unity
