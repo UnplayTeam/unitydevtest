@@ -461,11 +461,6 @@ MonoBehaviour:
   _CameraTarget: {fileID: 0}
   _UIBlendGroupControls:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &3633468625223653043
 GameObject:
   m_ObjectHideFlags: 0
