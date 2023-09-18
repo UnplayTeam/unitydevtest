@@ -44,7 +44,8 @@ namespace RPG.Character.Avatar {
       if (_BaseMeshData.TryGetBlendShapeGroup (entry.GroupName, out AvatarBaseMeshData.BlendShapeGroup blendShapeGroup)) {
         foreach (AvatarBaseMeshData.BlendShapeData blendShape in blendShapeGroup.BlendShapes) {
           if (TryGetCustomizableMesh (blendShape.MeshName, out SkinnedMeshRenderer customizableMesh)) {
-            customizableMesh.SetBlendShapeWeight (blendShape.Index, entry.Value);
+            float scaledValue = blendShape.ScaleValue (entry.Value);
+            customizableMesh.SetBlendShapeWeight (blendShape.Index, scaledValue);
           }
         }
       }

@@ -19,6 +19,10 @@ namespace RPG.Character.Avatar {
       public int Index;
       public float MinValue = MeshUtils.BlendShapeWeightMin;
       public float MaxValue = MeshUtils.BlendShapeWeightMax;
+      
+      public float ScaleValue (float value) {
+        return Mathf.Lerp (MinValue, MaxValue, value / MeshUtils.BlendShapeWeightMax);
+      }
     }
     
     [Serializable]
