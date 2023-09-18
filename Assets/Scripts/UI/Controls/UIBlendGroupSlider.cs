@@ -1,49 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
-using RPG.Character.Avatar;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace RPG.UI.Controls {
-  public class UIBlendGroupSlider : MonoBehaviour {
-    [SerializeField] private MenuPanelCustomization _MenuPanelCustomization;
-    [SerializeField] private string _BlendGroupNameKey;
+  /// <summary>
+  /// A UI control that manipulates a single BlendGroup value using a slider
+  /// </summary>
+  public class UIBlendGroupSlider : UIBlendGroupControl {
     [SerializeField] private Slider _Slider;
 
-    private bool _SkipInvokeChanged = false;
+    private bool _SkipInvokeChanged;
     
-    public string BlendGroupNameKey => _BlendGroupNameKey;
-    public float Value => _Slider.value;
+    public override float Value => _Slider.value;
     
-    public UnityEvent<string, float> OnValueChanged  = new ();
-
-    public void SetValue (float value, bool invokeChanged = true) {
-      _SkipInvokeChanged = !invokeChanged;
+    public override void SetValue (float value) {
       _Slider.value = value;
-      _SkipInvokeChanged = false;
     }
     
     // Unity
     private void Awake () {
-      SetValue (_MenuPanelCustomization.CharacterPawnAvatar.GetBlendShapeValue (_BlendGroupNameKey), false);
       _Slider.minValue = MeshUtils.BlendShapeWeightMin;
       _Slider.maxValue = MeshUtils.BlendShapeWeightMax;
-      _Slider.onValueChanged.AddListener (OnSliderValueChanged);
+      _Slider.onValueChanged.AddListener (InvokeValueChanged);
     }
     
     private void OnDestroy () {
-      _Slider.onValueChanged.RemoveListener (OnSliderValueChanged);
+      _Slider.onValueChanged.RemoveListener (InvokeValueChanged);
     }
 
     // Internal
-    private void OnSliderValueChanged (float value) {
-      if (_SkipInvokeChanged) {
-        return;
-      }
-      _MenuPanelCustomization.CharacterPawnAvatar.SetBlendShapeValue (_BlendGroupNameKey, value);
-      OnValueChanged.Invoke (_BlendGroupNameKey, value);
+    private void InvokeValueChanged (float value) {
+      OnBlendGroupValueChanged.Invoke (BlendGroupNameKey, value);
     }
   }
 }

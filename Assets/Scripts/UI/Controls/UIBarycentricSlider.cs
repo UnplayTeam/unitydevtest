@@ -7,34 +7,43 @@ namespace RPG.UI.Controls {
   // https://www.reddit.com/r/Unity3D/comments/b1qn5e/slider_for_three_values_d_code_included/
   // https://gist.github.com/Wokarol/fcb424148cb08c1dbbdf02d72a52a4dc
 
+  /// <summary>
+  /// UI Slider Control for a Barycentric Triangle shape, where each corner is a separate blendable value
+  /// </summary>
   public class UIBarycentricSlider : MonoBehaviour, IPointerDownHandler, IDragHandler {
-    [Serializable]
-    public class VectorEvent : UnityEvent<Vector3> { }
+    public class OnBarycentricWeightsChanged : UnityEvent<Vector3> { }
 
     [SerializeField] private RectTransform _Handle = null;
-    [SerializeField] private Vector2[] _TriangleCorners = new Vector2[3];
-
-    public VectorEvent OnValueChanged = new ();
+    [SerializeField] private float _TriangleSize = 50f;
     
-    public Vector3 TriangleCornerA => new (_TriangleCorners[0].x, _TriangleCorners[0].y, 0);
-    public Vector3 TriangleCornerAGlobal => transform.position + TriangleCornerA;
-    public Vector3 TriangleCornerB => new (_TriangleCorners[1].x, _TriangleCorners[1].y, 0);
-    public Vector3 TriangleCornerBGlobal => transform.position + TriangleCornerB;
-    public Vector3 TriangleCornerC => new (_TriangleCorners[2].x, _TriangleCorners[2].y, 0);
-    public Vector3 TriangleCornerCGlobal => transform.position + TriangleCornerC;
+    private Vector3 _TriangleCornerA => new (0f, _TriangleSize, 0);
+    private Vector3 _TriangleCornerAGlobal => transform.position + _TriangleCornerA;
+    private Vector3 _TriangleCornerB => new (-_TriangleSize, -_TriangleSize, 0);
+    private Vector3 _TriangleCornerBGlobal => transform.position + _TriangleCornerB;
+    private Vector3 _TriangleCornerC => new (_TriangleSize, -_TriangleSize, 0);
+    private Vector3 _TriangleCornerCGlobal => transform.position + _TriangleCornerC;
+    
+    /// <summary>
+    /// Invoked when the current Value of the slider changes, either programmatically or by user interaction
+    /// </summary>
+    public OnBarycentricWeightsChanged OnValueChanged = new ();
 
-    public float ValueA => CalculateBarycentricCoordinates (_Handle.position).x;
-    public float ValueB => CalculateBarycentricCoordinates (_Handle.position).y;
-    public float ValueC => CalculateBarycentricCoordinates (_Handle.position).z;
+    /// <summary>
+    /// The current weights value of the slider
+    /// </summary>
+    public Vector3 Value => CalculateBarycentricCoordinates (_Handle.position);
 
-    public void SetValue (Vector3 value, bool invokeChanged = true) {
+    /// <summary>
+    /// Set the value of the slider, where each axis of the Vector3 represents the weight of the corresponding corner
+    /// </summary>
+    /// <param name="value">The Vector3 weights to apply, will be normalized</param>
+    public void SetValue (Vector3 value) {
       value.Normalize ();
-      _Handle.position = CalculatePositionFromBarycentricCoordinates (value, TriangleCornerAGlobal, TriangleCornerBGlobal, TriangleCornerCGlobal);
-      if (invokeChanged) {
-        InvokeValueChanged ();
-      }
+      _Handle.position = CalculatePositionFromBarycentricCoordinates (value, _TriangleCornerAGlobal, _TriangleCornerBGlobal, _TriangleCornerCGlobal);
+      InvokeValueChanged ();
     }
     
+    // Internal
     private void InvokeValueChanged () {
       Vector3 result = CalculateBarycentricCoordinates (_Handle.position);
       OnValueChanged?.Invoke (result);
@@ -49,7 +58,7 @@ namespace RPG.UI.Controls {
     }
 
     private void MoveHandleToPointer (Vector2 pointerPosition) {
-      _Handle.position = FindClosestPointInTriangle (pointerPosition, TriangleCornerAGlobal, TriangleCornerBGlobal, TriangleCornerCGlobal);
+      _Handle.position = FindClosestPointInTriangle (pointerPosition, _TriangleCornerAGlobal, _TriangleCornerBGlobal, _TriangleCornerCGlobal);
       InvokeValueChanged ();
     }
 
@@ -109,7 +118,7 @@ namespace RPG.UI.Controls {
     }
     
     private Vector3 CalculatePositionFromBarycentricCoordinates (Vector3 weights) => CalculateBarycentricCoordinates (weights,
-      TriangleCornerAGlobal, TriangleCornerBGlobal, TriangleCornerCGlobal);
+      _TriangleCornerAGlobal, _TriangleCornerBGlobal, _TriangleCornerCGlobal);
 
     private Vector3 CalculatePositionFromBarycentricCoordinates (Vector3 weights, Vector3 a, Vector3 b, Vector3 c) {
       if (weights == Vector3.zero) {
@@ -120,7 +129,7 @@ namespace RPG.UI.Controls {
     }
 
     private Vector3 CalculateBarycentricCoordinates (Vector3 p) =>
-      CalculateBarycentricCoordinates (p, TriangleCornerAGlobal, TriangleCornerBGlobal, TriangleCornerCGlobal);
+      CalculateBarycentricCoordinates (p, _TriangleCornerAGlobal, _TriangleCornerBGlobal, _TriangleCornerCGlobal);
 
     private Vector3 CalculateBarycentricCoordinates (Vector3 p, Vector3 a, Vector3 b, Vector3 c) {
       Vector3 v0 = b - a, v1 = c - a, v2 = p - a;
@@ -140,16 +149,14 @@ namespace RPG.UI.Controls {
       return derivedVector3;
     }
     
-    
-    
 #if UNITY_EDITOR
     private void OnDrawGizmos() {
       Vector3 position = transform.position;
       // Draw lines connecting the corners to form a triangle
       Gizmos.color = Color.green;
-      Gizmos.DrawLine(position + TriangleCornerA, position + TriangleCornerB);
-      Gizmos.DrawLine(position + TriangleCornerB, position + TriangleCornerC);
-      Gizmos.DrawLine(position + TriangleCornerC, position + TriangleCornerA);
+      Gizmos.DrawLine(position + _TriangleCornerA, position + _TriangleCornerB);
+      Gizmos.DrawLine(position + _TriangleCornerB, position + _TriangleCornerC);
+      Gizmos.DrawLine(position + _TriangleCornerC, position + _TriangleCornerA);
     }
     
     [UnityEditor.CustomEditor (typeof(UIBarycentricSlider))]
