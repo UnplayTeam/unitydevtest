@@ -9,16 +9,14 @@ public class Blendshape
 {
     public int positiveIndex { get; set; }
     public int negativeIndex { get; set; }
-    ///We have a reference to the SkinnedMeshRenderer here because a single blend slider
-    ///has the potential to affect multple SkinnedMeshRenderers throughout the whole model,
-    ///so we have a reference to the particular SkinnedMeshRenderer in which each affected
-    ///blendshape can then use to apply the blend
-    public SkinnedMeshRenderer parentSkinnedMeshRenderer { get; set; }
+    public string skinnedMeshRendererName { get; set; }
+    public string shapeName { get; set; }
 
-    public Blendshape(int positiveIndex, int negativeIndex, SkinnedMeshRenderer smr)
+    public Blendshape(string shapeName, int positiveIndex, int negativeIndex, string skinnedMeshRendererName)
     {
+        this.shapeName = shapeName;
         this.positiveIndex = positiveIndex;
         this.negativeIndex = negativeIndex;
-        this.parentSkinnedMeshRenderer = smr;
+        this.skinnedMeshRendererName = skinnedMeshRendererName;
     }
 }
