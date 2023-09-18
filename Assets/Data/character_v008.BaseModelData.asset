@@ -2106,3 +2106,196 @@ MonoBehaviour:
       Index: 4
       MinValue: 0
       MaxValue: 100
+  - GroupName: Nose
+    Category: Species
+    BlendShapes:
+    - BlendShapeName: bs_eyemask.eyemask_facial_nose_bridge_depth
+      MeshName: eyemask
+      Index: 6
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_eyemask.eyemask_facial_nose_bridge_width
+      MeshName: eyemask
+      Index: 12
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_eyemask.eyemask_facial_nose_bulb
+      MeshName: eyemask
+      Index: 5
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_eyemask.eyemask_facial_nose_length
+      MeshName: eyemask
+      Index: 8
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_eyemask.eyemask_facial_nose_tip_width_in
+      MeshName: eyemask
+      Index: 4
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_eyemask.eyemask_facial_nose_tip_width_out
+      MeshName: eyemask
+      Index: 9
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_head.head_facial_nose_angle
+      MeshName: head
+      Index: 23
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_head.head_facial_nose_bridge_depth
+      MeshName: head
+      Index: 14
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_head.head_facial_nose_bridge_width
+      MeshName: head
+      Index: 8
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_head.head_facial_nose_bulb
+      MeshName: head
+      Index: 12
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_head.head_facial_nose_length
+      MeshName: head
+      Index: 10
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_head.head_facial_nose_tip_width_in
+      MeshName: head
+      Index: 24
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_head.head_facial_nose_tip_width_out
+      MeshName: head
+      Index: 11
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_mouth.mouth_facial_nose_angle
+      MeshName: mouth
+      Index: 20
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_mouth.mouth_facial_nose_bridge_depth
+      MeshName: mouth
+      Index: 22
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_mouth.mouth_facial_nose_bridge_width
+      MeshName: mouth
+      Index: 7
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_mouth.mouth_facial_nose_bulb
+      MeshName: mouth
+      Index: 10
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_mouth.mouth_facial_nose_length
+      MeshName: mouth
+      Index: 19
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_mouth.mouth_facial_nose_tip_width_in
+      MeshName: mouth
+      Index: 17
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_mouth.mouth_facial_nose_tip_width_out
+      MeshName: mouth
+      Index: 13
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_blend_facial_cheekbones_in
+      MeshName: nose
+      Index: 19
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_blend_facial_cheekbones_out
+      MeshName: nose
+      Index: 20
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_body_weight_thin_head
+      MeshName: nose
+      Index: 3
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_brow_forward
+      MeshName: nose
+      Index: 14
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_cheeks_full
+      MeshName: nose
+      Index: 8
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_cheeks_gauntShape
+      MeshName: nose
+      Index: 4
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_lip_top_fullness
+      MeshName: nose
+      Index: 13
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_lip_top_thin
+      MeshName: nose
+      Index: 15
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_mouth_crease
+      MeshName: nose
+      Index: 9
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_mouth_out
+      MeshName: nose
+      Index: 6
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_mouth_width
+      MeshName: nose
+      Index: 16
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_nose_angle
+      MeshName: nose
+      Index: 11
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_nose_bridge_depth
+      MeshName: nose
+      Index: 5
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_nose_bridge_width
+      MeshName: nose
+      Index: 10
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_nose_bulb
+      MeshName: nose
+      Index: 17
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_nose_length
+      MeshName: nose
+      Index: 18
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_nose_tip_width_in
+      MeshName: nose
+      Index: 7
+      MinValue: 0
+      MaxValue: 50
+    - BlendShapeName: bs_nose.nose_facial_nose_tip_width_out
+      MeshName: nose
+      Index: 12
+      MinValue: 0
+      MaxValue: 50
