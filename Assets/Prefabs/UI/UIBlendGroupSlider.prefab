@@ -103,7 +103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Identity
+  m_text: Default
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -412,12 +412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bfd3c3d9530e3948b41f1c8efb7227e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MenuPanelCustomization: {fileID: 0}
-  _BlendGroupNameKey: 
+  _BlendGroupNameKey: Default
+  _GroupLabel: {fileID: 6062553247255592135}
   _Slider: {fileID: 4950125554855601609}
-  OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &7875170463882967321
 GameObject:
   m_ObjectHideFlags: 0
