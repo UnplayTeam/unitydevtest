@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ namespace RPG.UI.Controls {
   /// A UI control that manipulates a single BlendGroup value using a slider
   /// </summary>
   public class UIBlendGroupSlider : UIBlendGroupControl {
+    [SerializeField] private TMP_Text _GroupLabel;
     [SerializeField] private Slider _Slider;
 
     private bool _SkipInvokeChanged;
@@ -31,5 +33,13 @@ namespace RPG.UI.Controls {
     private void InvokeValueChanged (float value) {
       OnBlendGroupValueChanged.Invoke (BlendGroupNameKey, value);
     }
+    
+#if UNITY_EDITOR
+    private void OnValidate () {
+      if (_GroupLabel != null) {
+        _GroupLabel.text = BlendGroupNameKey;
+      }
+    }
+#endif
   }
 }

@@ -3,43 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG
-{
+namespace RPG {
   public class AvatarCustomizationCamera : MonoBehaviour {
-    [SerializeField] private Transform _FullBodyTarget;
-    [SerializeField] private Transform _HeadTarget;
+    [SerializeField] private Camera _Camera;
+    [SerializeField] private Vector2 _TargetScreenPoint;
+    [SerializeField] private float _PositionLerpSpeed = 1.0f;
+    [SerializeField] private float _Duration = 1.0f;
     
-    private void Awake () {
-      transform.AlignWith (_FullBodyTarget);
-    }
+    public void MoveCameraToPositionTarget (Transform target) {
+      Vector2 screenTarget = new Vector2 ((Screen.width / 2) * _TargetScreenPoint.x,
+        (Screen.height / 2) * _TargetScreenPoint.y);
+      // Step 1: Find the world position corresponding to the center of the screen
+      Vector3 screenCenter = new (screenTarget.x, screenTarget.y, _Camera.nearClipPlane);
+      Vector3 worldPositionAtScreenCenter = _Camera.ScreenToWorldPoint (screenCenter);
 
-#if UNITY_EDITOR
-    [UnityEditor.CustomEditor (typeof(AvatarCustomizationCamera))]
-    public class AvatarCustomizationCameraEditor : UnityEditor.Editor {
-      public override void OnInspectorGUI () {
-        DrawDefaultInspector ();
-        if (!(target is AvatarCustomizationCamera customizationCamera)) {
-          return;
-        }
-        using (new UnityEditor.EditorGUILayout.VerticalScope (GUI.skin.box)) {
-          DrawAlignButtons (customizationCamera, customizationCamera._FullBodyTarget, "Full Body");
-          DrawAlignButtons (customizationCamera, customizationCamera._HeadTarget, "Head");
-        }
-      }
+      // Step 2: Find the offset between this world position and the target transform's position
+      Vector3 offset = target.position - worldPositionAtScreenCenter;
 
-      private void DrawAlignButtons (AvatarCustomizationCamera camera, Transform transform, string label) {
-        using (new UnityEditor.EditorGUILayout.HorizontalScope ()) {
-          float labelWidth = Mathf.Clamp (UnityEditor.EditorGUIUtility.currentViewWidth * 0.3f, 10f, 200f);
-          GUILayout.Label (label, GUILayout.Width(labelWidth));
-          if (GUILayout.Button ("Camera->Target")) {
-            camera.transform.AlignWith (transform);
-          }
-          if (GUILayout.Button ("Target->Camera")) {
-            transform.AlignWith (camera.transform);
-          }
+      // Step 3: Move the camera by this offset
+      _Camera.transform.position += offset;
+
+      IEnumerator MoveToTargetCoroutine () {
+        Vector3 startPosition = transform.position;
+        Quaternion startRotation = transform.rotation;
+
+        float elapsed = 0f;
+
+        while (elapsed < _Duration) {
+          elapsed += Time.deltaTime;
+          transform.position = Vector3.Lerp (startPosition, target.position, elapsed / _Duration);
+          transform.rotation = Quaternion.Slerp (startRotation, target.rotation, elapsed / _Duration);
+          yield return null;
         }
+
+        // Set the final position and rotation to ensure it is exactly at the target
+        _Camera.transform.position = target.position;
+        _Camera.transform.rotation = target.rotation;
       }
     }
-#endif
   }
 }
