@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _CanvasGroup: {fileID: 1073290831282917}
-  _FadeDuration: 1
+  _FadeDuration: 0.25
   OnShow:
     m_PersistentCalls:
       m_Calls:
