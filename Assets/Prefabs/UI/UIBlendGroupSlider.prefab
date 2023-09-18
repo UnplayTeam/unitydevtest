@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 7649794645674024582}
   - component: {fileID: 3764234695835468563}
   m_Layer: 5
-  m_Name: UIBlendShapeGroupSlider
+  m_Name: UIBlendGroupSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
