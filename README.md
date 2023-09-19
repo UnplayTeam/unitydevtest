@@ -1,4 +1,11 @@
 # unitydevtest
+
+UPDATE!!! This assessment will be closed down on Wednesday, September 20, 2023
+This will be archived but publicly available for sometime after. The next time
+we have need of a technical skills test, we will make a whole new random
+challenge!
+______________________________________________________________________________
+
 Create a functional UI for the morphing v008 LiveTale Character model!
 
 Inside this project, you will find a 3d model. This is an older novel custom 3d model consisting of many mesh renderers, bones, and blendshapes. We have since changed many things about our internal model, and decided to repurpose this for interview purposes. The blendshapes include many options, but most notable blending for fantasy species and body shapes. This project utilizes the LTS version of Unity 2021, however it should seemlessly load in all versions of Unity 2022 as well.
